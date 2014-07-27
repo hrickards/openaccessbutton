@@ -21,6 +21,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+/**
+ * Wrapper activity that provides navigation for the entire app, and loads the relevant fragment
+ * based on that navigation.
+ */
+
 public class MainActivity extends Activity {
     // Navigation drawer
     private String[] mNavigationTitles;
@@ -28,51 +33,57 @@ public class MainActivity extends Activity {
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
 
-    private static final int NAVIGATION_NEWS_FEED = 0;
-    private static final int NAVIGATION_CONTENT = 1;
-    private static final int DEFAULT_FRAGMENT = NAVIGATION_NEWS_FEED;
+    // Position of the various fragments in the navigation drawer
+    // TODO: Can this be done programatically from arrays.xml?
+    private static final int sNavigationAdvocacy = 0;
+    private static final int sNavigationBlog = 1;
+    private static final int sNavigationBrowser = 2;
+    private static final int sNavigationMap = 3;
+    private static final int sDefaultFragment = sNavigationAdvocacy;
 
-    private Fragment mNewsFeedFragment;
-    private Fragment mContentFragment;
+    private Fragment mAdvocacyFragment;
+    private Fragment mBlogFragment;
+    private Fragment mBrowserFragment;
+    private Fragment mMapFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialise navigation drawer
+        initialiseNavigation();
+
+        // Show the default fragment
+        switchToFragment(sDefaultFragment);
+    }
+
+    /**
+     * Setup (bind various handlers) the navigation drawer on the left hand side of the screen
+     * that enables the user to switch between activities.
+     */
+    private void initialiseNavigation() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
-        // Actually swap the fragments
+        // Swap the fragments when an item is selected
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-        // Set navigation titles
+        // Populate the list of places
         mNavigationTitles = getResources().getStringArray(R.array.navigation_array);
         mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item,
                 mNavigationTitles));
 
         // Tie in navigation drawer to action bar
-        mDrawerToggle = new ActionBarDrawerToggle(
-                this,                  /* host Activity */
-                mDrawerLayout,         /* DrawerLayout object */
-                R.drawable.ic_drawer,  /* nav drawer icon to replace 'Up' caret */
-                R.string.drawer_open,  /* "open drawer" description */
-                R.string.drawer_close  /* "close drawer" description */
-        );
-
-        // Set the drawer toggle as the DrawerListener
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_drawer,
+                R.string.drawer_open, R.string.drawer_close);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-        // Enable touching action bar icon to expand navigation drawer
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
-
-        // Open the first fragment
-        switchToFragment(DEFAULT_FRAGMENT);
     }
 
-    // Called on navigation drawer item click
+    /**
+     * When a navigation item is selected, load and show the corresponding fragment.
+     */
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView parent, View view, int position, long id) {
@@ -80,28 +91,46 @@ public class MainActivity extends Activity {
         }
     }
 
-    // Switch out to new fragment
+    /**
+     * Load and show the corresponding fragment, updating the UI of the navigation drawer at the
+     * same time.
+     */
     protected void switchToFragment(int position) {
+        // Switch to the new fragment, instantiating it if a previous instance isn't around
         Fragment mFragment;
         FragmentManager fragmentManager = getFragmentManager();
         switch (position) {
-            case NAVIGATION_NEWS_FEED:
-                if (mNewsFeedFragment == null) {
-                    mNewsFeedFragment = new NewsFeedFragment();
+            case sNavigationAdvocacy:
+                if (mAdvocacyFragment == null) {
+                    mAdvocacyFragment = new AdvocacyFragment();
                 }
-                mFragment = mNewsFeedFragment;
+                mFragment = mAdvocacyFragment;
                 break;
 
-            case NAVIGATION_CONTENT:
-                if (mContentFragment == null) {
-                    mContentFragment = new ContentFragment();
+            case sNavigationBlog:
+                if (mBlogFragment == null) {
+                    mBlogFragment = new BlogFragment();
                 }
-                mFragment = mContentFragment;
+                mFragment = mBlogFragment;
+                break;
+
+            case sNavigationBrowser:
+                if (mBrowserFragment == null) {
+                    mBrowserFragment = new BrowserFragment();
+                }
+                mFragment = mBrowserFragment;
+                break;
+
+            case sNavigationMap:
+                if (mMapFragment == null) {
+                    mMapFragment = new MapFragment();
+                }
+                mFragment = mMapFragment;
                 break;
 
             default:
-                // TODO
-                mFragment = new NewsFeedFragment();
+                // TODO: Look at sDefaultFragment
+                mFragment = new AdvocacyFragment();
         }
         fragmentManager.beginTransaction().replace(R.id.content_frame, mFragment).commit();
 
@@ -126,13 +155,14 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    // Called when an item in the action bar is selected
     public boolean onOptionsItemSelected(MenuItem item) {
         // Pass the event to ActionBarDrawerToggle, if it returns
         // true, then it has handled the app icon touch event
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        // Handle your other action bar items...
+        // TODO: Handle other action bar presses
 
         return super.onOptionsItemSelected(item);
     }
