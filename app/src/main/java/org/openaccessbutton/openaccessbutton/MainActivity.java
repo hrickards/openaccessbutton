@@ -21,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment;
 /**
  * Wrapper activity that provides navigation for the entire app, and loads the relevant fragment
  * based on that navigation.

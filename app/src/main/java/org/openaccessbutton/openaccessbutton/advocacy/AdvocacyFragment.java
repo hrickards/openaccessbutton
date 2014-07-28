@@ -5,7 +5,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-package org.openaccessbutton.openaccessbutton;
+package org.openaccessbutton.openaccessbutton.advocacy;
 
 import android.os.Bundle;
 import android.app.Fragment;
@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.advocacy.XmlParser;
 import org.xmlpull.v1.XmlPullParserException;
 
