@@ -8,4 +8,7 @@
     <string name="drawer_close">Close the Navigation Drawer</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="action_search">Search</string>
+    <string name="connection_error">Connection error</string>
+    <string name="xml_error">XML parsing error</string>
+    <string name="loading_text">Loading...</string>
 </resources>

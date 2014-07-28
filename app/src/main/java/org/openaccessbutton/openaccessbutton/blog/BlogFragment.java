@@ -5,7 +5,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-package org.openaccessbutton.openaccessbutton;
+package org.openaccessbutton.openaccessbutton.blog;
 
 import android.os.Bundle;
 import android.app.Fragment;
@@ -13,9 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.openaccessbutton.openaccessbutton.R;
+
 /**
  * Shows the user a native version of the Open Access Button blog using RSS.
- * TODO: Implement.
  */
 public class BlogFragment extends Fragment {
     public BlogFragment() {
