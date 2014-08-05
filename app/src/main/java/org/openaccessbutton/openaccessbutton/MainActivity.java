@@ -8,9 +8,6 @@ package org.openaccessbutton.openaccessbutton;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -25,12 +22,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.Toast;
+
 import com.google.gson.Gson;
 import org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment;
 import org.openaccessbutton.openaccessbutton.blog.BlogDetailsFragment;
 import org.openaccessbutton.openaccessbutton.blog.BlogFragment;
 import org.openaccessbutton.openaccessbutton.blog.Post;
+import org.openaccessbutton.openaccessbutton.map.MapFragment;
 
 /**
  * Wrapper activity that provides navigation for the entire app, and loads the relevant fragment
