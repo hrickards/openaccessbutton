@@ -18,6 +18,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.maps.android.clustering.Cluster;
@@ -33,7 +34,6 @@ import java.util.HashMap;
 public class MapFragment extends Fragment {
     private MapView m;
     private ClusterManager<Item> mClusterManager;
-    private Cluster<Item> mClickedCluster;
     private Item mClickedClusterItem;
 
 
@@ -94,7 +94,14 @@ public class MapFragment extends Fragment {
         mClusterManager.setOnClusterClickListener(new ClusterManager.OnClusterClickListener<Item>() {
             @Override
             public boolean onClusterClick(Cluster<Item> cluster) {
-                mClickedCluster = cluster; // remember for use later in the Adapter
+                float newZoomLevel = m.getMap().getCameraPosition().zoom + 1;
+                if (newZoomLevel < m.getMap().getMinZoomLevel()) {
+                    newZoomLevel = m.getMap().getMinZoomLevel();
+                } else if (newZoomLevel > m.getMap().getMaxZoomLevel()) {
+                    newZoomLevel = m.getMap().getMaxZoomLevel();
+                }
+                // TODO: Why does this not zoom when we use animateCamera()?
+                m.getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(cluster.getPosition(), newZoomLevel));
                 return false;
             }
         });
