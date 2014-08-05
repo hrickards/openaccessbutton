@@ -7,16 +7,24 @@
 
 package org.openaccessbutton.openaccessbutton.blog;
 
+import java.util.Date;
+
 /**
  * Structure containing one blog post
  */
 public class Post {
     public final String title;
     public final String description;
+    public final Date date;
+    public final String author;
+    public final String content;
 
-    public Post(String title, String description) {
+    public Post(String title, String description, Date date, String author, String content) {
         this.title = title;
         this.description = description;
+        this.date = date;
+        this.author = author;
+        this.content = content;
     }
 
     @Override

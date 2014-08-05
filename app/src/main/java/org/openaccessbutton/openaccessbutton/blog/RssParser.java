@@ -14,8 +14,11 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Parse the blog RSS (XML) feed into a List of Posts.
@@ -100,6 +103,9 @@ public class RssParser {
         // Post properties
         String title = null;
         String description = null;
+        Date date = null;
+        String creator = null;
+        String content = null;
 
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -111,11 +117,17 @@ public class RssParser {
                 title = readTitle(parser);
             } else if (name.equals("description")) {
                 description = readDescription(parser);
+            } else if (name.equals("pubDate")) {
+                date = readDate(parser);
+            } else if (name.equals("dc:creator")) {
+                creator = readCreator(parser);
+            } else if (name.equals("content:encoded")) {
+                content = readContent(parser);
             } else {
                 skip(parser);
             }
         }
-        return new Post(title, description);
+        return new Post(title, description, date, creator, content);
     }
 
     private void skip(XmlPullParser parser) throws XmlPullParserException, IOException {
@@ -146,6 +158,33 @@ public class RssParser {
     }
 
     /**
+     * Extract text from a <pubDate> tag
+     */
+    private Date readDate(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, "pubDate");
+
+        String dateString = readText(parser);
+        SimpleDateFormat dateParser = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss ZZZZZ", Locale.ENGLISH);
+        Date date = null;
+
+        try {
+            date = dateParser.parse(dateString);
+        } catch (Exception e) {
+        }
+
+        return date;
+    }
+    /**
+     * Extract text from a <dc:creator> tag
+     */
+    private String readCreator(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, "dc:creator");
+        String title = readText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, "dc:creator");
+        return title;
+    }
+
+    /**
      * Extract and format text from a <description> tag
      */
     private String readDescription(XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -154,7 +193,19 @@ public class RssParser {
         // remove those
         String description = readText(parser).replaceAll("(?m) \\[\u2026\\]<img.*/>$", "");
         parser.require(XmlPullParser.END_TAG, ns, "description");
-        return description;
+        return description + "...";
+    }
+
+    /**
+     * Extract and format text from a <content:encoded> tag
+     */
+    private String readContent(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, "content:encoded");
+        // Descriptions end in " [...]" (but with unicode ellipses) and then a 1x1px image so we
+        // remove those
+        String content = readText(parser).replaceAll("<img.*/>$", "");
+        parser.require(XmlPullParser.END_TAG, ns, "content:encoded");
+        return content;
     }
 
     /**

@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp">
-
     
 
     <TextView
@@ -20,11 +19,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/blog_title"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/blog_author"
+        android:layout_toRightOf="@+id/blog_author"
         android:text="blog_date" />
 
     <TextView
-        android:id="@+id/blog_author"
+        android:id="@id/blog_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/blog_title"

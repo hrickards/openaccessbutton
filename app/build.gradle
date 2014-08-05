@@ -3,13 +3,12 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 'android-19'
     buildToolsVersion '19.1.0'
-
     defaultConfig {
-        applicationId "org.openaccessbutton.openaccessbutton"
+        applicationId 'org.openaccessbutton.openaccessbutton'
         minSdkVersion 15
         targetSdkVersion 19
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
     }
     buildTypes {
         release {
@@ -17,10 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:support-v4:20.+'
     compile files('libs/commons-lang3-3.3.2.jar')
+    compile files('libs/gson-2.2.4.jar')
 }
