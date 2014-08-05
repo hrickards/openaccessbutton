@@ -24,13 +24,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 
 import com.google.gson.Gson;
-import org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment;
-import org.openaccessbutton.openaccessbutton.advocacy.XmlParser;
 import org.openaccessbutton.openaccessbutton.blog.BlogDetailsFragment;
 import org.openaccessbutton.openaccessbutton.blog.BlogFragment;
 import org.openaccessbutton.openaccessbutton.blog.Post;
-import org.openaccessbutton.openaccessbutton.browser.BrowserFragment;
-import org.openaccessbutton.openaccessbutton.map.MapFragment;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
@@ -40,7 +36,7 @@ import java.io.InputStream;
  * Wrapper activity that provides navigation for the entire app, and loads the relevant fragment
  * based on that navigation.
  */
-public class MainActivity extends Activity implements BlogFragment.OnPostSelectedListener,
+public class MainActivity extends Activity implements OnFragmentNeededListener,
         FragmentManager.OnBackStackChangedListener {
     // Navigation drawer
     private String[] mNavigationTitles;
@@ -214,20 +210,6 @@ public class MainActivity extends Activity implements BlogFragment.OnPostSelecte
         return super.onCreateOptionsMenu(menu);
     }
 
-    /**
-     * Shows details fragment when a post is selected
-     */
-    public void onPostSelected(Post post) {
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        Fragment blogDetailsFragment = new BlogDetailsFragment();
-        Bundle data = new Bundle();
-        data.putString("post", new Gson().toJson(post));
-        blogDetailsFragment.setArguments(data);
-        fragmentTransaction.replace(R.id.content_frame, blogDetailsFragment, "blogDetailsFragment");
-        fragmentTransaction.addToBackStack("blogDetailsFragment");
-        fragmentTransaction.commit();
-    }
-
     public void onBackStackChanged() {
         setActionBarArrowDependingOnFragmentsBackStack();
     }
@@ -254,4 +236,14 @@ public class MainActivity extends Activity implements BlogFragment.OnPostSelecte
 
         return true;
     }
+
+    public void launchFragment(Fragment fragment, String tag, Bundle data, boolean backstack) {
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.content_frame, fragment, tag);
+        if (backstack) {
+            fragmentTransaction.addToBackStack(tag);
+        }
+        fragmentTransaction.commit();
+    }
 }
+
