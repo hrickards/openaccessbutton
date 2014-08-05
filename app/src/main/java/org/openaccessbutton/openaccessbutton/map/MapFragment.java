@@ -59,9 +59,15 @@ public class MapFragment extends Fragment {
     class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
         @Override
         public View getInfoContents(Marker marker) {
-            TextView tv = new TextView(getActivity());
-            tv.setText(mClickedClusterItem.mStory);
-            return tv;
+            LayoutInflater li = getActivity().getLayoutInflater();
+            View view = li.inflate(R.layout.map_info_window, null);
+
+            TextView story = (TextView) view.findViewById(R.id.map_item_story);
+            TextView description = (TextView) view.findViewById(R.id.map_item_description);
+            story.setText(mClickedClusterItem.mStory);
+            description.setText(mClickedClusterItem.mDescription);
+
+            return view;
         }
 
         @Override
