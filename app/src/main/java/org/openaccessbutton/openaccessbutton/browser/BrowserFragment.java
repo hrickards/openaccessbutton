@@ -5,13 +5,15 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-package org.openaccessbutton.openaccessbutton;
+package org.openaccessbutton.openaccessbutton.browser;
 
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import org.openaccessbutton.openaccessbutton.R;
 
 /**
  * Allows the user to browse the web and view journal articles, and submit

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation>
+    <item>
+        <title>Advocacy</title>
+        <class>org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment</class>
+    </item>
+    <item>
+        <title>Blog</title>
+        <class>org.openaccessbutton.openaccessbutton.blog.BlogFragment</class>
+    </item>
+    <item>
+        <title>Browser</title>
+        <class>org.openaccessbutton.openaccessbutton.browser.BrowserFragment</class>
+    </item>
+    <item>
+        <title>Map</title>
+        <class>org.openaccessbutton.openaccessbutton.map.MapFragment</class>
+    </item>
+</navigation>

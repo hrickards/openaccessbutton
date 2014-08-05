@@ -25,10 +25,16 @@ import android.widget.SearchView;
 
 import com.google.gson.Gson;
 import org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment;
+import org.openaccessbutton.openaccessbutton.advocacy.XmlParser;
 import org.openaccessbutton.openaccessbutton.blog.BlogDetailsFragment;
 import org.openaccessbutton.openaccessbutton.blog.BlogFragment;
 import org.openaccessbutton.openaccessbutton.blog.Post;
+import org.openaccessbutton.openaccessbutton.browser.BrowserFragment;
 import org.openaccessbutton.openaccessbutton.map.MapFragment;
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Wrapper activity that provides navigation for the entire app, and loads the relevant fragment
@@ -43,18 +49,8 @@ public class MainActivity extends Activity implements BlogFragment.OnPostSelecte
     private ActionBarDrawerToggle mDrawerToggle;
     private SearchView mSearchView;
 
-    // Position of the various fragments in the navigation drawer
-    // TODO: Can this be done programatically from arrays.xml?
-    private static final int sNavigationAdvocacy = 0;
-    private static final int sNavigationBlog = 1;
-    private static final int sNavigationBrowser = 2;
-    private static final int sNavigationMap = 3;
-    private static final int sDefaultFragment = sNavigationAdvocacy;
-
-    private Fragment mAdvocacyFragment;
-    private Fragment mBlogFragment;
-    private Fragment mBrowserFragment;
-    private Fragment mMapFragment;
+    private NavigationXmlParser mNavigationParser;
+    private Fragment[] mFragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +60,7 @@ public class MainActivity extends Activity implements BlogFragment.OnPostSelecte
         initialiseNavigation();
 
         // Show the default fragment
-        switchToFragment(sDefaultFragment);
+        switchToFragment(0);
     }
 
     /**
@@ -78,10 +74,26 @@ public class MainActivity extends Activity implements BlogFragment.OnPostSelecte
         // Swap the fragments when an item is selected
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-        // Populate the list of places
-        mNavigationTitles = getResources().getStringArray(R.array.navigation_array);
+        // Parse the navigation drawer XML
+        mNavigationParser = new NavigationXmlParser();
+        try {
+            InputStream object = this.getResources().openRawResource(R.raw.navigation);
+            mNavigationParser.parse(object);
+        } catch (IOException e) {
+            // TODO: Do something
+            Log.e("openaccess", "exception", e);
+        } catch (XmlPullParserException e) {
+            // TODO: Do something
+            Log.e("openaccess", "exception", e);
+        }
+
+        // Obtain an array of the navigation titles
+        mNavigationTitles = mNavigationParser.getTitles();
         mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item,
                 mNavigationTitles));
+
+        // Initialise mFragments to the right length
+        mFragments = new Fragment[mNavigationParser.size()];
 
         // Tie in navigation drawer to action bar, switching between up caret and menu
         // caret depending on how deep in the fragment stack we are
@@ -119,35 +131,30 @@ public class MainActivity extends Activity implements BlogFragment.OnPostSelecte
         // Switch to the new fragment, instantiating it if a previous instance isn't around
         Fragment mFragment;
         FragmentManager fragmentManager = getFragmentManager();
-        switch (position) {
-            case sNavigationAdvocacy:
-                if (mAdvocacyFragment == null) {
-                    mAdvocacyFragment = new AdvocacyFragment();
-                }
-                mFragment = mAdvocacyFragment;
-                break;
-            case sNavigationBlog:
-                if (mBlogFragment == null) {
-                    mBlogFragment = new BlogFragment();
-                }
-                mFragment = mBlogFragment;
-                break;
-            case sNavigationBrowser:
-                if (mBrowserFragment == null) {
-                    mBrowserFragment = new BrowserFragment();
-                }
-                mFragment = mBrowserFragment;
-                break;
-            case sNavigationMap:
-                if (mMapFragment == null) {
-                    mMapFragment = new MapFragment();
-                }
-                mFragment = mMapFragment;
-                break;
-            default:
-                // TODO: Look at sDefaultFragment
-                mFragment = new AdvocacyFragment();
+
+        // Find a Fragment of the right class
+        NavigationItem item = mNavigationParser.get(position);
+        if (mFragments[position] == null) {
+            // This is safe because:
+            // - Hardcoded XML: *never* do this from any network-downloaded or user-editable source
+            // - All our fragment constructors need no arguments
+            try {
+                Class<?> fragmentClass = Class.forName(item.className);
+                mFragments[position] = (Fragment) fragmentClass.newInstance();
+            } catch (ClassNotFoundException e) {
+                mFragments[position] = null;
+                Log.e("openaccess", "exception", e);
+            } catch (IllegalAccessException e) {
+                mFragments[position] = null;
+                Log.e("openaccess", "exception", e);
+            } catch (InstantiationException e) {
+                mFragments[position] = null;
+                Log.e("openaccess", "exception", e);
+            }
         }
+        mFragment = mFragments[position];
+
+
         fragmentManager.beginTransaction().replace(R.id.content_frame, mFragment).commit();
         // Highlight the selected item, update the title, and close the drawer
         mDrawerList.setItemChecked(position, true);

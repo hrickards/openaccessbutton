@@ -1,9 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="navigation_array">
-        <item>Advocacy</item>
-        <item>Blog</item>
-        <item>Browser</item>
-        <item>Map</item>
-    </string-array>
 </resources>
