@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#ffffff"
     android:padding="5dp">
     
 
@@ -11,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:text="blog_title"
+        android:layout_marginLeft="2dp"
         android:textSize="25sp" />
 
     <TextView
@@ -19,19 +21,24 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/blog_title"
         android:layout_marginLeft="10dp"
+        android:layout_marginBottom="2dp"
         android:layout_toRightOf="@+id/blog_author"
+        style="@style/GrayedOutText"
         android:text="blog_date" />
 
     <TextView
+        style="@style/GrayedOutText"
         android:id="@id/blog_author"
+        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/blog_title"
-        android:textColor="#ccc"
         android:text="blog_author" />
 
     <TextView
         android:id="@+id/blog_summary"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/blog_author"
