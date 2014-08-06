@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -36,6 +37,13 @@ public class BlogDetailsFragment extends Fragment {
         // Set post data in view
         TextView titleView = (TextView) view.findViewById(R.id.blog_title);
         titleView.setText(mPost.title);
+
+        WebView contentView = (WebView) view.findViewById(R.id.blog_content);
+        contentView.getSettings().setJavaScriptEnabled(true);
+        contentView.loadDataWithBaseURL("", mPost.content, "text/html", "UTF-8", "");
+        // Transparent WebView
+        contentView.setBackgroundColor(0x00000000);
+        contentView.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
 
         return view;
     }

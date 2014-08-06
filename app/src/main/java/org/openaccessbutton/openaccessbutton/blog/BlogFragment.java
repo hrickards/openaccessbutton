@@ -8,6 +8,8 @@
 package org.openaccessbutton.openaccessbutton.blog;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,10 @@ import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
+
+import org.openaccessbutton.openaccessbutton.MainActivity;
+import org.openaccessbutton.openaccessbutton.OnFragmentNeededListener;
 import org.openaccessbutton.openaccessbutton.R;
 
 import java.util.ArrayList;
@@ -28,11 +34,7 @@ import java.util.List;
 public class BlogFragment extends android.app.ListFragment implements AbsListView.OnScrollListener {
     public BlogFragment() {}
 
-    // Interface for communication with parent activity
-    OnPostSelectedListener mCallback;
-    public interface OnPostSelectedListener {
-        public void onPostSelected(Post post);
-    }
+    OnFragmentNeededListener mCallback;
 
     // The posts shown
     List<Post> mItems = new ArrayList<Post>();
@@ -52,12 +54,12 @@ public class BlogFragment extends android.app.ListFragment implements AbsListVie
     public void onAttach(Activity activity) {
         super.onAttach(activity);
 
-        // Make sure parent activity has implemented comm. interface
+        // Make sure parent activity has implemented comm. interface for launching fragments
         try {
-            mCallback = (OnPostSelectedListener) activity;
+            mCallback = (OnFragmentNeededListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                    + " must implement OnPostSelectedListener");
+                    + " must implement OnFragmentNeededListener");
         }
     }
 
@@ -93,7 +95,17 @@ public class BlogFragment extends android.app.ListFragment implements AbsListVie
      */
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        mCallback.onPostSelected(mItems.get(position));
+        Fragment blogDetailsFragment = new BlogDetailsFragment();
+
+        // Send in the post as an argument
+        Post post = mItems.get(position);
+        Bundle data = new Bundle();
+        data.putString("post", new Gson().toJson(post));
+        blogDetailsFragment.setArguments(data);
+
+        // Use the communication interface we have with the parent activity to launch the
+        // fragment
+        mCallback.launchFragment(blogDetailsFragment, "blogDetailsFragment", data, true);
     }
 
     /**
