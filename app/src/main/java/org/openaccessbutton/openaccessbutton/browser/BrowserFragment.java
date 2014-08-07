@@ -16,15 +16,18 @@ import android.view.KeyEvent;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
+
+import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
 
 /**
  * Allows the user to browse the web and view journal articles, and submit
  * them to OAB if they're paywalled.
- * TODO: Implement
  */
 
-public class BrowserFragment extends Fragment {
+public class BrowserFragment extends Fragment implements MainActivity.OnBackButtonInterface {
+    WebView mWebView;
+
     public BrowserFragment() {
         // Required empty public constructor
     }
@@ -33,29 +36,21 @@ public class BrowserFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_browser, container, false);
-        WebView mWebView = (WebView)view.findViewById(R.id.mWebView);
+
+        mWebView = (WebView) view.findViewById(R.id.mWebView);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewClient());
         mWebView.loadUrl("http://www.google.com");
+
         return view;
     }
 
-
-    WebView mWebView;
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(event.getAction() == KeyEvent.ACTION_DOWN){
-            switch(keyCode)
-            {case KeyEvent.KEYCODE_BACK:
-                    if(mWebView.canGoBack()){
-                        mWebView.goBack();
-                    }else{
-                        break;
-                    }
-                    return true;
-            }
-
+    public boolean onBackButtonPressed() {
+        if (mWebView.canGoBack()) {
+            mWebView.goBack();
+            return true;
+        } else {
+            return false;
         }
-        return true;
     }
-
 }

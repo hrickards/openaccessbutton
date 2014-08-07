@@ -48,6 +48,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
 
     private NavigationXmlParser mNavigationParser;
     private Fragment[] mFragments;
+    private Fragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,7 +125,6 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
      */
     protected void switchToFragment(int position) {
         // Switch to the new fragment, instantiating it if a previous instance isn't around
-        Fragment mFragment;
         FragmentManager fragmentManager = getFragmentManager();
 
         // Find a Fragment of the right class
@@ -226,7 +226,10 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (mSearchView.isIconified() != true) {
+            // If current fragment implements OnBackButtonInterface
+            if ((mFragment instanceof OnBackButtonInterface) && ((OnBackButtonInterface) mFragment).onBackButtonPressed()) {
+                return true;
+            } else if (mSearchView.isIconified() != true) {
                 mSearchView.setIconified(true);
             } else {
                 super.onKeyDown(keyCode, event);
@@ -243,6 +246,11 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             fragmentTransaction.addToBackStack(tag);
         }
         fragmentTransaction.commit();
+    }
+
+    public interface OnBackButtonInterface {
+        // If back handled return true, otherwise return false
+        public boolean onBackButtonPressed();
     }
 }
 
