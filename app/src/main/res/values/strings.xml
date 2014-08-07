@@ -15,5 +15,6 @@
     <string name="search_hint">Search...</string>
     <string name="title_activity_button_submit">ButtonSubmit</string>
     <string name="button_submit_intent_title">Submit to Open Access Button</string>
+    <string name="title_activity_intro">IntroActivity</string>
 
 </resources>
