@@ -34,6 +34,12 @@ import java.util.List;
 public class BlogFragment extends android.app.ListFragment implements AbsListView.OnScrollListener {
     public BlogFragment() {}
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // TODO
+    }
+
     OnFragmentNeededListener mCallback;
 
     // The posts shown
@@ -75,8 +81,8 @@ public class BlogFragment extends android.app.ListFragment implements AbsListVie
     }
 
     @Override
-    public void onActivityCreated(Bundle saved) {
-        super.onActivityCreated(saved);
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
         // Call this class on scroll movements
         getListView().setOnScrollListener(this);
@@ -88,6 +94,10 @@ public class BlogFragment extends android.app.ListFragment implements AbsListVie
 
         // TODO: Automatically determine how many posts to load
         loadMore();
+
+        if (savedInstanceState != null) {
+            // TODO
+        }
     }
 
     /**

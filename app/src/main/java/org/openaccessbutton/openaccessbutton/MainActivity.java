@@ -55,8 +55,14 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialiseNavigation();
-        // Show the default fragment
-        switchToFragment(0);
+
+        if (savedInstanceState != null) {
+            // Restore the fragment's instance
+            mFragment = getFragmentManager().getFragment(savedInstanceState, "mFragment");
+        } else {
+            // Show the default fragment
+            switchToFragment(0);
+        }
     }
 
     /**
@@ -150,7 +156,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         mFragment = mFragments[position];
 
 
-        fragmentManager.beginTransaction().replace(R.id.content_frame, mFragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, mFragment, "mFragment").commit();
         // Highlight the selected item, update the title, and close the drawer
         mDrawerList.setItemChecked(position, true);
         setTitle(mNavigationTitles[position]);
@@ -251,6 +257,14 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
     public interface OnBackButtonInterface {
         // If back handled return true, otherwise return false
         public boolean onBackButtonPressed();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //Save the fragment's instance
+        getFragmentManager().putFragment(outState, "mFragment", mFragment);
     }
 }
 
