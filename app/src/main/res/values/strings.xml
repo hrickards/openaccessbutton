@@ -19,11 +19,9 @@
     <string name="signUp">Sign Up Now</string>
     <string name="knowledge">Knowledge</string>
     <string name="meetPage2Body">Our app provides a selection of useful information about publishing in an open access journals. This includes:</string>
-    <array name="meetPage2List">
-        <item>•List of popular myths and counter arguments</item>
-        <item>•Reasons for publishing your research open online</item>
-        <item>•The importance of open knowledge today</item>
-    </array>
+    <string name="meetPage2List">•List of popular myths and counter arguments</string>
+    <string name="meetPage2Reasons">•Reasons for publishing your research open online</string>
+    <string name="meetPage2Importance">•The importance of open knowledge today</string>
     <string name="quickReporting">Quick Reporting</string>
     <string name="easyUse">Simply click on our logo in the app or use the share button in any browser to report a paywall.</string>
     <string name="interactiveMap">Interactive Map</string>

@@ -25,9 +25,10 @@
             android:textColor="#fff"
             android:text="Providing tools and research for Open Access research advocates"/>
     </RelativeLayout>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:orientation="vertical"
         android:background="#F7882A">
         <TextView
             android:layout_width="match_parent"
@@ -35,13 +36,11 @@
             android:layout_marginTop="50dp"
             android:layout_height="wrap_content"
             android:text="@string/knowledge"
-            android:id="@+id/knowledge"
             android:textSize="40sp"
             android:textStyle="bold"
             android:gravity="center"
             android:textColor="#fff"/>
         <ImageView
-            android:layout_below="@id/knowledge"
             android:layout_marginBottom="20dp"
             android:contentDescription="@string/knowledge"
             android:id="@+id/imageBrain"
@@ -50,24 +49,29 @@
             android:src="@drawable/meet_page_knowledge"/>
         <TextView
             android:id="@+id/meetPage2Body"
-            android:layout_below="@id/imageBrain"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
             android:layout_height="wrap_content"
             android:textColor="#fff"
             android:text="@string/meetPage2Body"/>
-        <ListView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
-            android:textColor="#fff"
-            android:entries="@array/meetPage2List"
-            android:layout_below="@id/meetPage2Body">
-        </ListView>
-    </RelativeLayout>
+            style="@style/meetPageList"
+            android:text="@string/meetPage2List"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/meetPageList"
+            android:text="@string/meetPage2Reasons"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/meetPageList"
+            android:text="@string/meetPage2Importance"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -121,6 +125,7 @@
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:textColor="#fff"
+            android:textStyle="bold"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="10dp"
             android:text="@string/quickReporting"
