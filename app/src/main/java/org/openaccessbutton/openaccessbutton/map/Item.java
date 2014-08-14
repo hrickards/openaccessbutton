@@ -7,7 +7,7 @@ import com.google.maps.android.clustering.ClusterItem;
  * Created by harry on 05/08/14.
  */
 public class Item implements ClusterItem {
-    private final LatLng mPosition;
+    public LatLng mPosition;
     public String mStory;
     public String mDoi;
     public String mUserProfession;
