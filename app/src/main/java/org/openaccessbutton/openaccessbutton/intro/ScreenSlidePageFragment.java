@@ -52,7 +52,7 @@ public class ScreenSlidePageFragment extends Fragment {
         }
 
         switch (mPageNumber) {
-            case 3:
+            case 5:
                 Button gotoMainButton = (Button) childView.findViewById(R.id.goto_main_button);
                 gotoMainButton.setOnClickListener(new View.OnClickListener() {
                     @Override
