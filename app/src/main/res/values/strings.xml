@@ -35,4 +35,17 @@
     <string name="orSignUpEmail">Or sign up with Email</string>
     <string name="registeredSignIn">Already registered? Sign in</string>
     <string name="signUpAgreements">By signing in you agree to our Terms of Use. Please note that information obtained by the button will be publicly accessible.</string>
+    <string name="hitaPaywall">You have hit a paywall?!</string>
+    <string name="thatSucks">That sucks.</string>
+    <string name="tellUsWhy">Tell us why and we will put you on the map.</string>
+    <string name="articleUrl">Article URL</string>
+    <string name="yourLocation">Your location</string>
+    <string name="exampleLocation">e.g. London, United Kingdom</string>
+    <string name="DOI">Digital Object Identifier (DOI)</string>
+    <string name="formDescription">Description</string>
+    <string name="exampleFormDescription">Title, Authors, Journal</string>
+    <string name="whyAccess">Why do you need access?</string>
+    <string name="exampleWhyAccess">e.g. I am trying to save lives, dammit!</string>
+    <string name="submit">Submit</string>
+    <string name="formInstructions">For instructions, more info and your contribution head to www.openaccessbutton.org</string>
 </resources>
