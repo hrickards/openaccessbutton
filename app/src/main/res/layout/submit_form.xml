@@ -43,18 +43,21 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:inputType="textUri"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/yourLocation"
-            android:layout_marginLeft="7dp"
-            android:textStyle="bold"/>
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:hint="@string/exampleLocation"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/yourLocation"
+            android:layout_marginLeft="7dp"
+            android:textStyle="bold"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
