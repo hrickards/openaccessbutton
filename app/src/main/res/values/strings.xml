@@ -48,4 +48,7 @@
     <string name="exampleWhyAccess">e.g. I am trying to save lives, dammit!</string>
     <string name="submit">Submit</string>
     <string name="formInstructions">For instructions, more info and your contribution head to www.openaccessbutton.org</string>
+    <string name="faq1">Does Open Access have reliable peer review?</string>
+    <string name="simpleAnswer1">Simple Answer: Yes. A strong community of experts exists in order to support Open Access publishing. They delegate their time to the cause and are just as reliable as the ones of paid journals.</string>
+    <string name="clickForMoreInfo">Click for more information on the topic.</string>
 </resources>
