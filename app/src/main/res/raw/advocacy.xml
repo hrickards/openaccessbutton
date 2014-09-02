@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- TODO: Namespace -->
 <page>
+    <faq>
+        <question>Does Open Access have reliable peer review?</question>
+        <answer>Simple Answer: Yes. A strong community of experts exists in order to support Open Access publishing. They delegate their time to the cause and are just as reliable as the ones of paid journals.</answer>
+        <details>Some <b>more</b> <i>dynamic</i> HTML content goes here.</details>
+    </faq>
+
+    <html><b>Test</b> <i>HTML</i> <a href="#">content</a></html>
+
     <paragraph>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco

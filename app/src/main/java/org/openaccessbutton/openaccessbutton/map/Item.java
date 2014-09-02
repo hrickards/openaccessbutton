@@ -4,7 +4,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.clustering.ClusterItem;
 
 /**
- * Created by harry on 05/08/14.
+ * A marker on the map representing someone trying to access a paywalled article
  */
 public class Item implements ClusterItem {
     public LatLng mPosition;

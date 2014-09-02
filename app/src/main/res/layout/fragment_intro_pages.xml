@@ -206,7 +206,8 @@
     </LinearLayout>
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:background="#F7882A">
     <Button
         android:id="@+id/goto_main_button"
         android:layout_width="wrap_content"

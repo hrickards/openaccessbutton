@@ -1,7 +1,7 @@
 package org.openaccessbutton.openaccessbutton;
 
 /**
- * Created by harry on 05/08/14.
+ * A module in the navigation list (e.g., blog)
  */
 public class NavigationItem {
     public final String title;

@@ -14,20 +14,20 @@
         android:textColor="#222"
         android:text="https://www.google.com"/>
     <ImageView
-        android:id="@+id/shareButton"
+        android:id="@+id/oabButton"
         android:layout_width="45dp"
         android:layout_toRightOf="@id/uri"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
         android:src="@drawable/ic_navbar_logo"/>
     <ImageView
-        android:id="@+id/imageShare"
+        android:id="@+id/shareButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="2dp"
         android:background="#F7882A"
-        android:layout_toRightOf="@id/shareButton"
+        android:layout_toRightOf="@id/oabButton"
         android:src="@drawable/ic_sharing" />
     <WebView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"

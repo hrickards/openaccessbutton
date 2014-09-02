@@ -7,6 +7,7 @@
 
 package org.openaccessbutton.openaccessbutton.browser;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,9 +17,11 @@ import android.view.KeyEvent;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.button.ButtonSubmitActivity;
 
 /**
  * Allows the user to browse the web and view journal articles, and submit
@@ -54,6 +57,35 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewClient());
         mWebView.loadUrl("http://www.google.com");
+
+        // Share page to any generic application
+        ImageView shareButton = (ImageView) view.findViewById(R.id.shareButton);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Launches the chooser popup so the user can choose where to share the page
+                // From here on out, Android handles everything for us
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, mWebView.getUrl());
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+            }
+        });
+
+        // Submit page to OAB as a paywall
+        ImageView oabButton = (ImageView) view.findViewById(R.id.oabButton);
+        oabButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Intent to launch ButtonSubmitActivity with the URl as the param
+                Intent oabIntent = new Intent(getActivity(), ButtonSubmitActivity.class);
+                oabIntent.setAction(Intent.ACTION_SEND);
+                oabIntent.putExtra(Intent.EXTRA_TEXT, mWebView.getUrl());
+                oabIntent.setType("text/plain");
+                startActivity(oabIntent);
+            }
+        });
 
         return view;
     }
