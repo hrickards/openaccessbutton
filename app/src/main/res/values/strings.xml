@@ -51,4 +51,24 @@
     <string name="faq1">Does Open Access have reliable peer review?</string>
     <string name="simpleAnswer1">Simple Answer: Yes. A strong community of experts exists in order to support Open Access publishing. They delegate their time to the cause and are just as reliable as the ones of paid journals.</string>
     <string name="clickForMoreInfo">Click for more information on the topic.</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="signIn">Sign In</string>
+    <string name="register">Register</string>
+    <string name="nameRequired">Name (required)</string>
+    <string name="emailRequired">Email Address (required)</string>
+    <string-array name="job">
+        <item>Student</item>
+        <item>Doctor</item>
+        <item>Patient</item>
+        <item>Advocate</item>
+        <item>Academic</item>
+        <item>Researcher</item>
+        <item>Librarian</item>
+        <item>Other</item>
+        <item>Prefer not to say</item>
+    </string-array>
+    <string name="understandPubliclyAccessible">I understand that information obtained by this button will be publicly accessible</string>
+    <string name="mailingListAdd">I would like to be added to the Open Access Button Mailing List</string>
+    <string name="notShared">Your e-mail address will NOT be publicised or shared with third parties</string>
 </resources>
