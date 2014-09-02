@@ -14,9 +14,15 @@ import android.support.v13.app.FragmentPagerAdapter;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.viewpagerindicator.CirclePageIndicator;
+
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
 
+/**
+ * Take the user through some introductory pages they swipe through before launching
+ * the app for the first time
+ */
 public class IntroActivity extends Activity {
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
@@ -30,6 +36,10 @@ public class IntroActivity extends Activity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
         mPager.setAdapter(mPagerAdapter);
+
+        // Circle pager indicator to show the user visually they can swipe between pages
+        CirclePageIndicator pageIndicator = (CirclePageIndicator) findViewById(R.id.circles);
+        pageIndicator.setViewPager(mPager);
 
         /*
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);

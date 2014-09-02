@@ -51,4 +51,5 @@
     <string name="faq1">Does Open Access have reliable peer review?</string>
     <string name="simpleAnswer1">Simple Answer: Yes. A strong community of experts exists in order to support Open Access publishing. They delegate their time to the cause and are just as reliable as the ones of paid journals.</string>
     <string name="clickForMoreInfo">Click for more information on the topic.</string>
+    <string name="buttonSubmitted">Paywall recorded! Thank you!</string>
 </resources>
