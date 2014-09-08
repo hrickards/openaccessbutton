@@ -18,9 +18,10 @@
         android:layout_marginRight="30dp"
         android:background="#F7882A"
         android:layout_marginTop="30dp"
-        android:textColor="#ddd"
+        android:textColorHint="#ddd"
+        android:textColor="#fff"
         android:textSize="20sp"
-        android:text="@string/email"
+        android:hint="@string/email"
         android:layout_marginBottom="15dp"/>
     <View
         android:layout_width="match_parent"
@@ -37,9 +38,10 @@
         android:layout_marginRight="30dp"
         android:background="#F7882A"
         android:layout_marginTop="15dp"
-        android:textColor="#ddd"
+        android:textColorHint="#ddd"
+        android:textColor="#fff"
         android:textSize="20sp"
-        android:text="@string/password"
+        android:hint="@string/password"
         android:layout_marginBottom="15dp"/>
     <Button
         android:layout_width="fill_parent"

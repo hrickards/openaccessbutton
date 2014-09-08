@@ -2,114 +2,114 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res" >
+        <source path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res" >
             <file
                 name="vpi__dark_theme"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/color/vpi__dark_theme.xml"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\color\vpi__dark_theme.xml"
                 qualifiers=""
                 type="color" />
             <file
                 name="vpi__light_theme"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/color/vpi__light_theme.xml"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\color\vpi__light_theme.xml"
                 qualifiers=""
                 type="color" />
             <file
-                name="vpi__tab_selected_focused_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-hdpi/vpi__tab_selected_focused_holo.9.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_selected_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-hdpi/vpi__tab_selected_holo.9.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_selected_pressed_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-hdpi/vpi__tab_selected_pressed_holo.9.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_unselected_focused_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-hdpi/vpi__tab_unselected_focused_holo.9.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_unselected_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-hdpi/vpi__tab_unselected_holo.9.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_unselected_pressed_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-hdpi/vpi__tab_unselected_pressed_holo.9.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_selected_focused_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-mdpi/vpi__tab_selected_focused_holo.9.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_selected_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-mdpi/vpi__tab_selected_holo.9.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_selected_pressed_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-mdpi/vpi__tab_selected_pressed_holo.9.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_unselected_focused_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-mdpi/vpi__tab_unselected_focused_holo.9.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_unselected_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-mdpi/vpi__tab_unselected_holo.9.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_unselected_pressed_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-mdpi/vpi__tab_unselected_pressed_holo.9.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_selected_focused_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-xhdpi/vpi__tab_selected_focused_holo.9.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_selected_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-xhdpi/vpi__tab_selected_holo.9.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_selected_pressed_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-xhdpi/vpi__tab_selected_pressed_holo.9.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_unselected_focused_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-xhdpi/vpi__tab_unselected_focused_holo.9.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_unselected_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-xhdpi/vpi__tab_unselected_holo.9.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="vpi__tab_unselected_pressed_holo"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable-xhdpi/vpi__tab_unselected_pressed_holo.9.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
                 name="vpi__tab_indicator"
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/drawable/vpi__tab_indicator.xml"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable\vpi__tab_indicator.xml"
                 qualifiers=""
                 type="drawable" />
             <file
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/values/vpi__attrs.xml"
+                name="vpi__tab_selected_focused_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-hdpi\vpi__tab_selected_focused_holo.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_selected_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-hdpi\vpi__tab_selected_holo.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_selected_pressed_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-hdpi\vpi__tab_selected_pressed_holo.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_unselected_focused_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-hdpi\vpi__tab_unselected_focused_holo.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_unselected_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-hdpi\vpi__tab_unselected_holo.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_unselected_pressed_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-hdpi\vpi__tab_unselected_pressed_holo.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_selected_focused_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-mdpi\vpi__tab_selected_focused_holo.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_selected_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-mdpi\vpi__tab_selected_holo.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_selected_pressed_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-mdpi\vpi__tab_selected_pressed_holo.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_unselected_focused_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-mdpi\vpi__tab_unselected_focused_holo.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_unselected_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-mdpi\vpi__tab_unselected_holo.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_unselected_pressed_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-mdpi\vpi__tab_unselected_pressed_holo.9.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_selected_focused_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-xhdpi\vpi__tab_selected_focused_holo.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_selected_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-xhdpi\vpi__tab_selected_holo.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_selected_pressed_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-xhdpi\vpi__tab_selected_pressed_holo.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_unselected_focused_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-xhdpi\vpi__tab_unselected_focused_holo.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_unselected_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-xhdpi\vpi__tab_unselected_holo.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="vpi__tab_unselected_pressed_holo"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\drawable-xhdpi\vpi__tab_unselected_pressed_holo.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\values\vpi__attrs.xml"
                 qualifiers="" >
                 <attr
                     name="centered"
@@ -296,7 +296,7 @@
                 </declare-styleable>
             </file>
             <file
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/values/vpi__colors.xml"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\values\vpi__colors.xml"
                 qualifiers="" >
                 <color name="vpi__bright_foreground_holo_dark" >@color/vpi__background_holo_light
                 </color>
@@ -316,7 +316,7 @@
                 </color>
             </file>
             <file
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/values/vpi__defaults.xml"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\values\vpi__defaults.xml"
                 qualifiers="" >
                 <dimen name="default_circle_indicator_radius" >3dp
                 </dimen>
@@ -416,7 +416,7 @@ true
                 </color>
             </file>
             <file
-                path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/main/res/values/vpi__styles.xml"
+                path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\main\res\values\vpi__styles.xml"
                 qualifiers="" >
 
                 <style
@@ -488,11 +488,11 @@ bold
                 </style>
             </file>
         </source>
-        <source path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/build/generated/res/rs/release" />
-        <source path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/build/generated/res/generated/release" />
+        <source path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\build\generated\res\rs\release" />
+        <source path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\build\generated\res\generated\release" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/afs/athena.mit.edu/user/r/i/rickards/src/openaccess/viewPagerIndicator/src/release/res" />
+        <source path="C:\wamp\www\OpenAccessButton\openaccess\viewPagerIndicator\src\release\res" />
     </dataSet>
 
 </merger>
