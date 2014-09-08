@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_height="wrap_content"
             android:text="@string/knowledge"
             android:textSize="40sp"
@@ -86,7 +86,7 @@
             android:gravity="center"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:text="@string/interactiveMap"/>
         <ImageView
             android:layout_width="match_parent"
@@ -126,7 +126,7 @@
             android:textSize="40sp"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_marginBottom="10dp"
             android:text="@string/quickReporting"
             android:gravity="center"
@@ -155,7 +155,7 @@
         android:background="#F7882A">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_height="wrap_content"
             android:src="@drawable/openaccessbutton"/>
         <TextView

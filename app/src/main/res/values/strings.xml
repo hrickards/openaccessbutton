@@ -28,9 +28,9 @@
     <string name="paywallsHit">8888 Paywalls Hit</string>
     <string name="mapFeatures">Our interactive map displays people being denied access to research they both needed to pay for.</string>
     <string name="signUpSocialMedia">Sign up with social media</string>
-    <string name="signInGoogle">Sign in with Google+</string>
-    <string name="signInFacebook">Sign in with Facebook</string>
-    <string name="signInTwitter">Sign in with Twitter</string>
+    <string name="signInGoogle">Sign up with Google+</string>
+    <string name="signInFacebook">Sign up with Facebook</string>
+    <string name="signInTwitter">Sign up with Twitter</string>
     <string name="signUpEmail">Sign up with Email</string>
     <string name="orSignUpEmail">Or sign up with Email</string>
     <string name="registeredSignIn">Already registered? Sign in</string>

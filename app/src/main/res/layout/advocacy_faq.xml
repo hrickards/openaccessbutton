@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:background="#FCFCFC"
         android:gravity="center">
         <TextView
             android:layout_width="match_parent"
@@ -19,6 +18,9 @@
             android:text="@string/faq1"
             android:id="@+id/faqQuestion1"
             android:textColor="#000"
+            android:layout_marginBottom="5dp"
+            android:textSize="25sp"
+            android:layout_marginTop="5dp"
             android:textStyle="bold"
             android:layout_marginLeft="5dp"
             android:layout_weight="0.1"/>
@@ -37,16 +39,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#FCFCFC"
         android:id="@+id/answerDetailsContainer">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/faq1"
             android:id="@+id/faqQuestion2"
+            android:layout_marginTop="5dp"
             android:textColor="#000"
             android:textStyle="bold"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:layout_marginLeft="5dp"/>
         <TextView
             android:layout_width="wrap_content"
