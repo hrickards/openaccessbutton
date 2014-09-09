@@ -44,7 +44,7 @@ public class BlogAdapter extends ArrayAdapter<Post> {
         TextView blogDate = (TextView) row.findViewById(R.id.blog_date);
         TextView blogAuthor = (TextView) row.findViewById(R.id.blog_author);
         TextView blogSummary = (TextView) row.findViewById(R.id.blog_summary);
-        blogTitle.setText(post.title);
+        blogTitle.setText(post.shortTitle);
         blogDate.setText(new SimpleDateFormat("dd/MM/yyyy").format(post.date));
         blogAuthor.setText(post.author);
         blogSummary.setText(post.description);
