@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
@@ -51,13 +52,41 @@ public class ScreenSlidePageFragment extends Fragment {
             rootView.removeView(childView);
         }
 
+        // Logic we need to run on a per-view basis
         switch (mPageNumber) {
-            case 5:
-                Button gotoMainButton = (Button) childView.findViewById(R.id.goto_main_button);
-                gotoMainButton.setOnClickListener(new View.OnClickListener() {
+            case 4:
+                Button signupButton = (Button) childView.findViewById(R.id.signupEmailButton);
+                signupButton.setOnClickListener(new SignupEmailButtonClickListener(getActivity()));
+                TextView signinButton = (TextView) childView.findViewById(R.id.signinButton);
+                signinButton.setOnClickListener(new SigninButtonClickListener(getActivity()));
+
+                // Social sign in buttons
+                TextView signupGoogleButton = (Button) childView.findViewById(R.id.signupGoogleButton);
+                TextView signupTwitterButton = (Button) childView.findViewById(R.id.signupTwitterButton);
+                TextView signupFacebookButton = (Button) childView.findViewById(R.id.signupFacebookButton);
+                signupGoogleButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent k = new Intent(getActivity(), MainActivity.class);
+                        Intent k = new Intent(getActivity(), OAuthActivity.class);
+                        k.putExtra("provider", "google");
+                        startActivity(k);
+                        getActivity().finish();
+                    }
+                });
+                signupTwitterButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent k = new Intent(getActivity(), OAuthActivity.class);
+                        k.putExtra("provider", "twitter");
+                        startActivity(k);
+                        getActivity().finish();
+                    }
+                });
+                signupFacebookButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent k = new Intent(getActivity(), OAuthActivity.class);
+                        k.putExtra("provider", "facebook");
                         startActivity(k);
                         getActivity().finish();
                     }

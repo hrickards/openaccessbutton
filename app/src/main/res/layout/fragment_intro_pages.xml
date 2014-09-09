@@ -168,16 +168,19 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             style="@style/signUpButtons"
+            android:id="@+id/signupGoogleButton"
             android:text="@string/signInGoogle"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             style="@style/signUpButtons"
+            android:id="@+id/signupFacebookButton"
             android:text="@string/signInFacebook"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             style="@style/signUpButtons"
+            android:id="@+id/signupTwitterButton"
             android:text="@string/signInTwitter"/>
         <TextView
             android:layout_width="wrap_content"
@@ -189,11 +192,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/signUpButtons"
+            android:id="@+id/signupEmailButton"
             android:text="@string/signUpEmail"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/smallText"
+            android:id="@+id/signinButton"
             android:text="@string/registeredSignIn"/>
         <TextView
             android:layout_width="wrap_content"

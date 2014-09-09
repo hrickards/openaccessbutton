@@ -57,6 +57,7 @@
     <string name="register">Register</string>
     <string name="nameRequired">Name (required)</string>
     <string name="emailRequired">Email Address (required)</string>
+
     <string-array name="job">
         <item>Student</item>
         <item>Doctor</item>
@@ -68,8 +69,15 @@
         <item>Other</item>
         <item>Prefer not to say</item>
     </string-array>
+
     <string name="understandPubliclyAccessible">I understand that information obtained by this button will be publicly accessible</string>
     <string name="mailingListAdd">I would like to be added to the Open Access Button Mailing List</string>
     <string name="notShared">Your e-mail address will NOT be publicised or shared with third parties</string>
     <string name="buttonSubmitted">Paywall recorded! Thank you!</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_signin">SigninActivity</string>
+    <string name="title_activity_oauth">OAuthActivity</string>
+
+    <string name="oauth_authenticating">Authenticating...</string>
+
 </resources>
