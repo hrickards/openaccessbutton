@@ -91,6 +91,17 @@ public class ScreenSlidePageFragment extends Fragment {
                         getActivity().finish();
                     }
                 });
+
+            case 5:
+                Button gotoMainButton = (Button) childView.findViewById(R.id.goto_main_button);
+                gotoMainButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent k = new Intent(getActivity(), MainActivity.class);
+                        startActivity(k);
+                        getActivity().finish();
+                    }
+                });
         }
 
         return childView;
