@@ -18,6 +18,9 @@ import org.openaccessbutton.openaccessbutton.R;
  * a textual question, a textual answer and an HTML details section.
  */
 public class FaqView extends LinearLayout {
+    // Animation speed
+    public final static double ANIMATION_DP_MS = 2;
+    
     public FaqView(Context context) {
         super(context);
         initView(context);
@@ -109,8 +112,7 @@ public class FaqView extends LinearLayout {
                 return true;
             }
         };
-        // 1dp/ms
-        a.setDuration((int) (initialHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration((int) (ANIMATION_DP_MS*initialHeight / v.getContext().getResources().getDisplayMetrics().density));
         v.startAnimation(a);
     }
 
@@ -141,8 +143,7 @@ public class FaqView extends LinearLayout {
                 return true;
             }
         };
-        // 1dp/ms
-        a.setDuration((int)(targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration((int)(ANIMATION_DP_MS*targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
         findViewById(R.id.expandAnswerButton).setVisibility(View.INVISIBLE);
         findViewById(R.id.detailsContent).setVisibility(View.GONE);
         findViewById(R.id.moreInfo).setVisibility(View.VISIBLE);
@@ -180,8 +181,7 @@ public class FaqView extends LinearLayout {
                 return true;
             }
         };
-        // 1dp/ms
-        b.setDuration((int) (targtetHeight / detailsContent.getContext().getResources().getDisplayMetrics().density));
+        b.setDuration((int) (ANIMATION_DP_MS*targtetHeight / detailsContent.getContext().getResources().getDisplayMetrics().density));
         detailsContent.startAnimation(b);
     }
 }
