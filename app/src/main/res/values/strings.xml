@@ -33,7 +33,7 @@
     <string name="signInTwitter">Sign up with Twitter</string>
     <string name="signUpEmail">Sign up with Email</string>
     <string name="orSignUpEmail">Or sign up with Email</string>
-    <string name="registeredSignIn">Already registered? Sign in</string>
+    <string name="registeredSignIn">Already registered? Then click here to Sign in.</string>
     <string name="signUpAgreements">By signing in you agree to our Terms of Use. Please note that information obtained by the button will be publicly accessible.</string>
     <string name="hitaPaywall">You have hit a paywall?!</string>
     <string name="thatSucks">That sucks.</string>
@@ -57,6 +57,9 @@
     <string name="register">Register</string>
     <string name="nameRequired">Name (required)</string>
     <string name="emailRequired">Email Address (required)</string>
+    <string name="doResearch">Do research</string>
+    <string name="infoHub">Open access info hub</string>
+    <string name="openAccessMap">Open Access Research map</string>
 
     <string-array name="job">
         <item>Student</item>
@@ -77,7 +80,7 @@
     <string name="title_activity_signup">SignupActivity</string>
     <string name="title_activity_signin">SigninActivity</string>
     <string name="title_activity_oauth">OAuthActivity</string>
-
     <string name="oauth_authenticating">Authenticating...</string>
+    <string name="title_activity_menu">MenuActivity</string>
 
 </resources>

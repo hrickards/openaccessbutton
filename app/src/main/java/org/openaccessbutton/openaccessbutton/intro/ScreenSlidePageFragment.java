@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 
 /**
  * Created by harry on 06/08/14.
@@ -93,11 +94,11 @@ public class ScreenSlidePageFragment extends Fragment {
                 });
 
             case 5:
-                Button gotoMainButton = (Button) childView.findViewById(R.id.goto_main_button);
-                gotoMainButton.setOnClickListener(new View.OnClickListener() {
+                Button gotoMenuButton = (Button) childView.findViewById(R.id.goto_menu_button);
+                gotoMenuButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent k = new Intent(getActivity(), MainActivity.class);
+                        Intent k = new Intent(getActivity(), MenuActivity.class);
                         startActivity(k);
                         getActivity().finish();
                     }

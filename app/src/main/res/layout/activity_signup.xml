@@ -80,6 +80,11 @@
         android:textColor="#fff"
         android:hint="@string/password"
         android:layout_marginBottom="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registeredSignIn"
+        android:id="@+id/signInRegistered"/>
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
