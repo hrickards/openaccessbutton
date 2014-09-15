@@ -92,6 +92,7 @@ public class ScreenSlidePageFragment extends Fragment {
                         getActivity().finish();
                     }
                 });
+            break;
 
             case 5:
                 Button gotoMenuButton = (Button) childView.findViewById(R.id.goto_menu_button);
@@ -103,6 +104,7 @@ public class ScreenSlidePageFragment extends Fragment {
                         getActivity().finish();
                     }
                 });
+            break;
         }
 
         return childView;
