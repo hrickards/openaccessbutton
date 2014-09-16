@@ -4,27 +4,37 @@
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:layout_height="match_parent">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F7882A"
-        android:gravity="center">
+        android:orientation="vertical"
+        android:background="#F7882A">
         <ImageView
             android:id="@+id/infoPageTitle"
             android:layout_width="match_parent"
+            android:layout_marginTop="40dp"
             android:contentDescription="@string/app_name"
             android:layout_height="wrap_content"
             android:src="@drawable/openaccessbutton"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/infoPageTitle"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:gravity="center"
             android:textColor="#fff"
-            android:text="Providing tools and research for Open Access research advocates"/>
-    </RelativeLayout>
+            android:textSize="20sp"
+            android:text="Welcome to our app. We are a small company that aims to provide tools and research for Open Access research advocates. Our aim is that one day all research is openly available for the public and not stuck behind a paywall."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#fff"
+            android:text="Please, make yourself familiar with the app by scrolling through the next screens. Alternatively, press the button at the bottom of the screen to be taken straight into the app."/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -146,7 +156,7 @@
             android:textSize="20sp"
             />
     </LinearLayout>
-    <LinearLayout
+    <!-- <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -218,5 +228,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Finish" />
-    </RelativeLayout>
+    </RelativeLayout> -->
 </LinearLayout>

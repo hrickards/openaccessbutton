@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
+import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 
 public class SignupEmailButtonClickListener implements Button.OnClickListener {
     Context mContext;
@@ -16,8 +17,8 @@ public class SignupEmailButtonClickListener implements Button.OnClickListener {
     }
 
     @Override public void onClick(View v) {
-        // Launch SignupActivity
-        Intent k = new Intent(mContext, SignupActivity.class);
+        // Launch MenuActivity
+        Intent k = new Intent(mContext, MenuActivity.class);
         mContext.startActivity(k);
     }
 }

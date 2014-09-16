@@ -42,7 +42,6 @@
         android:textSize="20sp"
         android:textColorHint="#ddd"
         android:hint="@string/emailRequired"
-
         android:layout_marginBottom="15dp"/>
     <View
         android:layout_width="match_parent"
@@ -82,6 +81,7 @@
         android:layout_marginBottom="15dp"/>
     <TextView
         android:layout_width="wrap_content"
+        android:textColor="#ddd"
         android:layout_height="wrap_content"
         android:text="@string/registeredSignIn"
         android:id="@+id/signInRegistered"/>
@@ -95,5 +95,12 @@
         android:padding="10dp"
         android:onClick="login"
         android:text="@string/register"
+        android:layout_marginBottom="15dp"
         android:id="@+id/signupButton"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ddd"
+        android:text="@string/signUpSocialMedia"
+        android:id="@+id/signUpSocial"/>
 </LinearLayout>

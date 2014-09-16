@@ -54,8 +54,8 @@ public class ScreenSlidePageFragment extends Fragment {
         }
 
         // Logic we need to run on a per-view basis
-        switch (mPageNumber) {
-            case 4:
+        /** switch (mPageNumber) {
+             case 4:
                 Button signupButton = (Button) childView.findViewById(R.id.signupEmailButton);
                 signupButton.setOnClickListener(new SignupEmailButtonClickListener(getActivity()));
                 TextView signinButton = (TextView) childView.findViewById(R.id.signinButton);
@@ -94,7 +94,7 @@ public class ScreenSlidePageFragment extends Fragment {
                 });
             break;
 
-            case 5:
+            case 4:
                 Button gotoMenuButton = (Button) childView.findViewById(R.id.goto_menu_button);
                 gotoMenuButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -105,8 +105,7 @@ public class ScreenSlidePageFragment extends Fragment {
                     }
                 });
             break;
-        }
-
+        } **/
         return childView;
     }
 }

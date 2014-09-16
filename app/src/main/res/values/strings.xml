@@ -27,7 +27,7 @@
     <string name="interactiveMap">Interactive Map</string>
     <string name="paywallsHit">8888 Paywalls Hit</string>
     <string name="mapFeatures">Our interactive map displays people being denied access to research they both needed to pay for.</string>
-    <string name="signUpSocialMedia">Sign up with social media</string>
+    <string name="signUpSocialMedia">Alternatively, click here to sign up with social media</string>
     <string name="signInGoogle">Sign up with Google+</string>
     <string name="signInFacebook">Sign up with Facebook</string>
     <string name="signInTwitter">Sign up with Twitter</string>
@@ -60,6 +60,8 @@
     <string name="doResearch">Do research</string>
     <string name="infoHub">Open access info hub</string>
     <string name="openAccessMap">Open Access Research map</string>
+    <string name="takeToApp">Click on the button above to be taken straight into the app.</string>
+    <string name="gotIt">Got it!</string>
 
     <string-array name="job">
         <item>Student</item>
