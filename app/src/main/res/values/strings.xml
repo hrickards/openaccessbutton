@@ -77,7 +77,7 @@
     <string name="title_activity_signup">SignupActivity</string>
     <string name="title_activity_signin">SigninActivity</string>
     <string name="title_activity_oauth">OAuthActivity</string>
-
     <string name="oauth_authenticating">Authenticating...</string>
+    <string name="title_activity_push">PushActivity</string>
 
 </resources>

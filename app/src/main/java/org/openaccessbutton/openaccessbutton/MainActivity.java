@@ -28,10 +28,15 @@ import com.google.gson.Gson;
 import org.openaccessbutton.openaccessbutton.blog.BlogDetailsFragment;
 import org.openaccessbutton.openaccessbutton.blog.BlogFragment;
 import org.openaccessbutton.openaccessbutton.blog.Post;
+import org.openaccessbutton.openaccessbutton.push.Push;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+import com.parse.ParseInstallation;
+import com.parse.PushService;
 
 /**
  * Wrapper activity that provides navigation for the entire app, and loads the relevant fragment
@@ -55,6 +60,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialiseNavigation();
+        Push.initialisePushNotifications(this);
 
         if (savedInstanceState != null) {
             // Restore the fragment's instance
