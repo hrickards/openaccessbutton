@@ -66,11 +66,11 @@ public class SignupActivity extends Activity {
                             edit.commit();
 
 
-                            // Go to MainActivity
+                            // Go to IntroActivity
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Intent k = new Intent(context, MainActivity.class);
+                                    Intent k = new Intent(context, IntroActivity.class);
                                     startActivity(k);
                                     finish();
                                 }
@@ -82,11 +82,11 @@ public class SignupActivity extends Activity {
                             // to test navigation logic while the API is broken we'll just go
                             // straight into the MainActivity
 
-                            // Go to MainActivity
+                            // Go to IntroActivity
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Intent k = new Intent(context, MainActivity.class);
+                                    Intent k = new Intent(context, IntroActivity.class);
                                     startActivity(k);
                                     finish();
                                 }
