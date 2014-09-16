@@ -9,23 +9,27 @@
         android:layout_height="wrap_content"
         style="@style/menuButtons"
         android:drawableLeft="@drawable/button_menu"
-        android:text="@string/doResearch"/>
+        android:text="@string/doResearch"
+        android:id="@+id/doResearchButton"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/menuButtons"
         android:drawableLeft="@drawable/button_menu"
-        android:text="@string/infoHub"/>
+        android:text="@string/infoHub"
+        android:id="@+id/infoHubButton"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/menuButtons"
         android:drawableLeft="@drawable/button_menu"
-        android:text="@string/openAccessMap"/>
+        android:text="@string/openAccessMap"
+        android:id="@+id/mapButton"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/menuButtons"
         android:drawableLeft="@drawable/button_menu"
-        android:text="More on App?"/>
+        android:text="More on App?"
+        android:id="@+id/moreOnAppButton"/>
 </LinearLayout>

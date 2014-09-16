@@ -8,6 +8,7 @@ package org.openaccessbutton.openaccessbutton;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -62,9 +63,17 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         initialiseNavigation();
         Push.initialisePushNotifications(this);
 
+        // We might need to launch a specific fragment passed in via the intent
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
         if (savedInstanceState != null) {
             // Restore the fragment's instance
             mFragment = getFragmentManager().getFragment(savedInstanceState, "mFragment");
+        } else if (extras != null && extras.containsKey("fragmentNo")) {
+            // Launch the specified fragment
+            int fragmentNo = extras.getInt("fragmentNo");
+            switchToFragment(fragmentNo);
         } else {
             // Show the default fragment
             switchToFragment(0);
