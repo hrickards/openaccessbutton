@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 
 public class SignupEmailButtonClickListener implements Button.OnClickListener {

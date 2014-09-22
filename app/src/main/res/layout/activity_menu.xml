@@ -30,6 +30,6 @@
         android:layout_height="wrap_content"
         style="@style/menuButtons"
         android:drawableLeft="@drawable/button_menu"
-        android:text="More on App?"
+        android:text="@string/blog"
         android:id="@+id/moreOnAppButton"/>
 </LinearLayout>

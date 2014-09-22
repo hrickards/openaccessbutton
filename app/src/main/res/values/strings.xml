@@ -58,10 +58,12 @@
     <string name="nameRequired">Name (required)</string>
     <string name="emailRequired">Email Address (required)</string>
     <string name="doResearch">Do research</string>
-    <string name="infoHub">Open access info hub</string>
-    <string name="openAccessMap">Open Access Research map</string>
+    <string name="infoHub">Open Access info hub</string>
+    <string name="openAccessMap">Open Access Button map</string>
     <string name="takeToApp">Click on the button above to be taken straight into the app.</string>
     <string name="gotIt">Got it!</string>
+    <string name="forgottenPassword">Forgot your password?</string>
+    <string name="retypePassword">Retype password</string>
 
     <string-array name="job">
         <item>Student</item>
@@ -75,6 +77,7 @@
         <item>Prefer not to say</item>
     </string-array>
 
+    <string name="blog">Open Access Button blog</string>
     <string name="understandPubliclyAccessible">I understand that information obtained by this button will be publicly accessible</string>
     <string name="mailingListAdd">I would like to be added to the Open Access Button Mailing List</string>
     <string name="notShared">Your e-mail address will NOT be publicised or shared with third parties</string>

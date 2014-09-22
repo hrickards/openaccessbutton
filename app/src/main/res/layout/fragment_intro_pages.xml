@@ -19,17 +19,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:textColor="#fff"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:text="Welcome to our app. We are a small company that aims to provide tools and research for Open Access research advocates. Our aim is that one day all research is openly available for the public and not stuck behind a paywall."/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:textColor="#fff"
@@ -70,16 +70,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/meetPageList"
+            android:textSize="16sp"
             android:text="@string/meetPage2List"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             style="@style/meetPageList"
             android:text="@string/meetPage2Reasons"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/meetPageList"
+            android:textSize="16sp"
             android:text="@string/meetPage2Importance"/>
     </LinearLayout>
     <LinearLayout
@@ -112,7 +115,7 @@
             android:paddingRight="50dp"
             android:layout_marginTop="15dp"
             android:textColor="#000"
-            android:textSize="17sp"
+            android:textSize="16sp"
             android:background="#fff"
             android:text="@string/paywallsHit"/>
         <TextView
@@ -120,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:textColor="#fff"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:text="@string/mapFeatures"/>
     </LinearLayout>
     <LinearLayout
@@ -151,9 +154,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="#fff"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:text="@string/easyUse"
-            android:textSize="20sp"
+            android:textSize="16sp"
             />
     </LinearLayout>
     <!-- <LinearLayout

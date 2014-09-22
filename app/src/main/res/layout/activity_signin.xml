@@ -52,4 +52,14 @@
         android:padding="10dp"
         android:id="@+id/signinButton"
         android:text="@string/signIn"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#F7882A"
+        android:layout_marginTop="30dp"
+        android:textColor="#ddd"
+        android:textSize="16sp"
+        android:text="@string/forgottenPassword"/>
 </LinearLayout>

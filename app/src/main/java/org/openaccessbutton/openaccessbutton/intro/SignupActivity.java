@@ -9,9 +9,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 
 import com.goebl.david.Webb;
 
@@ -26,6 +29,19 @@ public class SignupActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        Spinner spinner = (Spinner) findViewById(R.id.signupProfession);
+        ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.job, R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        // Bind signin button
+        TextView signinButton = (TextView) findViewById(R.id.globalSigninButton);
+        signinButton.setOnClickListener(new SigninButtonClickListener(this));
+
+        // Bind signupSocialMedia button
+        TextView signupSocialMediaButton = (TextView) findViewById(R.id.globalSignUpSocialMedia);
+        signupSocialMediaButton.setOnClickListener(new SignUpSocialMediaClickListener(this));
 
         // Bind listener to signup button
         Button submitButton = (Button) findViewById(R.id.signupButton);

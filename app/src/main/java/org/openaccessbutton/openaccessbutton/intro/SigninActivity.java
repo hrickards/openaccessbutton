@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import org.openaccessbutton.openaccessbutton.MainActivity;
+import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 import org.openaccessbutton.openaccessbutton.R;
 
 public class SigninActivity extends Activity {
@@ -26,8 +26,8 @@ public class SigninActivity extends Activity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Go to MainActivity
-                Intent k = new Intent(context, MainActivity.class);
+                // Go to MenuActivity
+                Intent k = new Intent(context, MenuActivity.class);
                 startActivity(k);
                 finish();
             }

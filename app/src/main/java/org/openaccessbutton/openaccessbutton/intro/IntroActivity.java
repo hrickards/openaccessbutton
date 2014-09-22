@@ -49,6 +49,7 @@ public class IntroActivity extends Activity {
         TextView signupButton = (TextView) findViewById(R.id.globalSignupEmailButton);
         signupButton.setOnClickListener(new SignupEmailButtonClickListener(this));
 
+
         // Bind signin button
         TextView signinButton = (TextView) findViewById(R.id.globalSigninButton);
         signinButton.setOnClickListener(new SigninButtonClickListener(this));

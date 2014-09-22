@@ -79,12 +79,26 @@
         android:textColor="#fff"
         android:hint="@string/password"
         android:layout_marginBottom="15dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpRetypePassword"
+        android:inputType="textPassword"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#F7882A"
+        android:layout_marginTop="15dp"
+        android:textColorHint="#ddd"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:hint="@string/retypePassword"
+        android:layout_marginBottom="15dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:textColor="#ddd"
         android:layout_height="wrap_content"
         android:text="@string/registeredSignIn"
-        android:id="@+id/signInRegistered"/>
+        android:id="@+id/globalSigninButton" />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -102,5 +116,5 @@
         android:layout_height="wrap_content"
         android:textColor="#ddd"
         android:text="@string/signUpSocialMedia"
-        android:id="@+id/signUpSocial"/>
+        android:id="@+id/globalSignUpSocialMedia"/>
 </LinearLayout>

@@ -26,4 +26,8 @@
     android:layout_height="wrap_content"
     android:ellipsize="marquee"
     android:textColor="#fff"
+    android:textSize="20sp"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:background="#F7882A"
     android:textAlignment="inherit"/>
