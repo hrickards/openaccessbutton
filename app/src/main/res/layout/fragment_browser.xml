@@ -16,7 +16,8 @@
         android:background="#eee"
         android:textSize="20sp"
         android:inputType="textUri"
-        android:imeOptions="actionSend"
+        android:imeOptions="actionGo"
+        android:singleLine="true"
         android:textColor="#222"
         android:text="https://www.google.com"
         tools:ignore="HardcodedText" />

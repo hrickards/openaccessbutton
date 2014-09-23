@@ -7,6 +7,7 @@
 
 package org.openaccessbutton.openaccessbutton.browser;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -14,10 +15,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
@@ -84,6 +88,24 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
                 oabIntent.putExtra(Intent.EXTRA_TEXT, mWebView.getUrl());
                 oabIntent.setType("text/plain");
                 startActivity(oabIntent);
+            }
+        });
+
+        // URL box
+        final EditText urlBox = (EditText) view.findViewById(R.id.uri);
+        urlBox.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean   onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                if (actionId == EditorInfo.IME_ACTION_GO) {
+                    // Enter button pressed
+                    mWebView.loadUrl(urlBox.getText().toString());
+                    // Close keyboard
+                    InputMethodManager inputMethodManager = (InputMethodManager)  getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    // Take focus away from URL box
+                    urlBox.clearFocus();
+
+                }
+                return true;
             }
         });
 
