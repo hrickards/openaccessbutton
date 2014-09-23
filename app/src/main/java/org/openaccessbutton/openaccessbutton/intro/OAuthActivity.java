@@ -35,8 +35,10 @@ public class OAuthActivity extends Activity {
             @Override
             public void onFinished(OAuthData oAuthData) {
                 if (oAuthData.status.equals("success")) {
-                    // Go to MainActivity
-                    Intent k = new Intent(context, MainActivity.class);
+                    // TODO Store data in SharedPrefs
+
+                    // Go to IntroActivity
+                    Intent k = new Intent(context, IntroActivity.class);
                     startActivity(k);
                     finish();
                 } else {

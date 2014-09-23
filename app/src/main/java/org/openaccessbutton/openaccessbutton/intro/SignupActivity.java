@@ -60,11 +60,18 @@ public class SignupActivity extends Activity {
 
         // Bind signupSocialMedia button
         TextView signupSocialMediaButton = (TextView) findViewById(R.id.globalSignUpSocialMedia);
-        signupSocialMediaButton.setOnClickListener(new SignUpSocialMediaClickListener(this));
+        final Context context = this;
+        signupSocialMediaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Launch SignupSocialMediaActivity activity
+                Intent k = new Intent(context, SignupSocialMediaActivity.class);
+                context.startActivity(k);
+            }
+        });
 
         // Bind listener to signup button
         Button submitButton = (Button) findViewById(R.id.signupButton);
-        final Context context = this;
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

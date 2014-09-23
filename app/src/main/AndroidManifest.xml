@@ -14,10 +14,12 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <permission android:protectionLevel="signature"
-        android:name="org.openaccessbutton.openaccessbutton.permission.C2D_MESSAGE" />
-    <uses-permission android:name="org.openaccessbutton.openaccessbutton.permission.C2D_MESSAGE" />
 
+    <permission
+        android:name="org.openaccessbutton.openaccessbutton.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="org.openaccessbutton.openaccessbutton.permission.C2D_MESSAGE" />
 
     <application
         android:allowBackup="true"
@@ -56,11 +58,11 @@
         </activity>
         <activity
             android:name=".intro.SignupActivity"
-
             android:label="@string/app_name"
             android:theme="@style/NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -80,20 +82,30 @@
         </activity>
 
         <service android:name="com.parse.PushService" />
-        <receiver android:name="com.parse.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
                 <category android:name="org.openaccessbutton.openaccessbutton" />
             </intent-filter>
         </receiver>
-
-        <receiver android:name=".push.PushReceiver" android:exported="false">
+        <receiver
+            android:name=".push.PushReceiver"
+            android:exported="false" >
             <intent-filter>
                 <action android:name="org.openaccessbutton.openaccessbutton.HANDLE_PUSH" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".intro.SignupSocialMediaActivity"
+            android:label="@string/app_name"
+            android:theme="@style/NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

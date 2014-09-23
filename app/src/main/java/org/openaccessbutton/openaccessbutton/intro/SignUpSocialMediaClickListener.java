@@ -7,12 +7,14 @@ import android.widget.Button;
 
 public class SignUpSocialMediaClickListener implements Button.OnClickListener{
     Context mContext;
+    String mProvider;
 
-    public SignUpSocialMediaClickListener(Context context) { mContext = context; }
+    public SignUpSocialMediaClickListener(Context context, String provider) { mContext = context; mProvider = provider;}
 
     @Override public void onClick(View v){
-        //Launch SignInSocialMedia activity
+        //Launch OAuthActivity activity
         Intent k = new Intent(mContext, OAuthActivity.class);
+        k.putExtra("provider", mProvider);
         mContext.startActivity(k);
     }
 }

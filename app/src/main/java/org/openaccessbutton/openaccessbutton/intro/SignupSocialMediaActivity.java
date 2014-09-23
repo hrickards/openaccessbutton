@@ -1,41 +1,20 @@
 package org.openaccessbutton.openaccessbutton.intro;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 import org.openaccessbutton.openaccessbutton.R;
 
-public class SigninActivity extends Activity {
+public class SignupSocialMediaActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
+        setContentView(R.layout.activity_signup_social_media);
 
-        // Until we get an authentication method in the API (TODO), just go straight to the main
-        // activity whenever the login button is pressed
-        Button loginButton = (Button) findViewById(R.id.signinButton);
-        final Context context = this;
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Go to MenuActivity
-                Intent k = new Intent(context, MenuActivity.class);
-                startActivity(k);
-                finish();
-            }
-        });
-
-
-        // Social signin buttons
         TextView googleButton = (TextView) findViewById(R.id.signupGoogleButton);
         googleButton.setOnClickListener(new SignUpSocialMediaClickListener(this, "google"));
         TextView facebookButton = (TextView) findViewById(R.id.signupFacebookButton);
@@ -48,7 +27,7 @@ public class SigninActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.signin, menu);
+        getMenuInflater().inflate(R.menu.signup_social_media, menu);
         return true;
     }
 
