@@ -78,6 +78,7 @@
         android:textSize="20sp"
         android:textColor="#fff"
         android:hint="@string/password"
+        android:fontFamily="sans-serif"
         android:layout_marginBottom="15dp"/>
     <View
         android:layout_width="match_parent"
@@ -98,6 +99,7 @@
         android:textSize="20sp"
         android:textColor="#fff"
         android:hint="@string/retypePassword"
+        android:fontFamily="sans-serif"
         android:layout_marginBottom="15dp"/>
     <TextView
         android:layout_width="wrap_content"

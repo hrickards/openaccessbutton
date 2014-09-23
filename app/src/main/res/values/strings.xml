@@ -100,4 +100,5 @@
     <string name="oauth_authenticating">Authenticating...</string>
     <string name="title_activity_push">PushActivity</string>
     <string name="title_activity_menu">MenuActivity</string>
+    <string name="passwords_not_matching">Error: the two passwords don\'t match</string>
 </resources>

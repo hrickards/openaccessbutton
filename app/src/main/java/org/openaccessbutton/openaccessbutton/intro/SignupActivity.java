@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.goebl.david.Webb;
 
@@ -76,6 +77,12 @@ public class SignupActivity extends Activity {
                 // Use email as username for now (API does this if we don't send a username value)
                 final String name = ((EditText) findViewById(R.id.signUpName)).getText().toString();
                 final String password = ((EditText) findViewById(R.id.signUpPassword)).getText().toString();
+                final String passwordConfirmation = ((EditText) findViewById(R.id.signUpRetypePassword)).getText().toString();
+
+                if (!password.equals(passwordConfirmation)) {
+                    Toast.makeText(context, getResources().getString(R.string.passwords_not_matching), Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 // Create account using OAB API
                 Thread thread = new Thread(new Runnable(){
