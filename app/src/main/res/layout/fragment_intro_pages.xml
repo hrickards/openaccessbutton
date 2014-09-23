@@ -182,19 +182,19 @@
             android:layout_height="wrap_content"
             style="@style/signUpButtons"
             android:id="@+id/signupGoogleButton"
-            android:text="@string/signInGoogle"/>
+            android:text="@string/signUpGoogle"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             style="@style/signUpButtons"
             android:id="@+id/signupFacebookButton"
-            android:text="@string/signInFacebook"/>
+            android:text="@string/signUpFacebook"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             style="@style/signUpButtons"
             android:id="@+id/signupTwitterButton"
-            android:text="@string/signInTwitter"/>
+            android:text="@string/signUpTwitter"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -47,7 +47,6 @@
         android:text="@string/yourLocation"
         android:layout_marginLeft="7dp"
         android:textStyle="bold"/>
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,8 +54,6 @@
             android:layout_marginRight="8dp"
             android:hint="@string/exampleLocation"
             android:id="@+id/location"/>
-
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

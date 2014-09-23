@@ -28,9 +28,13 @@
     <string name="paywallsHit">8888 Paywalls Hit</string>
     <string name="mapFeatures">Our interactive map displays people being denied access to research they both needed to pay for.</string>
     <string name="signUpSocialMedia">Alternatively, click here to sign up with social media</string>
-    <string name="signInGoogle">Sign up with Google+</string>
-    <string name="signInFacebook">Sign up with Facebook</string>
-    <string name="signInTwitter">Sign up with Twitter</string>
+    <string name="signInSocialMedia">Alternatively, click here to sign in with social media</string>
+    <string name="signUpGoogle">Sign up with Google+</string>
+    <string name="signUpFacebook">Sign up with Facebook</string>
+    <string name="signUpTwitter">Sign up with Twitter</string>
+    <string name="signInGoogle">Sign in with Google+</string>
+    <string name="signInFacebook">Sign in with Facebook</string>
+    <string name="signInTwitter">Sign in with Twitter</string>
     <string name="signUpEmail">Sign up with Email</string>
     <string name="orSignUpEmail">Or sign up with Email</string>
     <string name="registeredSignIn">Already registered? Then click here to Sign in.</string>
@@ -64,6 +68,13 @@
     <string name="gotIt">Got it!</string>
     <string name="forgottenPassword">Forgot your password?</string>
     <string name="retypePassword">Retype password</string>
+    <string name="askQuestion">Have you got more? Then click here to ask question.</string>
+    <string name="questionHint">Please, enter your question here.</string>
+    <string name="passwordResetInstructions">No worries. Just enter your email address and we will send you a link to create a new one.</string>
+    <string name="registeredEmail">Registered email</string>
+    <string name="exampleEmail">someone@somewhere.com</string>
+    <string name="passwordResetEmailed">We have now emailed you instructions on resetting your password. Please check your email address for further instructions.</string>
+    <string name="questionSubmitted">Your question is now submitted. You will receive an answer via your email within a few days. Thank you for your patience</string>
 
     <string-array name="job">
         <item>Student</item>

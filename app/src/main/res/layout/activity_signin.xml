@@ -55,6 +55,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="#ddd"
+        android:textSize="16sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/signInSocialMedia"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/signUpButtons"
+        android:id="@+id/signupGoogleButton"
+        android:text="@string/signUpGoogle"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/signUpButtons"
+        android:id="@+id/signupFacebookButton"
+        android:text="@string/signUpFacebook"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/signUpButtons"
+        android:id="@+id/signupTwitterButton"
+        android:text="@string/signUpTwitter"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="#F7882A"
