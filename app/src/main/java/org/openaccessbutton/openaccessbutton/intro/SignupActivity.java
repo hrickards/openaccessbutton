@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,9 +33,25 @@ public class SignupActivity extends Activity {
         setContentView(R.layout.activity_signup);
 
         Spinner spinner = (Spinner) findViewById(R.id.signupProfession);
-        ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.job, R.layout.simple_spinner_item);
+        final ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.job, R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                int textColor;
+                if (i == 0) {
+                    textColor = Color.parseColor("#DDDDDD");
+                } else {
+                    textColor = Color.WHITE;
+                }
+                ((TextView) adapterView.getChildAt(0)).setTextColor(textColor);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
 
         // Bind signin button
         TextView signinButton = (TextView) findViewById(R.id.globalSigninButton);
@@ -50,7 +68,11 @@ public class SignupActivity extends Activity {
             @Override
             public void onClick(View view) {
                 final String email = ((EditText) findViewById(R.id.signUpEmail)).getText().toString();
-                final String profession = ((Spinner) findViewById(R.id.signupProfession)).getSelectedItem().toString();
+                String professionT = ((Spinner) findViewById(R.id.signupProfession)).getSelectedItem().toString();
+                if (professionT.equals(getResources().getStringArray(R.array.job)[0])) {
+                    professionT = "";
+                }
+                final String profession = professionT;
                 // Use email as username for now (API does this if we don't send a username value)
                 final String name = ((EditText) findViewById(R.id.signUpName)).getText().toString();
                 final String password = ((EditText) findViewById(R.id.signUpPassword)).getText().toString();

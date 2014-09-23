@@ -77,6 +77,7 @@
     <string name="questionSubmitted">Your question is now submitted. You will receive an answer via your email within a few days. Thank you for your patience</string>
 
     <string-array name="job">
+        <item>Profession</item>
         <item>Student</item>
         <item>Doctor</item>
         <item>Patient</item>
