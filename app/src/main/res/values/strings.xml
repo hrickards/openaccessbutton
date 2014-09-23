@@ -102,5 +102,5 @@
     <string name="title_activity_menu">MenuActivity</string>
     <string name="passwords_not_matching">Error: the two passwords don\'t match</string>
     <string name="title_activity_signup_social_media">SignupSocialMediaActivity</string>
-
+    <string name="swipe_right">Swipe right for more...</string>
 </resources>
