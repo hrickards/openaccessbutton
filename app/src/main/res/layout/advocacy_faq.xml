@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:gravity="center">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/faq1"
             android:id="@+id/faqQuestion1"

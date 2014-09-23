@@ -115,7 +115,6 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
         android:padding="10dp"
-        android:onClick="login"
         android:text="@string/register"
         android:layout_marginBottom="15dp"
         android:id="@+id/signupButton"/>

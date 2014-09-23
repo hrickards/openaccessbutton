@@ -2,21 +2,12 @@
 <resources>
 
     <string name="app_name">Open Access Button</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="drawer_open">Open the Navigation Drawer</string>
     <string name="drawer_close">Close the Navigation Drawer</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="action_search">Search</string>
-    <string name="connection_error">Connection error</string>
-    <string name="xml_error">XML parsing error</string>
-    <string name="loading_text">Loading...</string>
-    <string name="app_label">Open Access Button</string>
-    <string name="search_hint">Search...</string>
-    <string name="title_activity_button_submit">ButtonSubmit</string>
+    <string name="loading_text">Loading…</string>
     <string name="button_submit_intent_title">Submit to Open Access Button</string>
-    <string name="title_activity_intro">IntroActivity</string>
-    <string name="signUp">Sign Up Now</string>
     <string name="knowledge">Knowledge</string>
     <string name="meetPage2Body">Our app provides a selection of useful information about publishing in an open access journals. This includes:</string>
     <string name="meetPage2List">•List of popular myths and counter arguments</string>
@@ -35,10 +26,8 @@
     <string name="signInGoogle">Sign in with Google+</string>
     <string name="signInFacebook">Sign in with Facebook</string>
     <string name="signInTwitter">Sign in with Twitter</string>
-    <string name="signUpEmail">Sign up with Email</string>
     <string name="orSignUpEmail">Or sign up with Email</string>
     <string name="registeredSignIn">Already registered? Then click here to Sign in.</string>
-    <string name="signUpAgreements">By signing in you agree to our Terms of Use. Please note that information obtained by the button will be publicly accessible.</string>
     <string name="hitaPaywall">You have hit a paywall?!</string>
     <string name="thatSucks">That sucks.</string>
     <string name="tellUsWhy">Tell us why and we will put you on the map.</string>
@@ -90,18 +79,13 @@
     </string-array>
 
     <string name="blog">Open Access Button blog</string>
-    <string name="understandPubliclyAccessible">I understand that information obtained by this button will be publicly accessible</string>
-    <string name="mailingListAdd">I would like to be added to the Open Access Button Mailing List</string>
-    <string name="notShared">Your e-mail address will NOT be publicised or shared with third parties</string>
     <string name="buttonSubmitted">Paywall recorded! Thank you!</string>
-    <string name="title_activity_signup">SignupActivity</string>
-    <string name="title_activity_signin">SigninActivity</string>
     <string name="title_activity_oauth">OAuthActivity</string>
-    <string name="oauth_authenticating">Authenticating...</string>
-    <string name="title_activity_push">PushActivity</string>
-    <string name="title_activity_menu">MenuActivity</string>
+    <string name="oauth_authenticating">Authenticating…</string>
     <string name="passwords_not_matching">Error: the two passwords don\'t match</string>
-    <string name="title_activity_signup_social_media">SignupSocialMediaActivity</string>
     <string name="action_logout">Logout</string>
-    <string name="swipe_right">Swipe right for more...</string>
+    <string name="swipe_right">Swipe right for more…</string>
+    <string name="oab_intro_1">Welcome to our app. We are a small company that aims to provide tools and research for Open Access research advocates. Our aim is that one day all research is openly available for the public and not stuck behind a paywall.</string>
+    <string name="oab_intro_2">Please, make yourself familiar with the app by scrolling through the next screens. Alternatively, press the button at the bottom of the screen to be taken straight into the app.</string>
+    <string name="menu_more_on_app">More on App?</string>
 </resources>

@@ -125,7 +125,7 @@ public class SignupActivity extends Activity {
                             SharedPreferences.Editor edit = prefs.edit();
                             edit.clear();
                             edit.putString("api_key", apiKey);
-                            edit.commit();
+                            edit.apply();
 
 
                             // Go to IntroActivity

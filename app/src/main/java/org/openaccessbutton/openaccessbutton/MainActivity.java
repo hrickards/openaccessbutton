@@ -206,7 +206,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         } else if (item.getItemId() == R.id.action_logout) {
             // Remove the api key from the SharedPreferences indicating no user's logged in
             SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
-            prefs.edit().remove("api_key").commit();
+            prefs.edit().remove("api_key").apply();
 
             // Go back to SignupActivity
             Intent k = new Intent(this, SignupActivity.class);

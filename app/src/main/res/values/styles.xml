@@ -22,7 +22,7 @@
         <item name="android:layout_marginRight">30dp</item>
         <item name="android:paddingRight">20dp</item>
         <item name="android:layout_marginTop">25dp</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="menuButtons">
@@ -38,7 +38,7 @@
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">20dp</item>
         <item name="android:layout_marginTop">25dp</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">20sp</item>
     </style>
     <style name="smallText">
         <item name="android:textSize">12sp</item>

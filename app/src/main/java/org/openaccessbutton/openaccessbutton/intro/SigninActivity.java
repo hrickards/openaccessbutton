@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 
 public class SigninActivity extends Activity {
 

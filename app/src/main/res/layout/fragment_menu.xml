@@ -27,5 +27,5 @@
         android:layout_height="wrap_content"
         style="@style/menuButtons"
         android:drawableLeft="@drawable/button_menu"
-        android:text="More on App?"/>
+        android:text="@string/menu_more_on_app"/>
 </LinearLayout>
