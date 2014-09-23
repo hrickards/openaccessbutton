@@ -33,6 +33,16 @@ public class SignupActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        // Check if the user's already signed in
+        SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
+        String apiKey = prefs.getString("api_key", "");
+        if (apiKey.length() > 0) {
+            // Go to MainActivity
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+            finish();
+        }
+
         Spinner spinner = (Spinner) findViewById(R.id.signupProfession);
         final ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.job, R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);

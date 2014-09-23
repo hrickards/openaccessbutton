@@ -52,16 +52,6 @@ public class IntroActivity extends Activity {
         // Bind signin button
         // TextView signinButton = (TextView) findViewById(R.id.globalSigninButton);
         // signinButton.setOnClickListener(new SigninButtonClickListener(this));
-
-        // Check if the user's already signed in
-        SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
-        String apiKey = prefs.getString("api_key", "");
-        if (apiKey.length() > 0) {
-            // Go to MainActivity
-            Intent k = new Intent(this, MainActivity.class);
-            startActivity(k);
-            finish();
-        }
     }
 
 

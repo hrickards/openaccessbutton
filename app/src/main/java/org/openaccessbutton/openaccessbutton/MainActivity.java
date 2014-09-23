@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -29,6 +30,7 @@ import com.google.gson.Gson;
 import org.openaccessbutton.openaccessbutton.blog.BlogDetailsFragment;
 import org.openaccessbutton.openaccessbutton.blog.BlogFragment;
 import org.openaccessbutton.openaccessbutton.blog.Post;
+import org.openaccessbutton.openaccessbutton.intro.SignupActivity;
 import org.openaccessbutton.openaccessbutton.push.Push;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -197,10 +199,22 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         // If the navigation drawer toggle is enabled, let that handle the click
         if (mDrawerToggle.isDrawerIndicatorEnabled() && mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
-            // Otherwise go back up the fragment stack
+        // Otherwise go back up the fragment stack
         } else if (item.getItemId() == android.R.id.home && getFragmentManager().popBackStackImmediate()) {
             return true;
-            // Otherwise let Android handle the default behaviour
+        // Otherwise if the logout button was pressed
+        } else if (item.getItemId() == R.id.action_logout) {
+            // Remove the api key from the SharedPreferences indicating no user's logged in
+            SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
+            prefs.edit().remove("api_key").commit();
+
+            // Go back to SignupActivity
+            Intent k = new Intent(this, SignupActivity.class);
+            startActivity(k);
+            finish();
+
+            return true;
+        // Otherwise let Android handle the default behaviour
         } else {
             return super.onOptionsItemSelected(item);
         }
