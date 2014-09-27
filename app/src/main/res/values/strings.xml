@@ -23,10 +23,11 @@
     <string name="meetPage2Reasons">•Reasons for publishing your research open online</string>
     <string name="meetPage2Importance">•The importance of open knowledge today</string>
     <string name="quickReporting">Quick Reporting</string>
-    <string name="easyUse">Simply click on our logo in the app or use the share button in any browser to report a paywall.</string>
+    <string name="target">Target</string>
+    <string name="easyUse">Simply push the button in the app or use the share button in any browser to report a paywall.</string>
     <string name="interactiveMap">Interactive Map</string>
     <string name="paywallsHit">8888 Paywalls Hit</string>
-    <string name="mapFeatures">Our interactive map displays people being denied access to research they both needed to pay for.</string>
+    <string name="researchFeatures">Our interactive map displays people being denied access to research they both needed to pay for and their stories.</string>
     <string name="signUpSocialMedia">Alternatively, click here to sign up with social media</string>
     <string name="signInSocialMedia">Alternatively, click here to sign in with social media</string>
     <string name="signUpGoogle">Sign up with Google+</string>
@@ -75,6 +76,8 @@
     <string name="exampleEmail">someone@somewhere.com</string>
     <string name="passwordResetEmailed">We have now emailed you instructions on resetting your password. Please check your email address for further instructions.</string>
     <string name="questionSubmitted">Your question is now submitted. You will receive an answer via your email within a few days. Thank you for your patience</string>
+    <string name="learn">Learn</string>
+    <string name="research">Research</string>
 
     <string-array name="job">
         <item>Profession</item>
@@ -88,6 +91,7 @@
         <item>Other</item>
         <item>Prefer not to say</item>
     </string-array>
+
 
     <string name="blog">Open Access Button blog</string>
     <string name="understandPubliclyAccessible">I understand that information obtained by this button will be publicly accessible</string>

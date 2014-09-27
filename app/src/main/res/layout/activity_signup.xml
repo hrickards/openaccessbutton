@@ -3,11 +3,13 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:background="#F7882A">
+    android:background="@color/backgroundColor">
     <ImageView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
         android:src="@drawable/openaccessbutton"/>
     <EditText
         android:layout_width="match_parent"
@@ -16,7 +18,7 @@
         android:inputType="text"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#F7882A"
+        android:background="@color/backgroundColor"
         android:layout_marginTop="30dp"
         android:textColor="#fff"
         android:textColorHint="#ddd"
@@ -36,7 +38,7 @@
         android:inputType="textEmailAddress"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#F7882A"
+        android:background="@color/backgroundColor"
         android:layout_marginTop="15dp"
         android:textColor="#fff"
         android:textSize="20sp"
@@ -72,7 +74,7 @@
         android:inputType="textPassword"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#F7882A"
+        android:background="@color/backgroundColor"
         android:layout_marginTop="15dp"
         android:textColorHint="#ddd"
         android:textSize="20sp"
@@ -93,7 +95,7 @@
         android:inputType="textPassword"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#F7882A"
+        android:background="@color/backgroundColor"
         android:layout_marginTop="15dp"
         android:textColorHint="#ddd"
         android:textSize="20sp"
@@ -113,6 +115,7 @@
         style="@style/signUpButtons"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
+        android:textColor="@color/customNavy"
         android:layout_marginTop="15dp"
         android:padding="10dp"
         android:onClick="login"
