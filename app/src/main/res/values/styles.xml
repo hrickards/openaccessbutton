@@ -13,6 +13,19 @@
     </style>
     <style name="signUpButtons">
         <item name="android:background">@drawable/button_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="signUpButtonsDark">
+        <item name="android:background">@drawable/button_bg_dark</item>
         <item name="android:textColor">#fff</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingLeft">20dp</item>
