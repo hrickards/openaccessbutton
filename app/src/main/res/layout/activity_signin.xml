@@ -3,10 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:background="#F7882A">
+    android:background="@color/backgroundColor">
     <ImageView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="left"
         android:layout_height="wrap_content"
         android:src="@drawable/openaccessbutton"/>
     <EditText
@@ -16,7 +18,7 @@
         android:inputType="textEmailAddress"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#F7882A"
+        android:background="@color/backgroundColor"
         android:layout_marginTop="30dp"
         android:textColorHint="#ddd"
         android:textColor="#fff"
@@ -36,7 +38,7 @@
         android:inputType="textPassword"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#F7882A"
+        android:background="@color/backgroundColor"
         android:layout_marginTop="15dp"
         android:textColorHint="#ddd"
         android:textColor="#fff"
@@ -47,6 +49,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         style="@style/signUpButtons"
+        android:textColor="@color/customNavy"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:padding="10dp"
@@ -64,12 +67,14 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/customNavy"
         style="@style/signUpButtons"
         android:id="@+id/signupGoogleButton"
         android:text="@string/signInGoogle"/>
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/customNavy"
         style="@style/signUpButtons"
         android:id="@+id/signupFacebookButton"
         android:text="@string/signInFacebook"/>
@@ -77,6 +82,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         style="@style/signUpButtons"
+        android:textColor="@color/customNavy"
         android:id="@+id/signupTwitterButton"
         android:text="@string/signInTwitter"/>
     <TextView
@@ -84,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#F7882A"
+        android:background="@color/backgroundColor"
         android:layout_marginTop="30dp"
         android:textColor="#ddd"
         android:textSize="16sp"

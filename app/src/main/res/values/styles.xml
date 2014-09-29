@@ -13,6 +13,19 @@
     </style>
     <style name="signUpButtons">
         <item name="android:background">@drawable/button_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="signUpButtonsDark">
+        <item name="android:background">@drawable/button_bg_dark</item>
         <item name="android:textColor">#fff</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingLeft">20dp</item>
@@ -25,9 +38,30 @@
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <color name="backgroundColor">
+        #212F3F
+    </color>
+    <color name="customNavy">
+        #212F3F
+    </color>
+    <color name="oldColor">
+        #F7882A
+    </color>
+    <color name="customSky">
+        #29CAE6
+    </color>
+    <color name="customLightBlue">
+        #9DFDFD
+    </color>
+    <color name="customGray">
+        #C8C8C8
+    </color>
+    <color name="customOrange">
+        #F04717
+    </color>
     <style name="menuButtons">
         <item name="android:background">@drawable/button_bg</item>
-        <item name="android:textColor">#fff</item>
+        <item name="android:textColor">@color/customNavy</item>
         <item name="android:paddingBottom">10dp</item>
         <item name="android:paddingTop">10dp</item>
         <item name="android:textStyle">bold</item>
@@ -49,8 +83,8 @@
     <!-- ActionBar styles -->
     <style name="MyActionBar"
         parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">#F68212</item>
-        <item name="android:icon">@drawable/ic_navbar_logo</item>
+        <item name="android:background">@color/customNavy</item>
+        <item name="android:icon">@drawable/navbar_logo</item>
     </style>
     <style name="MyPopupMenu" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
         <item name="android:popupBackground">@drawable/menu_dropdown_panel</item>

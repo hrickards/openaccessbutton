@@ -8,11 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#F7882A">
+        android:background="@color/backgroundColor">
         <ImageView
             android:id="@+id/infoPageTitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_marginTop="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
             android:contentDescription="@string/app_name"
             android:layout_height="wrap_content"
             android:src="@drawable/openaccessbutton"/>
@@ -56,24 +58,24 @@
         android:orientation="vertical"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:background="#F7882A">
+        android:background="@color/backgroundColor">
         <TextView
             android:layout_width="match_parent"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="40dp"
             android:layout_height="wrap_content"
-            android:text="@string/knowledge"
+            android:text="@string/learn"
             android:textSize="40sp"
             android:textStyle="bold"
             android:gravity="center"
             android:textColor="#fff"/>
         <ImageView
             android:layout_marginBottom="20dp"
-            android:contentDescription="@string/knowledge"
+            android:contentDescription="@string/learn"
             android:id="@+id/imageBrain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/meet_page_knowledge"/>
+            android:src="@drawable/knowledge"/>
         <TextView
             android:id="@+id/meetPage2Body"
             android:textSize="16sp"
@@ -101,53 +103,12 @@
             android:text="@string/meetPage2Importance"/>
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:background="#F7882A">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:gravity="center"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:layout_marginTop="40dp"
-            android:text="@string/interactiveMap"/>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/interactiveMap"
-            android:src="@drawable/map"
-            android:layout_marginTop="15dp"/>
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingLeft="55dp"
-            android:paddingRight="50dp"
-            android:layout_marginTop="15dp"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:background="#fff"
-            android:text="@string/paywallsHit"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textColor="#fff"
-            android:textSize="16sp"
-            android:text="@string/mapFeatures"/>
-    </LinearLayout>
-    <LinearLayout
         android:layout_width="fill_parent"
         android:orientation="vertical"
         android:layout_height="match_parent"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:background="#F7882A">
+        android:background="@color/backgroundColor">
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -156,7 +117,7 @@
             android:textStyle="bold"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/quickReporting"
+            android:text="@string/target"
             android:gravity="center"
             />
         <ImageView
@@ -164,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/meet_page_logo"/>
+            android:src="@drawable/target"/>
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -174,13 +135,43 @@
             android:textSize="16sp"
             />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:background="@color/backgroundColor">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            android:text="@string/research"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/research"
+            android:src="@drawable/research"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:text="@string/researchFeatures"/>
+    </LinearLayout>
     <!-- <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:background="#F7882A">
+        android:background="@color/backgroundColor">
         <ImageView
             android:layout_width="match_parent"
             android:layout_marginTop="40dp"
@@ -240,7 +231,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#F7882A">
+        android:background="@color/backgroundColor">
     <Button
         android:id="@+id/goto_menu_button"
         android:layout_width="wrap_content"

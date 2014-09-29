@@ -10,9 +10,9 @@
         android:orientation="horizontal">
     <EditText
         android:id="@+id/uri"
-        android:layout_width="0dp"
-        android:layout_weight="0.2"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_weight="0.2"
         android:background="#eee"
         android:textSize="20sp"
         android:inputType="textUri"
@@ -26,14 +26,16 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginTop="2dp"
-        android:src="@drawable/ic_navbar_logo"/>
+        android:background="@color/customNavy"
+        android:src="@drawable/navbar_logo"/>
     <ImageView
         android:id="@+id/shareButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="2dp"
-        android:background="#F7882A"
+        android:background="@color/customNavy"
+        android:layout_marginRight="2dp"
         android:src="@drawable/ic_sharing" />
     </LinearLayout>
     <WebView xmlns:android="http://schemas.android.com/apk/res/android"
