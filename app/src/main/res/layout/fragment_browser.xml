@@ -4,43 +4,50 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="50dp"
+        android:id="@+id/browserHeader">
     <EditText
         android:id="@+id/uri"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_weight="0.2"
+        android:minHeight="50dp"
         android:textSize="20sp"
         android:inputType="textUri"
         android:imeOptions="actionGo"
         android:singleLine="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/oabButton"
         android:text=""/>
     <ImageView
         android:id="@+id/oabButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:minHeight="50dp"
         android:layout_marginTop="2dp"
         android:background="@color/customNavy"
-        android:src="@drawable/navbar_logo"/>
+        android:src="@drawable/navbar_logo"
+        android:layout_toLeftOf="@+id/shareButton"
+        android:layout_alignParentBottom="true"/>
     <ImageView
         android:id="@+id/shareButton"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:minHeight="50dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="2dp"
         android:background="@color/customNavy"
         android:layout_marginRight="2dp"
-        android:src="@drawable/ic_sharing" />
-    </LinearLayout>
-    <WebView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+        android:src="@drawable/ic_sharing"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <org.openaccessbutton.openaccessbutton.browser.ScrollingWebView
         android:id="@+id/mWebView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         tools:context="org.openaccessbutton.openaccessbutton.browser.BrowserFragment">
-    </WebView>
+    </org.openaccessbutton.openaccessbutton.browser.ScrollingWebView>
 
 </LinearLayout>

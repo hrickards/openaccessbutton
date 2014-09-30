@@ -8,9 +8,11 @@
 package org.openaccessbutton.openaccessbutton.browser;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
@@ -33,8 +37,9 @@ import org.openaccessbutton.openaccessbutton.button.ButtonSubmitActivity;
  */
 
 public class BrowserFragment extends Fragment implements MainActivity.OnBackButtonInterface {
-    WebView mWebView;
+    ScrollingWebView mWebView;
     EditText mUrlBox;
+    RelativeLayout mHeader;
 
     public BrowserFragment() {
         // Required empty public constructor
@@ -58,7 +63,7 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_browser, container, false);
 
-        mWebView = (WebView) view.findViewById(R.id.mWebView);
+        mWebView = (ScrollingWebView) view.findViewById(R.id.mWebView);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewClient());
 
@@ -106,6 +111,21 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
 
                 }
                 return true;
+            }
+        });
+
+        // Allow URL box to scroll with the page
+        final Context context = this.getActivity();
+        mHeader = (RelativeLayout) view.findViewById(R.id.browserHeader);
+        mWebView.setScrollingCallback(new ScrollingWebView.ScrollingCallback() {
+            @Override
+            public void onYChanged(int y) {
+                // TODO Don't hardcode this
+                int boxHeight = Math.round(50 * context.getResources().getDisplayMetrics().density);
+                int newHeight = (y > boxHeight) ? 0 : boxHeight - y;
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mHeader.getLayoutParams();
+                params.height = newHeight;
+                mHeader.setLayoutParams(params);
             }
         });
 
