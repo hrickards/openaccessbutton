@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="James (student)"
+        android:textColor="#000"
         tools:ignore="HardcodedText">
     </TextView>
 
@@ -21,6 +22,7 @@
         android:layout_marginLeft="2dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#000"
         android:text="Story" >
     </TextView>
 
@@ -30,6 +32,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#000"
         android:text="Description" >
     </TextView>
 
