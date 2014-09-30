@@ -27,6 +27,8 @@ import android.widget.ListView;
 import android.widget.SearchView;
 
 import com.google.gson.Gson;
+
+import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
 import org.openaccessbutton.openaccessbutton.blog.BlogDetailsFragment;
 import org.openaccessbutton.openaccessbutton.blog.BlogFragment;
 import org.openaccessbutton.openaccessbutton.blog.Post;
@@ -201,6 +203,13 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             return true;
         // Otherwise go back up the fragment stack
         } else if (item.getItemId() == android.R.id.home && getFragmentManager().popBackStackImmediate()) {
+            return true;
+        // Otherwise if the user wants to see answers to the questions they've asked
+        } else if (item.getItemId() == R.id.action_questions) {
+            // Open up QuestionsActivity for them to do that
+            Intent k = new Intent(this, QuestionsActivity.class);
+            startActivity(k);
+            finish();
             return true;
         // Otherwise if the logout button was pressed
         } else if (item.getItemId() == R.id.action_logout) {

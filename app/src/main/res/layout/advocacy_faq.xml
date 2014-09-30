@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:text="@string/faq1"
             android:id="@+id/faqQuestion1"
-            android:textColor="#000"
             android:layout_marginBottom="5dp"
             android:textSize="25sp"
             android:layout_marginTop="5dp"
@@ -34,7 +33,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#555"/>
+        android:background="#aaa"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -46,7 +45,6 @@
             android:text="@string/faq1"
             android:id="@+id/faqQuestion2"
             android:layout_marginTop="5dp"
-            android:textColor="#000"
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginLeft="5dp"/>
@@ -56,14 +54,13 @@
             android:text="@string/simpleAnswer1"
             android:id="@+id/faqAnswer"
             android:layout_marginTop="2dp"
-            android:textColor="#000"
             android:layout_marginLeft="9dp"
             android:layout_marginRight="7dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="9dp"
-            android:textColor="#333"
+            android:textColor="#ccc"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="20dp"
             android:text="@string/clickForMoreInfo"
@@ -85,36 +82,5 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#555"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/askQuestion"
-            android:layout_marginLeft="9dp"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:layout_marginRight="9dp"
-            android:hint="@string/questionHint"
-            android:inputType="textMultiLine"
-            android:id="@+id/newQuestion"
-            android:lines="5"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/submit"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:layout_marginRight="5dp"
-            android:text="@string/questionSubmitted"/>
     </LinearLayout>
 </LinearLayout>

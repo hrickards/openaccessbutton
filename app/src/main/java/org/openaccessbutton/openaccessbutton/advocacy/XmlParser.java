@@ -108,7 +108,12 @@ public class XmlParser {
                 view.setDetails(details);
                 layout.addView(view);
             } else if (name.equals("html")) {
-                String html = readHtml(parser, "html");
+                String html = "<html><head>"
+                        + "<style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #fff}"
+                        + "</style></head>"
+                        + "<body>"
+                        + readHtml(parser, "html")
+                        + "</body></html>";
 
                 View view = li.inflate(R.layout.advocacy_html, null);
                 WebView wv = (WebView) view.findViewById(R.id.advocacy_html_webview);

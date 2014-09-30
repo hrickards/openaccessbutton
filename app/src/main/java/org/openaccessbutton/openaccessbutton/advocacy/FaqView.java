@@ -54,7 +54,7 @@ public class FaqView extends LinearLayout {
 
         // Initialise the details WebView with blank data
         WebView details = (WebView) findViewById(R.id.detailsContent);
-        details.loadData("<html><body></body></html>", "text/html", "utf-8");
+        details.loadData("<html><head><style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #fff}</head><body></body></html>", "text/html", "utf-8");
 
         // Start off with the answer and details hidden
         switchToQuestionView();
