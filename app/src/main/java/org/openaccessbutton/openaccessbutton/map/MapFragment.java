@@ -65,8 +65,10 @@ public class MapFragment extends Fragment {
             LayoutInflater li = getActivity().getLayoutInflater();
             View view = li.inflate(R.layout.map_info_window, null);
 
+            TextView name = (TextView) view.findViewById(R.id.map_item_name);
             TextView story = (TextView) view.findViewById(R.id.map_item_story);
             TextView description = (TextView) view.findViewById(R.id.map_item_description);
+            name.setText(mClickedClusterItem.name());
             story.setText(mClickedClusterItem.mStory);
             description.setText(mClickedClusterItem.mDescription);
 

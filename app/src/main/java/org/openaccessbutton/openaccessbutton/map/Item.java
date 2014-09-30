@@ -32,4 +32,8 @@ public class Item implements ClusterItem {
     public LatLng getPosition() {
         return mPosition;
     }
+
+    public String name() {
+        return mUserName + " (" + mUserProfession + ")";
+    }
 }
