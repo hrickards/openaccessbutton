@@ -41,6 +41,7 @@
         android:layout_marginRight="50dp"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
+        android:gravity="center"
         android:layout_marginTop="20dp"
         android:id="@+id/globalSignupEmailButton"
         android:text="@string/gotIt" />

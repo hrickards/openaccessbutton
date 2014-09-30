@@ -61,13 +61,6 @@ public class MenuActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
-        // Otherwise if the user wants to see answers to the questions they've asked
-        } else if (item.getItemId() == R.id.action_questions) {
-            // Open up QuestionsActivity for them to do that
-            Intent k = new Intent(this, QuestionsActivity.class);
-            startActivity(k);
-            finish();
-            return true;
         } else if (item.getItemId() == R.id.action_logout) {
             // Remove the api key from the SharedPreferences indicating no user's logged in
             SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);

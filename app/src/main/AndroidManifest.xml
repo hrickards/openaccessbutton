@@ -70,7 +70,8 @@
         <activity
             android:name=".intro.SigninActivity"
             android:label="@string/app_name"
-            android:theme="@style/NoActionBar" >
+            android:theme="@style/NoActionBar"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name=".intro.OAuthActivity"
@@ -105,12 +106,14 @@
         <activity
             android:name=".intro.SignupSocialMediaActivity"
             android:label="@string/app_name"
-            android:theme="@style/NoActionBar" >
+            android:theme="@style/NoActionBar"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name=".intro.ForgotPasswordActivity"
             android:label="@string/title_activity_forgot_password"
-            android:theme="@style/NoActionBar" >
+            android:theme="@style/NoActionBar"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name=".advocacy.QuestionsActivity"

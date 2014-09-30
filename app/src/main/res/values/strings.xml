@@ -19,8 +19,8 @@
     <string name="interactiveMap">Interactive Map</string>
     <string name="paywallsHit">8888 Paywalls Hit</string>
     <string name="researchFeatures">Our interactive map displays people being denied access to research they both needed to pay for and their stories.</string>
-    <string name="signUpSocialMedia">Alternatively, click here to Sign Up with Social Media</string>
-    <string name="signInSocialMedia">Alternatively, click here to Sign In with Social Media</string>
+    <string name="signUpSocialMedia">Alternatively, touch here to Sign Up with Social Media</string>
+    <string name="signInSocialMedia">Alternatively, touch here to Sign In with Social Media</string>
     <string name="signUpGoogle">Sign Up with Google+</string>
     <string name="signUpFacebook">Sign Up with Facebook</string>
     <string name="signUpTwitter">Sign Up with Twitter</string>
@@ -28,7 +28,7 @@
     <string name="signInFacebook">Sign in with Facebook</string>
     <string name="signInTwitter">Sign in with Twitter</string>
     <string name="orSignUpEmail">Or Sign Up using Email</string>
-    <string name="registeredSignIn">Already registered? Then click here to Sign In.</string>
+    <string name="registeredSignIn">Already registered? Then touch here to Sign In.</string>
     <string name="hitaPaywall">You have hit a paywall?!</string>
     <string name="thatSucks">That sucks.</string>
     <string name="tellUsWhy">Tell us why and we will put you on the map.</string>
@@ -44,7 +44,7 @@
     <string name="formInstructions">For instructions, more info and your contribution head to www.openaccessbutton.org</string>
     <string name="faq1">Does Open Access have reliable peer review?</string>
     <string name="simpleAnswer1">Simple Answer: Yes. A strong community of experts exists in order to support Open Access publishing. They delegate their time to the cause and are just as reliable as the ones of paid journals.</string>
-    <string name="clickForMoreInfo">Click for more information on the topic.</string>
+    <string name="clickForMoreInfo">Touch for more information on the topic.</string>
     <string name="email">Email Address</string>
     <string name="password">Password</string>
     <string name="signIn">Sign In</string>
@@ -54,12 +54,12 @@
     <string name="doResearch">Do research</string>
     <string name="infoHub">Open Access info hub</string>
     <string name="openAccessMap">Open Access Button map</string>
-    <string name="takeToApp">Click on the button above to be taken straight into the app.</string>
+    <string name="takeToApp">Touch on the button above to be taken straight into the app.</string>
     <string name="gotIt">Got it!</string>
     <string name="forgottenPassword">Forgot your password?</string>
     <string name="retypePassword">Retype password</string>
-    <string name="askQuestion">More questions? Click here to ask one...</string>
-    <string name="askQuestionClosed">Click to close the question form.</string>
+    <string name="askQuestion">More questions? Touch here to ask one...</string>
+    <string name="askQuestionClosed">Touch to close the question form.</string>
     <string name="questionHint">Please, enter your question here.</string>
     <string name="passwordResetInstructions">No worries. Just enter your email address and we will send you a link to create a new one.</string>
     <string name="registeredEmail">Registered email</string>
