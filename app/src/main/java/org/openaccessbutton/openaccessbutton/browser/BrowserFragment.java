@@ -34,6 +34,7 @@ import org.openaccessbutton.openaccessbutton.button.ButtonSubmitActivity;
 
 public class BrowserFragment extends Fragment implements MainActivity.OnBackButtonInterface {
     WebView mWebView;
+    EditText mUrlBox;
 
     public BrowserFragment() {
         // Required empty public constructor
@@ -60,7 +61,6 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
         mWebView = (WebView) view.findViewById(R.id.mWebView);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewClient());
-        mWebView.loadUrl("http://www.google.com");
 
         // Share page to any generic application
         ImageView shareButton = (ImageView) view.findViewById(R.id.shareButton);
@@ -92,24 +92,34 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
         });
 
         // URL box
-        final EditText urlBox = (EditText) view.findViewById(R.id.uri);
-        urlBox.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        mUrlBox = (EditText) view.findViewById(R.id.uri);
+        mUrlBox.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public boolean   onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
                 if (actionId == EditorInfo.IME_ACTION_GO) {
                     // Enter button pressed
-                    mWebView.loadUrl(urlBox.getText().toString());
+                    mWebView.loadUrl(mUrlBox.getText().toString());
                     // Close keyboard
-                    InputMethodManager inputMethodManager = (InputMethodManager)  getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
                     // Take focus away from URL box
-                    urlBox.clearFocus();
+                    mUrlBox.clearFocus();
 
                 }
                 return true;
             }
         });
 
+        setUrl("http://scholar.google.com");
+
         return view;
+    }
+    
+    public void setUrl(String url) {
+        // Navigate WebView to URL
+        mWebView.loadUrl(url);
+        
+        // Show in address bar
+        mUrlBox.setText(url);
     }
 
     public boolean onBackButtonPressed() {

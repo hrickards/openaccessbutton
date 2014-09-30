@@ -13,14 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_weight="0.2"
-        android:background="#eee"
         android:textSize="20sp"
         android:inputType="textUri"
         android:imeOptions="actionGo"
         android:singleLine="true"
-        android:textColor="#222"
-        android:text="https://www.google.com"
-        tools:ignore="HardcodedText" />
+        android:text=""/>
     <ImageView
         android:id="@+id/oabButton"
         android:layout_width="45dp"
