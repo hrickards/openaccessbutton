@@ -98,6 +98,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_questions">QuestionsActivity</string>
     <string name="answerPlaceholder">Unanswered</string>
-<string name="action_questions">Questions</string>
+    <string name="action_questions">Questions</string>
+    <string name="action_share">Share</string>
 
 </resources>

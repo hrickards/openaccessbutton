@@ -25,6 +25,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.ShareActionProvider;
 
 import com.google.gson.Gson;
 
@@ -59,6 +60,8 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
     private NavigationXmlParser mNavigationParser;
     private Fragment[] mFragments;
     private Fragment mFragment;
+
+    private ShareActionProvider mShareActionProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -250,7 +253,22 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             }
         });
 
+        // Setup sharing
+        MenuItem shareItem = menu.findItem(R.id.action_share);
+        mShareActionProvider = (ShareActionProvider) shareItem.getActionProvider();
+        mShareActionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
+        mShareActionProvider.setShareIntent(createShareIntent());
+
         return super.onCreateOptionsMenu(menu);
+    }
+
+    protected Intent createShareIntent() {
+        // TODO This should vary based upon whereabouts we are on the app. See GH issue 13.
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "I love open access!");
+        shareIntent.setType("text/plain");
+        return shareIntent;
     }
 
     public void onBackStackChanged() {
