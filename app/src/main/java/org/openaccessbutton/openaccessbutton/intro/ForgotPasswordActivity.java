@@ -2,63 +2,43 @@ package org.openaccessbutton.openaccessbutton.intro;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
-import android.widget.Button;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.openaccessbutton.openaccessbutton.R;
-import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 
-public class SigninActivity extends Activity {
+public class ForgotPasswordActivity extends Activity {
     // Animation speed
-    public final static double ANIMATION_DP_MS = 2;
+    public final static double ANIMATION_DP_MS = 0.5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
+        setContentView(R.layout.activity_forgot_password);
 
-        // Until we get an authentication method in the API (TODO), just go straight to the main
-        // activity whenever the login button is pressed
-        Button loginButton = (Button) findViewById(R.id.signinButton);
-        final Context context = this;
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Go to MenuActivity
-                Intent k = new Intent(context, MenuActivity.class);
-                startActivity(k);
-                finish();
-            }
-        });
-
-        // Forgotten password button
-        TextView forgottenButton = (TextView) findViewById(R.id.forgotPasswordButton);
-        forgottenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Go to ForgotPasswordActivity
-                Intent k = new Intent(context, ForgotPasswordActivity.class);
-                startActivity(k);
-                finish();
-            }
-        });
-
-        // Show the social login buttons
-        TextView socialButtonShow = (TextView) findViewById(R.id.socialSignInButton);
+        // Submit the forgotten password form and show the user a message
+        TextView socialButtonShow = (TextView) findViewById(R.id.forgotPasswordSubmit);
         socialButtonShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final View v = findViewById(R.id.socialSignInButtons);
+                // TODO Actually submit the form to the API
 
-                // Animate showing the social sign in buttons
+                // Hide the keyboard
+                EditText myEditText = (EditText) findViewById(R.id.forgotPasswordEmail);
+                InputMethodManager imm = (InputMethodManager)getSystemService(
+                        Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(myEditText.getWindowToken(), 0);
+
+                // Show the form submission message
+                final View v = findViewById(R.id.forgotPasswordSubmittedText);
                 // Copied from Tom Esterez @ http://stackoverflow.com/questions/4946295
                 v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 final int targtetHeight = v.getMeasuredHeight();
@@ -80,26 +60,17 @@ public class SigninActivity extends Activity {
                     }
                 };
                 a.setDuration((int)(ANIMATION_DP_MS*targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
-                findViewById(R.id.socialSignInButton).setVisibility(View.GONE);
+                findViewById(R.id.forgotPasswordSubmit).setVisibility(View.GONE);
                 v.startAnimation(a);
             }
         });
-
-
-        // Social signin buttons
-        TextView googleButton = (TextView) findViewById(R.id.signupGoogleButton);
-        googleButton.setOnClickListener(new SignUpSocialMediaClickListener(this, "google"));
-        TextView facebookButton = (TextView) findViewById(R.id.signupFacebookButton);
-        facebookButton.setOnClickListener(new SignUpSocialMediaClickListener(this, "facebook"));
-        TextView twitterButton = (TextView) findViewById(R.id.signupTwitterButton);
-        twitterButton.setOnClickListener(new SignUpSocialMediaClickListener(this, "twitter"));
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.signin, menu);
+        getMenuInflater().inflate(R.menu.forgot_password, menu);
         return true;
     }
 

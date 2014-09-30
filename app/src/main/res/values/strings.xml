@@ -19,16 +19,16 @@
     <string name="interactiveMap">Interactive Map</string>
     <string name="paywallsHit">8888 Paywalls Hit</string>
     <string name="researchFeatures">Our interactive map displays people being denied access to research they both needed to pay for and their stories.</string>
-    <string name="signUpSocialMedia">Alternatively, click here to sign up with social media</string>
-    <string name="signInSocialMedia">Alternatively, click here to sign in with social media</string>
-    <string name="signUpGoogle">Sign up with Google+</string>
-    <string name="signUpFacebook">Sign up with Facebook</string>
-    <string name="signUpTwitter">Sign up with Twitter</string>
+    <string name="signUpSocialMedia">Alternatively, click here to Sign Up with Social Media</string>
+    <string name="signInSocialMedia">Alternatively, click here to Sign In with Social Media</string>
+    <string name="signUpGoogle">Sign Up with Google+</string>
+    <string name="signUpFacebook">Sign Up with Facebook</string>
+    <string name="signUpTwitter">Sign Up with Twitter</string>
     <string name="signInGoogle">Sign in with Google+</string>
     <string name="signInFacebook">Sign in with Facebook</string>
     <string name="signInTwitter">Sign in with Twitter</string>
-    <string name="orSignUpEmail">Or sign up with Email</string>
-    <string name="registeredSignIn">Already registered? Then click here to Sign in.</string>
+    <string name="orSignUpEmail">Or Sign Up using Email</string>
+    <string name="registeredSignIn">Already registered? Then click here to Sign In.</string>
     <string name="hitaPaywall">You have hit a paywall?!</string>
     <string name="thatSucks">That sucks.</string>
     <string name="tellUsWhy">Tell us why and we will put you on the map.</string>
@@ -81,7 +81,6 @@
         <item>Prefer not to say</item>
     </string-array>
 
-
     <string name="blog">Open Access Button blog</string>
     <string name="buttonSubmitted">Paywall recorded! Thank you!</string>
     <string name="title_activity_oauth">OAuthActivity</string>
@@ -92,4 +91,9 @@
     <string name="oab_intro_1">Welcome to our app. We are a small company that aims to provide tools and research for Open Access research advocates. Our aim is that one day all research is openly available for the public and not stuck behind a paywall.</string>
     <string name="oab_intro_2">Please, make yourself familiar with the app by scrolling through the next screens. Alternatively, press the button at the bottom of the screen to be taken straight into the app.</string>
     <string name="menu_more_on_app">More on App?</string>
+    <string name="signUp">Sign Up</string>
+    <string name="signUpWithSocialMedia">Sign Up with Social Media</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

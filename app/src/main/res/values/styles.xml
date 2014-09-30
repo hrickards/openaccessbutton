@@ -1,64 +1,38 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <!-- Application themes -->
+    <style name="AppTheme" parent="android:Theme.Holo">
         <item name="android:activatedBackgroundIndicator">@drawable/activated_background_holo_dark</item>
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
         <item name="android:itemTextAppearance">@style/TextAppearance</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="android:panelBackground">@color/backgroundColor</item>
     </style>
-    <!-- the theme applied to the application or activity -->
-    <style name="GrayedOutText" parent="@android:style/TextAppearance">
-        <item name="android:textColor">#777</item>
+    <style name="NoActionBar" parent="AppTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
+
+    <!-- Button themes -->
     <style name="signUpButtons">
         <item name="android:background">@drawable/button_bg</item>
-        <item name="android:gravity">center</item>
-        <item name="android:paddingLeft">20dp</item>
+        <item name="android:textColor">@color/customNavy</item>
         <item name="android:paddingBottom">10dp</item>
         <item name="android:paddingTop">10dp</item>
-        <item name="android:layout_marginLeft">30dp</item>
-        <item name="android:layout_marginRight">30dp</item>
-        <item name="android:paddingRight">20dp</item>
-        <item name="android:layout_marginTop">25dp</item>
-        <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
-    </style>
-    <style name="signUpButtonsDark">
-        <item name="android:background">@drawable/button_bg_dark</item>
-        <item name="android:textColor">#fff</item>
-        <item name="android:gravity">center</item>
-        <item name="android:paddingLeft">20dp</item>
-        <item name="android:paddingBottom">10dp</item>
-        <item name="android:paddingTop">10dp</item>
-        <item name="android:layout_marginLeft">30dp</item>
-        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">20dp</item>
         <item name="android:layout_marginTop">25dp</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
     </style>
-    <color name="backgroundColor">
-        #212F3F
-    </color>
-    <color name="customNavy">
-        #212F3F
-    </color>
-    <color name="oldColor">
-        #F7882A
-    </color>
-    <color name="customSky">
-        #29CAE6
-    </color>
-    <color name="customLightBlue">
-        #9DFDFD
-    </color>
-    <color name="customGray">
-        #C8C8C8
-    </color>
-    <color name="customOrange">
-        #F04717
-    </color>
+    <style name="signUpButtonsDark" parent="@style/signUpButtons">
+        <item name="android:background">@drawable/button_bg_dark</item>
+        <item name="android:textColor">#fff</item>
+    </style>
     <style name="menuButtons">
         <item name="android:background">@drawable/button_bg</item>
         <item name="android:textColor">@color/customNavy</item>
@@ -74,27 +48,44 @@
         <item name="android:layout_marginTop">25dp</item>
         <item name="android:textSize">20sp</item>
     </style>
+
+    <!-- Colours -->
+    <color name="backgroundColor">#212F3F</color>
+    <color name="customNavy">#212F3F</color>
+    <color name="oldColor">#F7882A</color>
+    <color name="customSky">#29CAE6</color>
+    <color name="customLightBlue">#9DFDFD</color>
+    <color name="customGray">#C8C8C8</color>
+    <color name="customOrange">#F04717</color>
+
+    <!-- Text styles -->
+    <style name="GrayedOutText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#777</item>
+    </style>
     <style name="smallText">
         <item name="android:textSize">12sp</item>
         <item name="android:layout_marginTop">15dp</item>
         <item name="android:textColor">#fff</item>
         <item name="android:layout_marginLeft">40dp</item>
     </style>
+    <style name="header">
+        <item name="android:textSize">25sp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">25dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
+
     <!-- ActionBar styles -->
     <style name="MyActionBar"
-        parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/customNavy</item>
-        <item name="android:icon">@drawable/navbar_logo</item>
+        parent="@android:style/Widget.Holo.ActionBar">
     </style>
-    <style name="MyPopupMenu" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+    <style name="MyPopupMenu" parent="@android:style/Widget.Holo.ListPopupWindow">
         <item name="android:popupBackground">@drawable/menu_dropdown_panel</item>
     </style>
+
     <style name="TextAppearance">
         <item name="android:textColor">#fff</item>
-    </style>
-    <style name="NoActionBar" parent="@android:style/Theme.Holo.Light">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
     </style>
     <style name="meetPageList">
         <item name="android:layout_marginRight">10dp</item>
