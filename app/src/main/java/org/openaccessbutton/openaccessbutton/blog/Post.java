@@ -41,4 +41,15 @@ public class Post {
     public String toString() {
         return this.title + "\n" + this.description;
     }
+
+    public String html() {
+        // White font and with blog title as header
+        return "<html><head>"
+                + "<style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #fff}"
+                + "</style></head>"
+                + "<body>"
+                + "<h1>" + this.title + "</h1>"
+                + this.content
+                + "</body></html>";
+    }
 }

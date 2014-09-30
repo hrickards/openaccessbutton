@@ -35,12 +35,9 @@ public class BlogDetailsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_blog_details, container, false);
 
         // Set post data in view
-        TextView titleView = (TextView) view.findViewById(R.id.blog_title);
-        titleView.setText(mPost.title);
-
         WebView contentView = (WebView) view.findViewById(R.id.blog_content);
         contentView.getSettings().setJavaScriptEnabled(true);
-        contentView.loadDataWithBaseURL("", mPost.content, "text/html", "UTF-8", "");
+        contentView.loadDataWithBaseURL("", mPost.html(), "text/html", "UTF-8", "");
         // Transparent WebView
         contentView.setBackgroundColor(0x00000000);
         contentView.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
