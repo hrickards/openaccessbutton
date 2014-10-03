@@ -78,6 +78,7 @@
     <string name="questionSubmitted">Your question is now submitted. You will receive an answer via your email within a few days. Thank you for your patience</string>
     <string name="learn">Learn</string>
     <string name="research">Research</string>
+    <string name="menu">Menu</string>
 
     <string-array name="job">
         <item>Profession</item>
