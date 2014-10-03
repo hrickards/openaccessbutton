@@ -8,33 +8,65 @@
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu"
+            android:textSize="40sp"
+            android:textColor="#fff"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="35dp"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/menuButtons"
-            android:drawableLeft="@drawable/button_menu"
+            android:drawableLeft="@drawable/button_menu_white"
             android:text="@string/doResearch"
             android:id="@+id/doResearchButton"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="#fff"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/menuButtons"
-            android:drawableLeft="@drawable/button_menu"
+            android:drawableLeft="@drawable/button_menu_white"
             android:text="@string/infoHub"
             android:id="@+id/infoHubButton"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="#fff"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/menuButtons"
-            android:drawableLeft="@drawable/button_menu"
+            android:drawableLeft="@drawable/button_menu_white"
             android:text="@string/openAccessMap"
             android:id="@+id/mapButton"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="#fff"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/menuButtons"
-            android:drawableLeft="@drawable/button_menu"
+            android:drawableLeft="@drawable/button_menu_white"
             android:text="@string/blog"
             android:id="@+id/moreOnAppButton"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="#fff"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
     </LinearLayout>
 </ScrollView>
