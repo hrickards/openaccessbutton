@@ -57,7 +57,7 @@
     <color name="customLightBlue">#9DFDFD</color>
     <color name="customGray">#C8C8C8</color>
     <color name="customOrange">#F04717</color>
-
+    <color name="black_alpha">#22D6D6D6</color>
     <!-- Text styles -->
     <style name="GrayedOutText" parent="@android:style/TextAppearance">
         <item name="android:textColor">#777</item>
