@@ -49,11 +49,12 @@
         android:background="#fff"
         android:layout_marginRight="40dp"/>
     <Button
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/menuButtons"
         android:drawableLeft="@drawable/button_menu_white"
-        android:text="More on App?"/>
+        android:text="@string/blog"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"

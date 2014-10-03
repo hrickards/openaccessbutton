@@ -13,6 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
 
 import java.net.URI;
 import java.util.Iterator;
@@ -38,6 +39,8 @@ public class PushReceiver extends BroadcastReceiver {
             if (type.equals("url")) {
                 String url = json.getString("url");
                 i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            } else if (type.equals("question")) {
+                i = new Intent(context, QuestionsActivity.class);
             } else {
                 i = new Intent(context, MainActivity.class);
             }

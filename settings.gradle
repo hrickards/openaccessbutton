@@ -1,2 +1,2 @@
-include ':app', ':library', ':android-maps-utils'
+include ':app'
 include ':viewPagerIndicator'

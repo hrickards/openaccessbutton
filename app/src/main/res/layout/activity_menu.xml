@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor">
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/menuButtons"
-        android:drawableLeft="@drawable/button_menu"
-        android:text="@string/doResearch"
-        android:id="@+id/doResearchButton"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/menuButtons"
-        android:drawableLeft="@drawable/button_menu"
-        android:text="@string/infoHub"
-        android:id="@+id/infoHubButton"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/menuButtons"
-        android:drawableLeft="@drawable/button_menu"
-        android:text="@string/openAccessMap"
-        android:id="@+id/mapButton"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/menuButtons"
-        android:drawableLeft="@drawable/button_menu"
-        android:text="@string/blog"
-        android:id="@+id/moreOnAppButton"/>
-</LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/menuButtons"
+            android:drawableLeft="@drawable/button_menu"
+            android:text="@string/doResearch"
+            android:id="@+id/doResearchButton"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/menuButtons"
+            android:drawableLeft="@drawable/button_menu"
+            android:text="@string/infoHub"
+            android:id="@+id/infoHubButton"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/menuButtons"
+            android:drawableLeft="@drawable/button_menu"
+            android:text="@string/openAccessMap"
+            android:id="@+id/mapButton"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/menuButtons"
+            android:drawableLeft="@drawable/button_menu"
+            android:text="@string/blog"
+            android:id="@+id/moreOnAppButton"/>
+    </LinearLayout>
+</ScrollView>

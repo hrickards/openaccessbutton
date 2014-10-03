@@ -24,6 +24,7 @@ import com.goebl.david.Webb;
 import org.json.JSONObject;
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
 
 public class SignupActivity extends Activity {
     private static final String REGISTER_API_URL = "http://oabutton.cottagelabs.com/api/register";
@@ -32,6 +33,16 @@ public class SignupActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        // Check if the user's already signed in
+        SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
+        String apiKey = prefs.getString("api_key", "");
+        if (apiKey.length() > 0) {
+            // Go to MainActivity
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+            finish();
+        }
 
         Spinner spinner = (Spinner) findViewById(R.id.signupProfession);
         final ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.job, R.layout.simple_spinner_item);
@@ -115,7 +126,7 @@ public class SignupActivity extends Activity {
                             SharedPreferences.Editor edit = prefs.edit();
                             edit.clear();
                             edit.putString("api_key", apiKey);
-                            edit.commit();
+                            edit.apply();
 
 
                             // Go to IntroActivity

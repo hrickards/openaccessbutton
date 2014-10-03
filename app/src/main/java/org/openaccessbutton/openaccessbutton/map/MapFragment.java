@@ -7,22 +7,28 @@
 
 package org.openaccessbutton.openaccessbutton.map;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterManager;
+import com.google.maps.android.clustering.view.DefaultClusterRenderer;
+import com.google.maps.android.ui.IconGenerator;
 
 import org.openaccessbutton.openaccessbutton.R;
 
@@ -65,8 +71,10 @@ public class MapFragment extends Fragment {
             LayoutInflater li = getActivity().getLayoutInflater();
             View view = li.inflate(R.layout.map_info_window, null);
 
+            TextView name = (TextView) view.findViewById(R.id.map_item_name);
             TextView story = (TextView) view.findViewById(R.id.map_item_story);
             TextView description = (TextView) view.findViewById(R.id.map_item_description);
+            name.setText(mClickedClusterItem.name());
             story.setText(mClickedClusterItem.mStory);
             description.setText(mClickedClusterItem.mDescription);
 
@@ -88,6 +96,7 @@ public class MapFragment extends Fragment {
 
         // Setup clustering
         mClusterManager = new ClusterManager<Item>(getActivity(), m.getMap());
+        mClusterManager.setRenderer(new ItemRenderer());
         m.getMap().setOnCameraChangeListener(mClusterManager);
         m.getMap().setOnMarkerClickListener(mClusterManager);
 
@@ -143,6 +152,35 @@ public class MapFragment extends Fragment {
         super.onLowMemory();
         m.onLowMemory();
     }
+
+    // Implement a custom Cluster renderer so we can use our own icons for the marker pins
+    // Based upon android-maps-utils CustomMarkerClusteringDemoActivity
+    public class ItemRenderer extends DefaultClusterRenderer<Item> {
+        private final IconGenerator mIconGenerator = new IconGenerator(getActivity().getApplicationContext());
+        private final ImageView mImageView;
+        private final int mDimension;
+
+        public ItemRenderer() {
+            super(getActivity().getApplicationContext(), m.getMap(), mClusterManager);
+
+            mImageView = new ImageView(getActivity().getApplicationContext());
+            mDimension = (int) getResources().getDimension(R.dimen.map_marker_width);
+            mImageView.setLayoutParams(new ViewGroup.LayoutParams(mDimension, mDimension));
+            int padding = (int) getResources().getDimension(R.dimen.map_marker_padding);
+            mImageView.setPadding(padding, padding, padding, padding);
+            mIconGenerator.setContentView(mImageView);
+        }
+
+        @Override
+        protected void onBeforeClusterItemRendered(Item item, MarkerOptions markerOptions) {
+            // Draw a single person.
+            // Set the info window to show their name.
+            mImageView.setImageResource(item.mIcon);
+            Bitmap icon = mIconGenerator.makeIcon();
+            markerOptions.icon(BitmapDescriptorFactory.fromBitmap(icon)).title(item.toString());
+        }
+    }
+
 
     private void addItem(Item item) {
         // Don't add unique markers

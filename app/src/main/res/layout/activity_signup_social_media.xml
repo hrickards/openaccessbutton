@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,29 +9,45 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="org.openaccessbutton.openaccessbutton.intro.SignupSocialMediaActivity">
-    <ImageView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/openaccessbutton"/>
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        style="@style/signUpButtons"
-        android:id="@+id/signupGoogleButton"
-        android:text="@string/signUpGoogle"/>
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        style="@style/signUpButtons"
-        android:id="@+id/signupFacebookButton"
-        android:text="@string/signUpFacebook"/>
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        style="@style/signUpButtons"
-        android:id="@+id/signupTwitterButton"
-        android:text="@string/signUpTwitter"/>
-</LinearLayout>
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="org.openaccessbutton.openaccessbutton.intro.SignupSocialMediaActivity">
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/openaccessbutton"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/header"
+            android:text="@string/signUpWithSocialMedia"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/siguttons"
+            android:layout_marginTop="20dp"
+            android:id="@+id/signupGoogleButton"
+            android:text="@string/signUpGoogle"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/signUpButtons"
+            android:id="@+id/signupFacebookButton"
+            android:text="@string/signUpFacebook"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/signUpButtons"
+            android:id="@+id/signupTwitterButton"
+            android:text="@string/signUpTwitter"/>
+    </LinearLayout>
+</ScrollView>

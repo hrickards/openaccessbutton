@@ -3,6 +3,7 @@ package org.openaccessbutton.openaccessbutton.menu;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +12,8 @@ import android.widget.Button;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
+import org.openaccessbutton.openaccessbutton.intro.SignupActivity;
 
 public class MenuActivity extends Activity {
 
@@ -57,6 +60,17 @@ public class MenuActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            return true;
+        } else if (item.getItemId() == R.id.action_logout) {
+            // Remove the api key from the SharedPreferences indicating no user's logged in
+            SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
+            prefs.edit().remove("api_key").apply();
+
+            // Go back to SignupActivity
+            Intent k = new Intent(this, SignupActivity.class);
+            startActivity(k);
+            finish();
+
             return true;
         }
         return super.onOptionsItemSelected(item);
