@@ -212,7 +212,6 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             // Open up QuestionsActivity for them to do that
             Intent k = new Intent(this, QuestionsActivity.class);
             startActivity(k);
-            finish();
             return true;
         // Otherwise if the logout button was pressed
         } else if (item.getItemId() == R.id.action_logout) {
