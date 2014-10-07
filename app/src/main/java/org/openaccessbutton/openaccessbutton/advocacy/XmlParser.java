@@ -84,6 +84,7 @@ public class XmlParser {
                 String question = "";
                 String answer = "";
                 String details = "";
+                String image = "";
 
                 while (parser.next() != XmlPullParser.END_TAG) {
                     if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -97,6 +98,8 @@ public class XmlParser {
                         answer = readFaqAnswer(parser);
                     } else if (subname.equals("details")) {
                         details = readFaqDetails(parser);
+                    } else if (subname.equals("image")) {
+                        image = readFaqImage(parser);
                     } else {
                         skip(parser);
                     }
@@ -106,6 +109,7 @@ public class XmlParser {
                 view.setQuestion(question);
                 view.setAnswer(answer);
                 view.setDetails(details);
+                view.setImage(image);
                 layout.addView(view);
             } else if (name.equals("html")) {
                 String html = "<html><head>"
@@ -132,6 +136,16 @@ public class XmlParser {
         String question = readText(parser);
         parser.require(XmlPullParser.END_TAG, ns, "question");
         return question;
+    }
+
+    /**
+     * Extract text from a <image> tag
+     */
+    private String readFaqImage(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, "image");
+        String image = readText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, "image");
+        return image;
     }
 
     /**

@@ -72,6 +72,12 @@
             android:layout_marginRight="7dp"
             android:id="@+id/detailsContent"/>
         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="7dp"
+            android:id="@+id/imageContent"/>
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"

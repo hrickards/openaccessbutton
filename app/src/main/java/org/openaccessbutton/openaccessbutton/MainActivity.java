@@ -58,7 +58,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
     //private SearchView mSearchView;
 
     private NavigationXmlParser mNavigationParser;
-    private Fragment[] mFragments; 
+    private Fragment[] mFragments;
     private Fragment mFragment;
 
     private ShareActionProvider mShareActionProvider;
