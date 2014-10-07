@@ -101,5 +101,6 @@
     <string name="answerPlaceholder">Unanswered</string>
     <string name="action_questions">Questions</string>
     <string name="action_share">Share</string>
+    <string name="blank_question_error">You can\'t submit a blank question!</string>
 
 </resources>

@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.goebl.david.Response;
 import com.goebl.david.Webb;
@@ -81,7 +82,7 @@ public class AdvocacyFragment extends Fragment {
         final LinearLayout newQuestionWrapper = (LinearLayout) view.findViewById(R.id.newQuestionWrapper);
         final EditText newQuestion = (EditText) view.findViewById(R.id.newQuestion);
         final TextView questionSubmitted = (TextView) view.findViewById(R.id.questionSubmitted);
-        Button newQuestionSubmit = (Button) view.findViewById(R.id.newQuestionSubmit);
+        final Button newQuestionSubmit = (Button) view.findViewById(R.id.newQuestionSubmit);
 
         askQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,45 +102,59 @@ public class AdvocacyFragment extends Fragment {
         newQuestionSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Submit the question to the web service
-                Thread thread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            String user_id;
-                            ParseInstallation installation = ParseInstallation.getCurrentInstallation();
-                            if (installation == null) {
-                                user_id = "";
-                            } else {
-                                user_id = installation.getObjectId();
-                            }
+                if (newQuestion.getText().length() > 0) {
 
-                            Log.w("asdf", user_id);
-
-                            Webb webb = Webb.create();
-                            JSONObject response = webb
-                                    .post("http://oabuttonquestions.herokuapp.com/questions/new")
-                                    .param("user_id", user_id)
-                                    .param("question", newQuestion.getText())
-                                    .ensureSuccess()
-                                    .asJsonObject()
-                                    .getBody();
-
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    questionSubmitted.setVisibility(View.VISIBLE);
-                                    newQuestion.setText("");
+                    // Submit the question to the web service
+                    Thread thread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                String user_id;
+                                ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+                                if (installation == null) {
+                                    user_id = "";
+                                } else {
+                                    user_id = installation.getObjectId();
                                 }
-                            });
-                        } catch (Exception e) {
-                            e.printStackTrace();
 
-                            // TODO: Show error
+                                Log.w("asdf", user_id);
+
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        newQuestionSubmit.setVisibility(View.INVISIBLE);
+                                    }
+                                });
+
+
+                                    Webb webb = Webb.create();
+                                JSONObject response = webb
+                                        .post("http://oabuttonquestions.herokuapp.com/questions/new")
+                                        .param("user_id", user_id)
+                                        .param("question", newQuestion.getText())
+                                        .ensureSuccess()
+                                        .asJsonObject()
+                                        .getBody();
+
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        questionSubmitted.setVisibility(View.VISIBLE);
+                                        newQuestion.setText("");
+                                        newQuestionSubmit.setVisibility(View.VISIBLE);
+                                    }
+                                });
+                            } catch (Exception e) {
+                                e.printStackTrace();
+
+                                // TODO: Show error
+                            }
                         }
-                    }
-                });
-                thread.start();
+                    });
+                    thread.start();
+                } else {
+                    Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.blank_question_error), Toast.LENGTH_LONG).show();
+                }
             }
         });
 
