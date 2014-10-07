@@ -55,10 +55,10 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
-    private SearchView mSearchView;
+    //private SearchView mSearchView;
 
     private NavigationXmlParser mNavigationParser;
-    private Fragment[] mFragments;
+    private Fragment[] mFragments; 
     private Fragment mFragment;
 
     private ShareActionProvider mShareActionProvider;
@@ -238,6 +238,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         getMenuInflater().inflate(R.menu.main, menu);
 
         // Setup search
+        /*
         mSearchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -252,6 +253,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
                 return false;
             }
         });
+        */
 
         // Setup sharing
         MenuItem shareItem = menu.findItem(R.id.action_share);
@@ -291,8 +293,8 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             // If current fragment implements OnBackButtonInterface
             if ((mFragment instanceof OnBackButtonInterface) && ((OnBackButtonInterface) mFragment).onBackButtonPressed()) {
                 return true;
-            } else if (mSearchView.isIconified() != true) {
-                mSearchView.setIconified(true);
+            //} else if (mSearchView.isIconified() != true) {
+            //    mSearchView.setIconified(true);
             } else {
                 super.onKeyDown(keyCode, event);
             }
