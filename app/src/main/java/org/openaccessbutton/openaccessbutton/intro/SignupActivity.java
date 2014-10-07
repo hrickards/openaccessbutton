@@ -82,7 +82,7 @@ public class SignupActivity extends Activity {
         });
 
         // Bind listener to signup button
-        Button submitButton = (Button) findViewById(R.id.signupButton);
+        final Button submitButton = (Button) findViewById(R.id.signupButton);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,6 +101,8 @@ public class SignupActivity extends Activity {
                     Toast.makeText(context, getResources().getString(R.string.passwords_not_matching), Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                submitButton.setEnabled(false);
 
                 // Create account using OAB API
                 Thread thread = new Thread(new Runnable(){
@@ -133,6 +135,7 @@ public class SignupActivity extends Activity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+                                    submitButton.setEnabled(true);
                                     Intent k = new Intent(context, IntroActivity.class);
                                     startActivity(k);
                                     finish();
@@ -149,6 +152,7 @@ public class SignupActivity extends Activity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+                                    submitButton.setEnabled(true);
                                     Intent k = new Intent(context, IntroActivity.class);
                                     startActivity(k);
                                     finish();
