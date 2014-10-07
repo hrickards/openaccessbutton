@@ -26,7 +26,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_more"
+            android:src="@drawable/ic_menu_more_white"
             android:id="@+id/expandAnswerButton"
             android:layout_marginRight="2dp"/>
     </LinearLayout>
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:src="@drawable/ic_menu_less"
+            android:src="@drawable/ic_menu_less_white"
             android:layout_marginRight="7dp"
             android:id="@+id/contractAnswerButton"/>
             <View
