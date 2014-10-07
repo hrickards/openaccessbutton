@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor">
-
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -14,8 +13,8 @@
             android:text="@string/menu"
             android:textSize="40sp"
             android:textColor="#fff"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="35dp"/>
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
