@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 

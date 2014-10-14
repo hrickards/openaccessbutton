@@ -12,8 +12,10 @@ import android.view.animation.Transformation;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.api.API;
 import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 
 public class SigninActivity extends Activity {
@@ -25,17 +27,20 @@ public class SigninActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        // Until we get an authentication method in the API (TODO), just go straight to the main
-        // activity whenever the login button is pressed
         Button loginButton = (Button) findViewById(R.id.signinButton);
         final Context context = this;
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Go to MenuActivity
-                Intent k = new Intent(context, MenuActivity.class);
-                startActivity(k);
-                finish();
+                API.signinRequest(new API.SigninCallback() {
+                    @Override
+                    public void onComplete(String username, String apikey) {
+                        // Go to MenuActivity
+                        Intent k = new Intent(context, MenuActivity.class);
+                        startActivity(k);
+                        finish();
+                    }
+                });
             }
         });
 

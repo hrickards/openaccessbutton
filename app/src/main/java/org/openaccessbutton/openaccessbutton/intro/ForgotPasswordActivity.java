@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.api.API;
 
 public class ForgotPasswordActivity extends Activity {
     // Animation speed
@@ -30,38 +31,42 @@ public class ForgotPasswordActivity extends Activity {
             @Override
             public void onClick(View view) {
                 // TODO Actually submit the form to the API
-
-                // Hide the keyboard
-                EditText myEditText = (EditText) findViewById(R.id.forgotPasswordEmail);
-                InputMethodManager imm = (InputMethodManager)getSystemService(
-                        Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(myEditText.getWindowToken(), 0);
-
-                // Show the form submission message
-                final View v = findViewById(R.id.forgotPasswordSubmittedText);
-                // Copied from Tom Esterez @ http://stackoverflow.com/questions/4946295
-                v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                final int targtetHeight = v.getMeasuredHeight();
-                v.getLayoutParams().height = 0;
-                v.setVisibility(View.VISIBLE);
-                Animation a = new Animation()
-                {
+                API.forgotPasswordRequest(new API.Callback() {
                     @Override
-                    protected void applyTransformation(float interpolatedTime, Transformation t) {
-                        v.getLayoutParams().height = interpolatedTime == 1
-                                ? LinearLayout.LayoutParams.WRAP_CONTENT
-                                : (int)(targtetHeight * interpolatedTime);
-                        v.requestLayout();
-                    }
+                    public void onComplete() {
+                        // Hide the keyboard
+                        EditText myEditText = (EditText) findViewById(R.id.forgotPasswordEmail);
+                        InputMethodManager imm = (InputMethodManager)getSystemService(
+                                Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(myEditText.getWindowToken(), 0);
 
-                    @Override
-                    public boolean willChangeBounds() {
-                        return true;
+                        // Show the form submission message
+                        final View v = findViewById(R.id.forgotPasswordSubmittedText);
+                        // Copied from Tom Esterez @ http://stackoverflow.com/questions/4946295
+                        v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        final int targtetHeight = v.getMeasuredHeight();
+                        v.getLayoutParams().height = 0;
+                        v.setVisibility(View.VISIBLE);
+                        Animation a = new Animation()
+                        {
+                            @Override
+                            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                                v.getLayoutParams().height = interpolatedTime == 1
+                                        ? LinearLayout.LayoutParams.WRAP_CONTENT
+                                        : (int)(targtetHeight * interpolatedTime);
+                                v.requestLayout();
+                            }
+
+                            @Override
+                            public boolean willChangeBounds() {
+                                return true;
+                            }
+                        };
+                        a.setDuration((int)(ANIMATION_DP_MS*targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
+                        findViewById(R.id.forgotPasswordSubmit).setVisibility(View.GONE);
+                        v.startAnimation(a);
                     }
-                };
-                a.setDuration((int)(ANIMATION_DP_MS*targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
-                findViewById(R.id.forgotPasswordSubmit).setVisibility(View.GONE);
-                v.startAnimation(a);
+                });
             }
         });
     }

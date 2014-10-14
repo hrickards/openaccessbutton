@@ -25,6 +25,7 @@ import org.json.JSONObject;
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
+import org.openaccessbutton.openaccessbutton.api.API;
 
 public class SignupActivity extends Activity {
     private static final String REGISTER_API_URL = "http://oabutton.cottagelabs.com/api/register";
@@ -110,6 +111,7 @@ public class SignupActivity extends Activity {
                     public void run() {
                         try {
                             // Register using API
+                            /*
                             Webb webb = Webb.create();
                             JSONObject result = webb
                                     .post(REGISTER_API_URL)
@@ -129,16 +131,21 @@ public class SignupActivity extends Activity {
                             edit.clear();
                             edit.putString("api_key", apiKey);
                             edit.apply();
+                            */
 
-
-                            // Go to IntroActivity
-                            runOnUiThread(new Runnable() {
+                            API.signupRequest(new API.SignupCallback() {
                                 @Override
-                                public void run() {
-                                    submitButton.setEnabled(true);
-                                    Intent k = new Intent(context, IntroActivity.class);
-                                    startActivity(k);
-                                    finish();
+                                public void onComplete(String username, String apikey) {
+                                    // Go to IntroActivity
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            submitButton.setEnabled(true);
+                                            Intent k = new Intent(context, IntroActivity.class);
+                                            startActivity(k);
+                                            finish();
+                                        }
+                                    });
                                 }
                             });
                         } catch (Exception e) {
