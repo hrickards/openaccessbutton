@@ -26,6 +26,7 @@ import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
 import org.openaccessbutton.openaccessbutton.api.API;
+import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
 public class SignupActivity extends Activity {
@@ -40,8 +41,8 @@ public class SignupActivity extends Activity {
         SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
         String apiKey = prefs.getString("api_key", "");
         if (apiKey.length() > 0) {
-            // Go to MainActivity
-            Intent k = new Intent(this, MainActivity.class);
+            // Go to MenuActivity
+            Intent k = new Intent(this, MenuActivity.class);
             startActivity(k);
             finish();
         }
