@@ -111,4 +111,6 @@
     <string name="generic_share_message">I love Open Access!</string>
     <string name="feedback_uri">mailto:dev@openaccessbutton.org</string>
     <string name="username_already_taken">Sorry that email address has already been registered</string>
+    <string name="noQuestionsTitle">No questions asked!</string>
+    <string name="noQuestionsDescription">Try submitting one now</string>
 </resources>

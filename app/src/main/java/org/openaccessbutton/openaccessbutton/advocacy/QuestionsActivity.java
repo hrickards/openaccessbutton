@@ -2,6 +2,7 @@ package org.openaccessbutton.openaccessbutton.advocacy;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.parse.ParseInstallation;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openaccessbutton.openaccessbutton.R;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -61,11 +63,20 @@ public class QuestionsActivity extends ListActivity {
 
     protected class LoadQuestionsTask extends AsyncTask<Void, Void, Question[]> {
         private Context mContext;
+        private ProgressDialog mProgress;
 
         public LoadQuestionsTask(Context context) {
             mContext = context;
         }
 
+        @Override
+        protected void onPreExecute() {
+            // Show progress dialog
+            mProgress = new ProgressDialog(mContext);
+            mProgress.setTitle("Loading");
+            mProgress.setMessage("Please wait...");
+            mProgress.show();
+        }
 
         @Override
         protected Question[] doInBackground(Void... params) {
@@ -109,8 +120,15 @@ public class QuestionsActivity extends ListActivity {
 
         @Override
         protected void onPostExecute(Question[] questions) {
+            mProgress.dismiss();
+
+            if (questions == null || questions.length == 0) {
+                questions = new Question[] {new Question(getResources().getString(R.string.noQuestionsTitle), getResources().getString(R.string.noQuestionsDescription)) };
+            }
+
             QuestionsArrayAdapter adapter = new QuestionsArrayAdapter(mContext, questions);
             setListAdapter(adapter);
+
         }
     }
 }
