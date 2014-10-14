@@ -102,6 +102,14 @@ public class SignupActivity extends Activity {
                     Toast.makeText(context, getResources().getString(R.string.passwords_not_matching), Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if (email.length() == 0) {
+                    Toast.makeText(context, getResources().getString(R.string.blank_email), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (password.length() == 0) {
+                    Toast.makeText(context, getResources().getString(R.string.blank_password), Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 submitButton.setEnabled(false);
 
@@ -147,7 +155,7 @@ public class SignupActivity extends Activity {
                                         }
                                     });
                                 }
-                            });
+                            }, context, email, profession, name, password);
                         } catch (Exception e) {
                             e.printStackTrace();
 

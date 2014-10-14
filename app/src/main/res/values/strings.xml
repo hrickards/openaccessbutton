@@ -102,5 +102,7 @@
     <string name="action_questions">Questions</string>
     <string name="action_share">Share</string>
     <string name="blank_question_error">You can\'t submit a blank question!</string>
+    <string name="blank_email">You must enter an email address!</string>
+    <string name="blank_password">You must enter a password!</string>
 
 </resources>
