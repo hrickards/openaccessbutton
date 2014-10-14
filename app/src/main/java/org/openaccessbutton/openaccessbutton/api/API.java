@@ -83,8 +83,6 @@ public class API {
     }
 
     public static void signinRequest(final SigninCallback callback, final Context context, final String username, final String password) {
-        // TODO Call the API
-        // TODO Store these details in SharedPrefs
         Runnable r = new Runnable() {
             @Override
             public void run() {
@@ -127,10 +125,31 @@ public class API {
 
     }
 
-    public static void blockedRequest(Callback callback) {
-        // TODO Call the API
-        Log.w("oab", "blocked not implemented");
-        callback.onComplete();
+    public static void blockedRequest(final Callback callback, Context context, final String url, final String location, final String doi, final String description, final String usecase) {
+        SharedPreferences prefs = context.getSharedPreferences("org.openaccessbutton.openaccessbutton", Context.MODE_PRIVATE);
+        final String apiKey = prefs.getString("api_key", "");
+
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                Webb webb = Webb.create();
+                JSONObject result = webb
+                        .post("http://oabutton.cottagelabs.com/api/blocked")
+                        .param("api_key", apiKey) // We need to get this when the user signs up
+                        .param("url", url)
+                        .param("location", location) // Geocode this either here or in the API
+                        .param("doi", doi)
+                        .param("description", description) // Ignored by the API at the moment
+                        .param("usecase", usecase) // Ignored by the API at the moment
+                        .ensureSuccess()
+                        .asJsonObject()
+                        .getBody();
+
+                callback.onComplete();
+            }
+        };
+        (new Thread(r)).start();
+
     }
 
     public static void storyListRequest(StoryListCallback callback) {
