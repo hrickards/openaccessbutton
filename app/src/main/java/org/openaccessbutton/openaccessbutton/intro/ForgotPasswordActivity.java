@@ -3,6 +3,7 @@ package org.openaccessbutton.openaccessbutton.intro;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +19,9 @@ import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.api.API;
 import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 public class ForgotPasswordActivity extends Activity {
     // Animation speed
     public final static double ANIMATION_DP_MS = 0.5;
@@ -32,43 +36,17 @@ public class ForgotPasswordActivity extends Activity {
         socialButtonShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO Actually submit the form to the API
-                API.forgotPasswordRequest(new API.Callback() {
-                    @Override
-                    public void onComplete() {
-                        // Hide the keyboard
-                        EditText myEditText = (EditText) findViewById(R.id.forgotPasswordEmail);
-                        InputMethodManager imm = (InputMethodManager)getSystemService(
-                                Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(myEditText.getWindowToken(), 0);
+                try {
+                    // Open forgot password form in browser
+                    String email = ((EditText) findViewById(R.id.forgotPasswordEmail)).getText().toString();
+                    String url = "http://www.openaccessbutton.org/forgot_password?email=" + URLEncoder.encode(email, "UTF-8");
 
-                        // Show the form submission message
-                        final View v = findViewById(R.id.forgotPasswordSubmittedText);
-                        // Copied from Tom Esterez @ http://stackoverflow.com/questions/4946295
-                        v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                        final int targtetHeight = v.getMeasuredHeight();
-                        v.getLayoutParams().height = 0;
-                        v.setVisibility(View.VISIBLE);
-                        Animation a = new Animation()
-                        {
-                            @Override
-                            protected void applyTransformation(float interpolatedTime, Transformation t) {
-                                v.getLayoutParams().height = interpolatedTime == 1
-                                        ? LinearLayout.LayoutParams.WRAP_CONTENT
-                                        : (int)(targtetHeight * interpolatedTime);
-                                v.requestLayout();
-                            }
-
-                            @Override
-                            public boolean willChangeBounds() {
-                                return true;
-                            }
-                        };
-                        a.setDuration((int)(ANIMATION_DP_MS*targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
-                        findViewById(R.id.forgotPasswordSubmit).setVisibility(View.GONE);
-                        v.startAnimation(a);
-                    }
-                });
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

@@ -38,7 +38,7 @@ public class OAuthActivity extends Activity {
             @Override
             public void onFinished(OAuthData oAuthData) {
                 if (oAuthData.status.equals("success")) {
-                    API.oauthSignupRequest(new API.SignupCallback() {
+                    API.oauthSignupRequest(new API.OAuthSignupCallback() {
                         @Override
                         public void onComplete(String username, String apikey) {
                             // Go to IntroActivity
