@@ -18,6 +18,8 @@ import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.api.API;
 
+import java.util.List;
+
 /**
  * Submit paywalled articles to the OAB
  */
@@ -55,16 +57,35 @@ public class ButtonSubmitActivity extends Activity {
         EditText urlView = (EditText) findViewById(R.id.articleUrl);
         urlView.setText(url);
 
-        // Attempt to get the last known location from Android. If we can get it, prefill that
-        // into the form
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        if (location != null) {
-            mLatitude = location.getLatitude();
-            mLongitude = location.getLongitude();
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                // Based on http://stackoverflow.com/questions/17668917
+                LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                List<String> providers = lm.getProviders(true);
+                Location location = null;
 
-            ((EditText) findViewById(R.id.location)).setText(Double.toString(mLatitude) + ", " + Double.toString(mLongitude));
-        }
+                // Try every possible provider
+                for (int i=providers.size()-1; i>=0; i--) {
+                    location = lm.getLastKnownLocation(providers.get(i));
+                    if (location != null) break;
+                }
+
+                if (location != null) {
+                    final double mLatitude = location.getLatitude();
+                    final double mLongitude = location.getLongitude();
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            ((EditText) findViewById(R.id.location)).setText(String.format("%.4f", mLatitude) + ", " + String.format("%.4f", mLongitude));
+                        }
+                    });
+                }
+            }
+        };
+        (new Thread(r)).start();
+
     }
 
     // Handle button submits by posting data to the OAB API
