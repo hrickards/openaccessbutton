@@ -85,27 +85,15 @@ public class ButtonSubmitActivity extends Activity {
                 API.blockedRequest(new API.Callback() {
                     @Override
                     public void onComplete() {
-                        Toast.makeText(context, getString(R.string.buttonSubmitted), Toast.LENGTH_LONG).show();
-                        finish();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(context, getString(R.string.buttonSubmitted), Toast.LENGTH_LONG).show();
+                                finish();
+                            }
+                        });
                     }
-                });
-
-                // Post our data using something like this when the API details are finalised
-                // TODO: Implement
-                /*
-                    Webb webb = Webb.create();
-                    JSONObject result = webb
-                            .post("http://oabutton.cottagelabs.com/api/blocked")
-                            .param("api_key", api_key) // We need to get this when the user signs up
-                            .param("url", url)
-                            .param("location", location) // Geocode this either here or in the API
-                            .param("doi", doi)
-                            .param("description", description) // Ignored by the API at the moment
-                            .param("usecase", usecase) // Ignored by the API at the moment
-                            .ensureSuccess()
-                            .asJsonObject()
-                            .getBody();
-                */
+                }, context, url, location, doi, description, usecase);
 
             }
         });

@@ -104,5 +104,6 @@
     <string name="blank_question_error">You can\'t submit a blank question!</string>
     <string name="blank_email">You must enter an email address!</string>
     <string name="blank_password">You must enter a password!</string>
+    <string name="invalid_username_password">That username or password is invalid!</string>
 
 </resources>
