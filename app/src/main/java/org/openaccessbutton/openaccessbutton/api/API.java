@@ -43,12 +43,6 @@ public class API {
         void onComplete();
     }
 
-    public static void forgotPasswordRequest(Callback callback) {
-        // TODO Implement forgot password
-        Log.w("oab", "forgot password not implemented");
-        callback.onComplete();
-    }
-
     public static void oauthSignupRequest(OAuthSignupCallback callback) {
         Log.w("oab", "oauth not implemented");
         callback.onComplete("", "");
