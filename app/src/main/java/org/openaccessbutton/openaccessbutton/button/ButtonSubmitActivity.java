@@ -3,9 +3,11 @@ package org.openaccessbutton.openaccessbutton.button;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.api.API;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
 import java.util.List;
 
@@ -84,7 +87,10 @@ public class ButtonSubmitActivity extends Activity {
                 }
             }
         };
-        (new Thread(r)).start();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        if (sp.getBoolean("location", true)) {
+            (new Thread(r)).start();
+        }
 
     }
 
@@ -135,6 +141,9 @@ public class ButtonSubmitActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         }
         return super.onOptionsItemSelected(item);

@@ -14,6 +14,7 @@ import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
 import org.openaccessbutton.openaccessbutton.intro.SignupActivity;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
 public class MenuActivity extends Activity {
 
@@ -60,6 +61,9 @@ public class MenuActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         } else if (item.getItemId() == R.id.action_logout) {
             // Remove the api key from the SharedPreferences indicating no user's logged in

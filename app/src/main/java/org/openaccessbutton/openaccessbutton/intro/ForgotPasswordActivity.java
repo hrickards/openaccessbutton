@@ -2,6 +2,7 @@ package org.openaccessbutton.openaccessbutton.intro;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.api.API;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
 public class ForgotPasswordActivity extends Activity {
     // Animation speed
@@ -86,6 +88,9 @@ public class ForgotPasswordActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         }
         return super.onOptionsItemSelected(item);

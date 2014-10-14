@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:title="Notifications"
+        android:defaultValue="true"
+        android:summary="If selected, this option allows the app to receive push notifications containing vital open access updates, answers to questions, etc."
+        android:key="pushNotifications" />
+    <CheckBoxPreference android:title="Location"
+        android:defaultValue="true"
+        android:summary="If selected, this option allows the app to use a coarse version of your location to center the map and submit paywall blocks."
+        android:key="location" />
+</PreferenceScreen>
