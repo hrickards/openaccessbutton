@@ -58,7 +58,7 @@
     <string name="gotIt">Got it!</string>
     <string name="forgottenPassword">Forgot your password?</string>
     <string name="retypePassword">Retype password</string>
-    <string name="askQuestion">More questions? Touch here to ask one...</string>
+    <string name="askQuestion">Question not answered below? Ask one here.</string>
     <string name="askQuestionClosed">Touch to close the question form.</string>
     <string name="questionHint">Please, enter your question here.</string>
     <string name="passwordResetInstructions">No worries. Just enter your email address and we will send you a link to create a new one.</string>
