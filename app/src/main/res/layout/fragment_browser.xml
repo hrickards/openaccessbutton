@@ -27,6 +27,7 @@
         android:minHeight="50dp"
         android:layout_marginTop="2dp"
         android:background="@color/customNavy"
+        android:scaleType="center"
         android:src="@drawable/navbar_logo"
         android:layout_toLeftOf="@+id/shareButton"
         android:layout_alignParentBottom="true"/>
@@ -40,6 +41,7 @@
         android:background="@color/customNavy"
         android:layout_marginRight="2dp"
         android:src="@drawable/ic_sharing"
+        android:scaleType="center"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"/>
     </RelativeLayout>
