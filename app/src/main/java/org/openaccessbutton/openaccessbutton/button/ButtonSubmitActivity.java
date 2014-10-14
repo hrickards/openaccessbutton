@@ -17,6 +17,7 @@ import android.widget.Toast;
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.api.API;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
 import java.util.List;
 
@@ -135,6 +136,9 @@ public class ButtonSubmitActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         }
         return super.onOptionsItemSelected(item);

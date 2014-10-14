@@ -28,6 +28,7 @@ import android.widget.ShareActionProvider;
 
 import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
 import org.openaccessbutton.openaccessbutton.intro.SignupActivity;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 import org.openaccessbutton.openaccessbutton.push.Push;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -214,6 +215,12 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             startActivity(k);
             finish();
 
+            return true;
+        // Otherwise if the settings button was pressed
+        } else if (item.getItemId() == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         // Otherwise let Android handle the default behaviour
         } else {
