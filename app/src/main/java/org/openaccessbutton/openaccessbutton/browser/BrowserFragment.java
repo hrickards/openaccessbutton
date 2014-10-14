@@ -10,6 +10,7 @@ package org.openaccessbutton.openaccessbutton.browser;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -28,6 +29,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
+import org.openaccessbutton.openaccessbutton.OnShareIntentInterface;
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.button.ButtonSubmitActivity;
 
@@ -40,9 +42,20 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
     ScrollingWebView mWebView;
     EditText mUrlBox;
     RelativeLayout mHeader;
+    OnShareIntentInterface mCallback;
 
     public BrowserFragment() {
         // Required empty public constructor
+    }
+
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            mCallback = (OnShareIntentInterface) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnShareIntentInterface");
+        }
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -65,7 +78,13 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
 
         mWebView = (ScrollingWebView) view.findViewById(R.id.mWebView);
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.setWebViewClient(new WebViewClient());
+        mWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                updateShareIntent();
+            }
+        });
 
         // Share page to any generic application
         ImageView shareButton = (ImageView) view.findViewById(R.id.shareButton);
@@ -149,5 +168,28 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
         } else {
             return false;
         }
+    }
+
+    public Intent onShareButtonPressed(Resources resources) {
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.browser_share_title));
+        if (mWebView != null) {
+            shareIntent.putExtra(Intent.EXTRA_TEXT, mWebView.getUrl());
+        }
+        shareIntent.setType("text/plain");
+
+        return shareIntent;
+    }
+
+    public void updateShareIntent() {
+        Intent shareIntent = onShareButtonPressed(getResources());
+        mCallback.onShareIntentUpdated(shareIntent);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateShareIntent();
     }
 }

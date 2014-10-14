@@ -21,15 +21,17 @@ public class Post {
     public final Date date;
     public final String author;
     public final String content;
+    public final String link;
 
     private static final int SHORT_TITLE_LENGTH = 100;
 
-    public Post(String title, String description, Date date, String author, String content) {
+    public Post(String title, String description, Date date, String author, String content, String link) {
         this.title = title;
         this.description = description;
         this.date = date;
         this.author = author;
         this.content = content;
+        this.link = link;
         // Shorten blogpost titles if they're too long
         this.shortTitle = StringUtils.abbreviate(title, SHORT_TITLE_LENGTH);
     }

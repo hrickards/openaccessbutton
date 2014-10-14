@@ -10,6 +10,8 @@ package org.openaccessbutton.openaccessbutton.blog;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,7 @@ import com.google.gson.Gson;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.OnFragmentNeededListener;
+import org.openaccessbutton.openaccessbutton.OnShareIntentInterface;
 import org.openaccessbutton.openaccessbutton.R;
 
 import java.util.ArrayList;
@@ -33,6 +36,7 @@ import java.util.List;
  */
 public class BlogFragment extends android.app.ListFragment implements AbsListView.OnScrollListener {
     public BlogFragment() {}
+    protected final String WEB_BLOG_URL = "http://blog.openaccessbutton.org/";
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -41,6 +45,7 @@ public class BlogFragment extends android.app.ListFragment implements AbsListVie
     }
 
     OnFragmentNeededListener mCallback;
+    OnShareIntentInterface mShareCallback;
 
     // The posts shown
     List<Post> mItems = new ArrayList<Post>();
@@ -66,6 +71,12 @@ public class BlogFragment extends android.app.ListFragment implements AbsListVie
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentNeededListener");
+        }
+
+        try {
+            mShareCallback = (OnShareIntentInterface) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnShareIntentInterface");
         }
     }
 
@@ -159,5 +170,26 @@ public class BlogFragment extends android.app.ListFragment implements AbsListVie
     private boolean needsMorePosts() {
         AbsListView listView = getListView();
         return listView.getLastVisiblePosition() >= listView.getCount() - 1 - sThreshold;
+    }
+
+    public Intent onShareButtonPressed(Resources resources) {
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.blog_share_title));
+        shareIntent.putExtra(Intent.EXTRA_TEXT, WEB_BLOG_URL);
+        shareIntent.setType("text/plain");
+
+        return shareIntent;
+    }
+
+    public void updateShareIntent() {
+        Intent shareIntent = onShareButtonPressed(getResources());
+        mShareCallback.onShareIntentUpdated(shareIntent);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateShareIntent();
     }
 }

@@ -7,6 +7,9 @@
 
 package org.openaccessbutton.openaccessbutton.map;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -30,6 +33,8 @@ import com.google.maps.android.clustering.ClusterManager;
 import com.google.maps.android.clustering.view.DefaultClusterRenderer;
 import com.google.maps.android.ui.IconGenerator;
 
+import org.openaccessbutton.openaccessbutton.MainActivity;
+import org.openaccessbutton.openaccessbutton.OnShareIntentInterface;
 import org.openaccessbutton.openaccessbutton.R;
 
 import java.util.HashMap;
@@ -44,10 +49,21 @@ public class MapFragment extends Fragment {
     private ClusterManager<Item> mClusterManager;
     private Item mClickedClusterItem;
     private Map<String, Item> mMarkers;  // For unique markers
-
+    private final String WEB_MAP_URL = "http://openaccessbutton.org";
+    private OnShareIntentInterface mCallback;
 
     public MapFragment() {
         // Required empty public constructor
+    }
+
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            mCallback = (OnShareIntentInterface) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnShareIntentInterface");
+        }
     }
 
     @Override
@@ -133,6 +149,7 @@ public class MapFragment extends Fragment {
     public void onResume() {
         super.onResume();
         m.onResume();
+        updateShareIntent();
     }
 
     @Override
@@ -414,5 +431,20 @@ public class MapFragment extends Fragment {
         addItem(new Item(55.8, -4.1, "I need this paper for my research", "10.1016/j.yexcr.2004.09.026", "Student", "http://www.sciencedirect.com/science/article/pii/S0014482704005762", "Nov 19, 2013", "Graham Steel", "Title: Myocilin binding to Hep II domain of fibronectin inhibits cell spreading and incorporation of paxillin into focal adhesionsAuthors: Donna M. Peters, Kathleen Herbert, Brenda Biddick, Jennifer A. PetersonJournal: Experimental Cell ResearchDate: 2005-2"));
         addItem(new Item(51.5112139, -0.1198244, "I study biological oscillators and want to know more!", "10.1038/ncomms3769", "Researcher", "http://www.nature.com/ncomms/2013/131114/ncomms3769/full/ncomms3769.html", "Nov 19, 2013", "Alexis Webb", "Title: Circadian rhythms in Mexican blind cavefish Astyanax mexicanus in the lab and in the fieldAuthors: Andrew Beale, Christophe Guibal, T. Katherine Tamai, Linda Klotz, Sophie Cowen, Elodie Peyric, VĂ­ctor H. Reynoso, Yoshiyuki Yamamoto, David WhitmoreJournal: Nature CommunicationsDate: 2013-11-14"));
         addItem(new Item(50.82253, -0.137163, "Research into mitochondrial replacement therapy (so-called 3-person IVF)", "", "Researcher", "http://journal.nzma.org.nz/journal/abstract.php?id=5895", "Nov 19, 2013", "Edward Morrow", "Numerical identity: the creation of tri-parental embryos to correct inherited mitochondrial diseaseMichael Legge, Ruth FitzgeraldThe New Zealand Medical Journal"));
+    }
+
+    public Intent onShareButtonPressed(Resources resources) {
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.map_share_text));
+        shareIntent.putExtra(Intent.EXTRA_TEXT, WEB_MAP_URL);
+        shareIntent.setType("text/plain");
+
+        return shareIntent;
+    }
+
+    public void updateShareIntent() {
+        Intent shareIntent = onShareButtonPressed(getResources());
+        mCallback.onShareIntentUpdated(shareIntent);
     }
 }

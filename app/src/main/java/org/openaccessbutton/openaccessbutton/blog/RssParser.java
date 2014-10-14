@@ -106,6 +106,7 @@ public class RssParser {
         Date date = null;
         String creator = null;
         String content = null;
+        String link = null;
 
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -123,11 +124,13 @@ public class RssParser {
                 creator = readCreator(parser);
             } else if (name.equals("content:encoded")) {
                 content = readContent(parser);
+            } else if (name.equals("link")) {
+                link = readLink(parser);
             } else {
                 skip(parser);
             }
         }
-        return new Post(title, description, date, creator, content);
+        return new Post(title, description, date, creator, content, link);
     }
 
     private void skip(XmlPullParser parser) throws XmlPullParserException, IOException {
@@ -206,6 +209,16 @@ public class RssParser {
         String content = readText(parser).replaceAll("<img.*/>$", "");
         parser.require(XmlPullParser.END_TAG, ns, "content:encoded");
         return content;
+    }
+
+    /**
+     * Extract text from a <link> tag
+     */
+    private String readLink(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, "link");
+        String link = readText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, "link");
+        return link;
     }
 
     /**
