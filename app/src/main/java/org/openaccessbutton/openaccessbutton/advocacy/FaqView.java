@@ -18,6 +18,10 @@ import org.openaccessbutton.openaccessbutton.R;
  * a textual question, a textual answer and an HTML details section.
  */
 public class FaqView extends LinearLayout {
+    // Animation speed
+    public final static double ANIMATION_DP_MS = 2;
+    protected Context mContext;
+    
     public FaqView(Context context) {
         super(context);
         initView(context);
@@ -46,12 +50,17 @@ public class FaqView extends LinearLayout {
         ((WebView) findViewById(R.id.detailsContent)).loadData(html, "text/html", "utf-8");
     }
 
+    public void setImage(String imageName) {
+        ((ImageView) findViewById(R.id.imageContent)).setImageResource(mContext.getResources().getIdentifier(imageName, "drawable", mContext.getPackageName()));
+    }
+
     protected void initView(Context context) {
+        mContext = context;
         LayoutInflater.from(context).inflate(R.layout.advocacy_faq, this);
 
         // Initialise the details WebView with blank data
         WebView details = (WebView) findViewById(R.id.detailsContent);
-        details.loadData("<html><body></body></html>", "text/html", "utf-8");
+        details.loadData("<html><head><style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #fff}</head><body></body></html>", "text/html", "utf-8");
 
         // Start off with the answer and details hidden
         switchToQuestionView();
@@ -97,6 +106,7 @@ public class FaqView extends LinearLayout {
                     v.setVisibility(View.GONE);
                     findViewById(R.id.expandAnswerButton).setVisibility(View.VISIBLE);
                     findViewById(R.id.detailsContent).setVisibility(View.GONE);
+                    findViewById(R.id.imageContent).setVisibility(View.GONE);
                     findViewById(R.id.moreInfo).setVisibility(View.VISIBLE);
                 }else{
                     v.getLayoutParams().height = initialHeight - (int)(initialHeight * interpolatedTime);
@@ -109,8 +119,7 @@ public class FaqView extends LinearLayout {
                 return true;
             }
         };
-        // 1dp/ms
-        a.setDuration((int) (initialHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration((int) (ANIMATION_DP_MS*initialHeight / v.getContext().getResources().getDisplayMetrics().density));
         v.startAnimation(a);
     }
 
@@ -141,10 +150,10 @@ public class FaqView extends LinearLayout {
                 return true;
             }
         };
-        // 1dp/ms
-        a.setDuration((int)(targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
+        a.setDuration((int)(ANIMATION_DP_MS*targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
         findViewById(R.id.expandAnswerButton).setVisibility(View.INVISIBLE);
         findViewById(R.id.detailsContent).setVisibility(View.GONE);
+        findViewById(R.id.imageContent).setVisibility(View.GONE);
         findViewById(R.id.moreInfo).setVisibility(View.VISIBLE);
         v.startAnimation(a);
     }
@@ -180,8 +189,31 @@ public class FaqView extends LinearLayout {
                 return true;
             }
         };
-        // 1dp/ms
-        b.setDuration((int) (targtetHeight / detailsContent.getContext().getResources().getDisplayMetrics().density));
+        b.setDuration((int) (ANIMATION_DP_MS*targtetHeight / detailsContent.getContext().getResources().getDisplayMetrics().density));
         detailsContent.startAnimation(b);
+
+
+        final View imageContent = findViewById(R.id.imageContent);
+        imageContent.measure(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        final int imageTargetHeight = imageContent.getMeasuredHeight();
+        imageContent.getLayoutParams().height = 0;
+        imageContent.setVisibility(View.VISIBLE);
+        Animation c = new Animation()
+        {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                imageContent.getLayoutParams().height = interpolatedTime == 1
+                        ? LayoutParams.WRAP_CONTENT
+                        : (int)(imageTargetHeight * interpolatedTime);
+                imageContent.requestLayout();
+            }
+
+            @Override
+            public boolean willChangeBounds() {
+                return true;
+            }
+        };
+        c.setDuration((int) (ANIMATION_DP_MS*imageTargetHeight / imageContent.getContext().getResources().getDisplayMetrics().density));
+        imageContent.startAnimation(c);
     }
 }

@@ -1,7 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false">
+    android:baselineAligned="false"
+    tools:ignore="MergeRootFrame">
 
 
     <ScrollView
@@ -47,7 +49,6 @@
         android:text="@string/yourLocation"
         android:layout_marginLeft="7dp"
         android:textStyle="bold"/>
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,8 +56,6 @@
             android:layout_marginRight="8dp"
             android:hint="@string/exampleLocation"
             android:id="@+id/location"/>
-
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

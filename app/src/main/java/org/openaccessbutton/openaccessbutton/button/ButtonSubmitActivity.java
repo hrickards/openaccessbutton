@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.api.API;
 
 /**
  * Submit paywalled articles to the OAB
@@ -81,6 +82,14 @@ public class ButtonSubmitActivity extends Activity {
                 String description = ((EditText) findViewById(R.id.description)).getText().toString();
                 String usecase = ((EditText) findViewById(R.id.usecase)).getText().toString();
 
+                API.blockedRequest(new API.Callback() {
+                    @Override
+                    public void onComplete() {
+                        Toast.makeText(context, getString(R.string.buttonSubmitted), Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                });
+
                 // Post our data using something like this when the API details are finalised
                 // TODO: Implement
                 /*
@@ -98,8 +107,6 @@ public class ButtonSubmitActivity extends Activity {
                             .getBody();
                 */
 
-                Toast.makeText(context, getString(R.string.buttonSubmitted), Toast.LENGTH_LONG).show();
-                finish();
             }
         });
     }

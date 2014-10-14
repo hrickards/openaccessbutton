@@ -11,8 +11,12 @@ import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v13.app.FragmentPagerAdapter;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -41,19 +45,13 @@ public class IntroActivity extends Activity {
         CirclePageIndicator pageIndicator = (CirclePageIndicator) findViewById(R.id.circles);
         pageIndicator.setViewPager(mPager);
 
-        /*
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        if(!prefs.getBoolean("firstTime", true)) {
-            // If we're not on the first run skip straight to the main activity
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putBoolean("firstTime", false);
-            editor.commit();
+        // Bind signup button
+        TextView signupButton = (TextView) findViewById(R.id.globalSignupEmailButton);
+        signupButton.setOnClickListener(new SignupEmailButtonClickListener(this));
 
-            Intent k = new Intent(this, MainActivity.class);
-            startActivity(k);
-            finish();
-        }
-        */
+        // Bind signin button
+        // TextView signinButton = (TextView) findViewById(R.id.globalSigninButton);
+        // signinButton.setOnClickListener(new SigninButtonClickListener(this));
     }
 
 
@@ -91,4 +89,5 @@ public class IntroActivity extends Activity {
             return ScreenSlidePageFragment.numberPages(getApplicationContext());
         }
     }
+
 }
