@@ -105,5 +105,8 @@
     <string name="blank_email">You must enter an email address!</string>
     <string name="blank_password">You must enter a password!</string>
     <string name="invalid_username_password">That username or password is invalid!</string>
-
+    <string name="browser_share_title">Here\'s some research I\'ve been looking at&#8230;</string>
+    <string name="map_share_text">Open Access Button Map</string>
+    <string name="blog_share_title">Open Access Button Blog</string>
+    <string name="generic_share_message">I love Open Access!</string>
 </resources>

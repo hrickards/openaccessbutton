@@ -7,7 +7,9 @@
 
 package org.openaccessbutton.openaccessbutton.advocacy;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -25,6 +27,7 @@ import com.goebl.david.Webb;
 import com.parse.ParseInstallation;
 
 import org.json.JSONObject;
+import org.openaccessbutton.openaccessbutton.OnShareIntentInterface;
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.advocacy.XmlParser;
 import org.openaccessbutton.openaccessbutton.intro.IntroActivity;
@@ -37,8 +40,40 @@ import java.io.InputStream;
  * Shows static/semi-dynamic content (regarding open access advocacy) in a WebView.
  */
 public class AdvocacyFragment extends Fragment {
+    protected OnShareIntentInterface mCallback;
+
     public AdvocacyFragment() {
         // Required empty public constructor
+    }
+
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            mCallback = (OnShareIntentInterface) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnShareIntentInterface");
+        }
+    }
+
+    public Intent onShareButtonPressed(Resources resources) {
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.generic_share_message));
+        shareIntent.setType("text/plain");
+
+        return shareIntent;
+    }
+
+    public void updateShareIntent() {
+        Intent shareIntent = onShareButtonPressed(getResources());
+        mCallback.onShareIntentUpdated(shareIntent);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateShareIntent();
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
