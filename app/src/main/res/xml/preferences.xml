@@ -9,4 +9,11 @@
         android:defaultValue="true"
         android:summary="If selected, this option allows the app to use a coarse version of your location to center the map and submit paywall blocks."
         android:key="location" />
+    <Preference
+        android:key="feedback"
+        android:title="Feedback"
+        android:summary="Give us feedback on how to improve the app!">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="@string/feedback_uri"/>
+    </Preference>
 </PreferenceScreen>
