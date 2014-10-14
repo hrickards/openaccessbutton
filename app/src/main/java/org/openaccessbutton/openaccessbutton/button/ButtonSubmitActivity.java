@@ -3,9 +3,11 @@ package org.openaccessbutton.openaccessbutton.button;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -85,7 +87,10 @@ public class ButtonSubmitActivity extends Activity {
                 }
             }
         };
-        (new Thread(r)).start();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        if (sp.getBoolean("location", true)) {
+            (new Thread(r)).start();
+        }
 
     }
 

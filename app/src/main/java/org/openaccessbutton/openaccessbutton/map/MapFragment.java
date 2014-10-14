@@ -10,12 +10,14 @@ package org.openaccessbutton.openaccessbutton.map;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -140,7 +142,10 @@ public class MapFragment extends Fragment {
                 });
             }
         };
-        (new Thread(r)).start();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        if (sp.getBoolean("location", true)) {
+            (new Thread(r)).start();
+        }
 
         // Setup clustering
         mClusterManager = new ClusterManager<Item>(getActivity(), m.getMap());
