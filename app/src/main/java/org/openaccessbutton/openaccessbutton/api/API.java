@@ -3,11 +3,14 @@ package org.openaccessbutton.openaccessbutton.api;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.goebl.david.Webb;
+import com.goebl.david.WebbException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.map.Item;
 
 /**
@@ -22,6 +25,7 @@ public class API {
 
     public interface SigninCallback {
         void onComplete(String username, String apikey);
+        void onError(String message);
     }
 
     public interface StoryListCallback {
@@ -43,41 +47,84 @@ public class API {
         callback.onComplete("", "");
     }
 
-    public static void signupRequest(SignupCallback callback, Context context, String email, String profession, String name, String password) {
-        try {
-            Webb webb = Webb.create();
-            JSONObject result = webb
-                    .post(API_URL + "/register")
-                    .param("email", email)
-                    .param("profession", profession)
-                    .param("name", name)
-                    .param("password", password)
-                    .ensureSuccess()
-                    .asJsonObject()
-                    .getBody();
-            String apiKey = result.getString("api_key");
-            String username = result.getString("username");
+    public static void signupRequest(final SignupCallback callback, final Context context, final String email, final String profession, final String name, final String password) {
+        Runnable r = new Runnable() {
+            public void run() {
+                try {
+                    Webb webb = Webb.create();
+                    JSONObject result = webb
+                            .post(API_URL + "/register")
+                            .param("email", email)
+                            .param("profession", profession)
+                            .param("name", name)
+                            .param("password", password)
+                            .ensureSuccess()
+                            .asJsonObject()
+                            .getBody();
+                    String apiKey = result.getString("api_key");
+                    String username = result.getString("username");
 
-            // Store API key so we know we're authenticated (and skip intro pages)
-            // and also for making API requests
-            SharedPreferences prefs = context.getSharedPreferences("org.openaccessbutton.openaccessbutton", Context.MODE_PRIVATE);
-            SharedPreferences.Editor edit = prefs.edit();
-            edit.clear();
-            edit.putString("api_key", apiKey);
-            edit.putString("username", username);
-            edit.apply();
+                    // Store API key so we know we're authenticated (and skip intro pages)
+                    // and also for making API requests
+                    SharedPreferences prefs = context.getSharedPreferences("org.openaccessbutton.openaccessbutton", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor edit = prefs.edit();
+                    edit.clear();
+                    edit.putString("api_key", apiKey);
+                    edit.putString("username", username);
+                    edit.apply();
 
-            callback.onComplete(username, apiKey);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+                    callback.onComplete(username, apiKey);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        (new Thread(r)).start();
     }
 
-    public static void signinRequest(SigninCallback callback) {
+    public static void signinRequest(final SigninCallback callback, final Context context, final String username, final String password) {
         // TODO Call the API
         // TODO Store these details in SharedPrefs
-        Log.w("oab", "signin not implemented");
-        callback.onComplete("hrickards", "foobar");
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Webb webb = Webb.create();
+                    JSONObject result = webb
+                            .post(API_URL + "/retrieve")
+                            .param("email", username)
+                            .param("password", password)
+                            .ensureSuccess()
+                            .asJsonObject()
+                            .getBody();
+                    String apiKey = result.getString("api_key");
+                    if ((apiKey == null) || (apiKey.equals(""))) {
+                        throw new Error("Invalid username or password");
+                    }
+
+                    // Store API key so we know we're authenticated (and skip intro pages)
+                    // and also for making API requests
+                    SharedPreferences prefs = context.getSharedPreferences("org.openaccessbutton.openaccessbutton", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor edit = prefs.edit();
+                    edit.clear();
+                    edit.putString("api_key", apiKey);
+                    edit.putString("username", username);
+                    edit.apply();
+
+                    callback.onComplete(username, apiKey);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    callback.onError(context.getResources().getString(R.string.invalid_username_password));
+                } catch (Error e) {
+                    e.printStackTrace();
+                    callback.onError(context.getResources().getString(R.string.invalid_username_password));
+                } catch (WebbException e) {
+                    e.printStackTrace();
+                    callback.onError(context.getResources().getString(R.string.invalid_username_password));}
+                }
+        };
+        (new Thread(r)).start();
+
     }
 
     public static void blockedRequest(Callback callback) {
