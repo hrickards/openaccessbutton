@@ -57,14 +57,14 @@ public class ButtonSubmitActivity extends Activity {
 
         // Attempt to get the last known location from Android. If we can get it, prefill that
         // into the form
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        /* LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if (location != null) {
             mLatitude = location.getLatitude();
             mLongitude = location.getLongitude();
 
             ((EditText) findViewById(R.id.location)).setText(Double.toString(mLatitude) + ", " + Double.toString(mLongitude));
-        }
+        }*/
     }
 
     // Handle button submits by posting data to the OAB API

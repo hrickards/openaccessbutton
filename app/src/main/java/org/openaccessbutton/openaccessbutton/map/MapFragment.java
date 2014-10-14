@@ -8,9 +8,12 @@
 package org.openaccessbutton.openaccessbutton.map;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -38,6 +41,7 @@ import org.openaccessbutton.openaccessbutton.OnShareIntentInterface;
 import org.openaccessbutton.openaccessbutton.R;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -107,8 +111,36 @@ public class MapFragment extends Fragment {
         MapsInitializer.initialize(getActivity());
         mMarkers = new HashMap<String, Item>();
 
-        // Position map
-        m.getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(51.503186, -0.126446), 10));
+        // Auto center map
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                // Based on http://stackoverflow.com/questions/17668917
+                LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+                List<String> providers = lm.getProviders(true);
+                Location location = null;
+
+                // Try every possible provider
+                for (int i=providers.size()-1; i>=0; i--) {
+                    location = lm.getLastKnownLocation(providers.get(i));
+                    if (location != null) break;
+                }
+
+                final LatLng center;
+                if (location == null) {
+                    center = new LatLng(51.503186, -0.126446);
+                } else {
+                    center = new LatLng(location.getLatitude(), location.getLongitude());
+                }
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        m.getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(center, 10));
+                    }
+                });
+            }
+        };
+        (new Thread(r)).start();
 
         // Setup clustering
         mClusterManager = new ClusterManager<Item>(getActivity(), m.getMap());
