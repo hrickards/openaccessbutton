@@ -4,37 +4,57 @@
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:layout_height="match_parent">
-    <LinearLayout
+   <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/backgroundColor">
+        android:gravity="center"
+        android:background="#fff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:textColor="@color/customNavy"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
         <ImageView
             android:id="@+id/infoPageTitle"
             android:layout_width="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:contentDescription="@string/app_name"
             android:layout_height="wrap_content"
-            android:src="@drawable/openaccessbutton"/>
+            android:src="@drawable/newlogo"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:textColor="#fff"
+            android:layout_marginLeft="20dp"
+            android:gravity="left"
+            android:textColor="@color/customNavy"
             android:textSize="16sp"
-            android:text="@string/oab_intro_1"/>
+            android:text="@string/getAccessToResearch"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="16sp"
-            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:textColor="#fff"
+            android:layout_marginLeft="20dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="@color/customNavy"
+            android:text="@string/pushButton"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:gravity="left"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/customNavy"
             android:text="@string/oab_intro_2"/>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/swipe_right"
                 android:textSize="16sp"
-                android:textColor="#fff"
+                android:textColor="@color/customNavy"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_alignParentBottom="true"
@@ -62,45 +82,36 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
-            android:text="@string/learn"
+            android:text="@string/doResearch"
             android:textSize="40sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:textColor="#fff"/>
-        <ImageView
-            android:layout_marginBottom="20dp"
-            android:contentDescription="@string/learn"
-            android:id="@+id/imageBrain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/knowledge"/>
+            android:textColor="@color/fontColor"/>
         <TextView
             android:id="@+id/meetPage2Body"
             android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
+            android:textColor="@color/fontColor"
             android:text="@string/meetPage2Body"/>
+        <ImageView
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/learn"
+            android:id="@+id/imageBrain"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pushbutton"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             style="@style/meetPageList"
             android:textSize="16sp"
-            android:text="@string/meetPage2List"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            style="@style/meetPageList"
-            android:text="@string/meetPage2Reasons"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/meetPageList"
-            android:textSize="16sp"
-            android:text="@string/meetPage2Importance"/>
+            android:textColor="@color/fontColor"
+            android:text="@string/nextTime"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -113,25 +124,33 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="40sp"
-            android:textColor="#fff"
+            android:textColor="@color/fontColor"
             android:textStyle="bold"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/target"
+            android:text="@string/getInformed"
             android:gravity="center"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/fontColor"
+            android:layout_marginTop="16dp"
+            android:text="@string/packedWithInfo"
+            android:textSize="16sp"
             />
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/target"/>
+            android:src="@drawable/getresearch"/>
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
+            android:textColor="@color/fontColor"
             android:layout_marginTop="16dp"
-            android:text="@string/easyUse"
+            android:text="@string/keepAppBySide"
             android:textSize="16sp"
             />
     </LinearLayout>
@@ -147,23 +166,30 @@
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:gravity="center"
-            android:textColor="#fff"
+            android:textColor="@color/fontColor"
             android:textStyle="bold"
-            android:layout_marginTop="40dp"
-            android:text="@string/research"/>
+            android:layout_marginTop="20dp"
+            android:text="@string/takeAction"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/customNavy"
+            android:textSize="16sp"
+            android:text="@string/workTogether"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/research"
-            android:src="@drawable/research"
+            android:src="@drawable/makeprogress"
             android:layout_marginTop="15dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:textColor="#fff"
+            android:textColor="@color/fontColor"
             android:textSize="16sp"
-            android:text="@string/researchFeatures"/>
+            android:text="@string/greatActions"/>
     </LinearLayout>
     <!-- <LinearLayout
         android:layout_width="match_parent"
