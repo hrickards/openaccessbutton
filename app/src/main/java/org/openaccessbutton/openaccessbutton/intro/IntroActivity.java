@@ -22,6 +22,7 @@ import com.viewpagerindicator.CirclePageIndicator;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
 /**
  * Take the user through some introductory pages they swipe through before launching
@@ -69,6 +70,9 @@ public class IntroActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         }
         return super.onOptionsItemSelected(item);

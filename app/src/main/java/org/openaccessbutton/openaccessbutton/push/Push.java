@@ -2,7 +2,9 @@ package org.openaccessbutton.openaccessbutton.push;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -19,8 +21,9 @@ public class Push {
      */
     public static void initialisePushNotifications(Context context) {
         Parse.initialize(context, "AWw3gd0gGnS5JDxepYKcPrL42G6FfSmntJiwPIfr", "4IugoFfEIc8YIAgsRm5elZuUGIB7z9bsPNHcfl3c");
-        PushService.setDefaultPushCallback(context, MainActivity.class);
-        PushService.subscribe(context, "Users", MainActivity.class);
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean pushEnabled = sp.getBoolean("pushNotifications", true);
 
         String user_id;
         ParseInstallation installation = ParseInstallation.getCurrentInstallation();
@@ -29,6 +32,16 @@ public class Push {
         } else {
             user_id = installation.getObjectId();
         }
-        PushService.subscribe(context, "user_" + user_id, MainActivity.class);
+
+        if (pushEnabled) {
+            PushService.setDefaultPushCallback(context, MainActivity.class);
+            PushService.subscribe(context, "Users", MainActivity.class);
+            PushService.subscribe(context, "user_" + user_id, MainActivity.class);
+        } else {
+            PushService.setDefaultPushCallback(context, null);
+            PushService.unsubscribe(context, "Users");
+            PushService.unsubscribe(context, "user_" + user_id);
+        }
+
     }
 }

@@ -25,6 +25,9 @@ import org.json.JSONObject;
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
 import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
+import org.openaccessbutton.openaccessbutton.api.API;
+import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
 public class SignupActivity extends Activity {
     private static final String REGISTER_API_URL = "http://oabutton.cottagelabs.com/api/register";
@@ -38,8 +41,8 @@ public class SignupActivity extends Activity {
         SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
         String apiKey = prefs.getString("api_key", "");
         if (apiKey.length() > 0) {
-            // Go to MainActivity
-            Intent k = new Intent(this, MainActivity.class);
+            // Go to MenuActivity
+            Intent k = new Intent(this, MenuActivity.class);
             startActivity(k);
             finish();
         }
@@ -101,70 +104,48 @@ public class SignupActivity extends Activity {
                     Toast.makeText(context, getResources().getString(R.string.passwords_not_matching), Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if (email.length() == 0) {
+                    Toast.makeText(context, getResources().getString(R.string.blank_email), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (password.length() == 0) {
+                    Toast.makeText(context, getResources().getString(R.string.blank_password), Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 submitButton.setEnabled(false);
 
                 // Create account using OAB API
-                Thread thread = new Thread(new Runnable(){
-                    @Override
-                    public void run() {
-                        try {
-                            // Register using API
-                            Webb webb = Webb.create();
-                            JSONObject result = webb
-                                    .post(REGISTER_API_URL)
-                                    .param("email", email)
-                                    .param("profession", profession)
-                                    .param("name", name)
-                                    .param("password", password)
-                                    .ensureSuccess()
-                                    .asJsonObject()
-                                    .getBody();
-                            String apiKey = result.getString("api_key");
-
-                            // Store API key so we know we're authenticated (and skip intro pages)
-                            // and also for making API requests
-                            SharedPreferences prefs = context.getSharedPreferences("org.openaccessbutton.openaccessbutton", MODE_PRIVATE);
-                            SharedPreferences.Editor edit = prefs.edit();
-                            edit.clear();
-                            edit.putString("api_key", apiKey);
-                            edit.apply();
-
-
-                            // Go to IntroActivity
-                            runOnUiThread(new Runnable() {
+                            API.signupRequest(new API.SignupCallback() {
                                 @Override
-                                public void run() {
-                                    submitButton.setEnabled(true);
-                                    Intent k = new Intent(context, IntroActivity.class);
-                                    startActivity(k);
-                                    finish();
+                                public void onComplete(String username, String apikey) {
+                                    // Go to IntroActivity
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            submitButton.setEnabled(true);
+                                            Intent k = new Intent(context, IntroActivity.class);
+                                            startActivity(k);
+                                            finish();
+                                        }
+                                    });
                                 }
-                            });
-                        } catch (Exception e) {
-                            e.printStackTrace();
 
-                            // TODO Really we should show an error message to the user, however
-                            // to test navigation logic while the API is broken we'll just go
-                            // straight into the MainActivity
-
-                            // Go to IntroActivity
-                            runOnUiThread(new Runnable() {
                                 @Override
-                                public void run() {
-                                    submitButton.setEnabled(true);
-                                    Intent k = new Intent(context, IntroActivity.class);
-                                    startActivity(k);
-                                    finish();
+                                public void onError(final String message) {
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            submitButton.setEnabled(true);
+                                            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                                        }
+                                    });
                                 }
-                            });
-                        }
+                            }, context, email, profession, name, password);
+
                     }
-                });
 
-                thread.start();
 
-            }
         });
     }
 
@@ -183,6 +164,9 @@ public class SignupActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         }
         return super.onOptionsItemSelected(item);

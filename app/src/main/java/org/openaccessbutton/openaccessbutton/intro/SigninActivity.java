@@ -10,11 +10,15 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.api.API;
 import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
 public class SigninActivity extends Activity {
     // Animation speed
@@ -25,17 +29,38 @@ public class SigninActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        // Until we get an authentication method in the API (TODO), just go straight to the main
-        // activity whenever the login button is pressed
         Button loginButton = (Button) findViewById(R.id.signinButton);
+
         final Context context = this;
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Go to MenuActivity
-                Intent k = new Intent(context, MenuActivity.class);
-                startActivity(k);
-                finish();
+                final String username = ((EditText) findViewById(R.id.signInEmail)).getText().toString();
+                final String password = ((EditText) findViewById(R.id.signInPassword)).getText().toString();
+                API.signinRequest(new API.SigninCallback() {
+                    @Override
+                    public void onComplete(String username, String apikey) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Go to MenuActivity
+                                Intent k = new Intent(context, MenuActivity.class);
+                                startActivity(k);
+                                finish();
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onError(final String message) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                }, context, username, password);
             }
         });
 
@@ -110,6 +135,9 @@ public class SigninActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         }
         return super.onOptionsItemSelected(item);

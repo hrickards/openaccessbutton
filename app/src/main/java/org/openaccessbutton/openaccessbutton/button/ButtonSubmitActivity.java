@@ -3,9 +3,11 @@ package org.openaccessbutton.openaccessbutton.button;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +18,10 @@ import android.widget.Toast;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.api.API;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
+
+import java.util.List;
 
 /**
  * Submit paywalled articles to the OAB
@@ -54,16 +60,38 @@ public class ButtonSubmitActivity extends Activity {
         EditText urlView = (EditText) findViewById(R.id.articleUrl);
         urlView.setText(url);
 
-        // Attempt to get the last known location from Android. If we can get it, prefill that
-        // into the form
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        if (location != null) {
-            mLatitude = location.getLatitude();
-            mLongitude = location.getLongitude();
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                // Based on http://stackoverflow.com/questions/17668917
+                LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                List<String> providers = lm.getProviders(true);
+                Location location = null;
 
-            ((EditText) findViewById(R.id.location)).setText(Double.toString(mLatitude) + ", " + Double.toString(mLongitude));
+                // Try every possible provider
+                for (int i=providers.size()-1; i>=0; i--) {
+                    location = lm.getLastKnownLocation(providers.get(i));
+                    if (location != null) break;
+                }
+
+                if (location != null) {
+                    final double mLatitude = location.getLatitude();
+                    final double mLongitude = location.getLongitude();
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            ((EditText) findViewById(R.id.location)).setText(String.format("%.4f", mLatitude) + ", " + String.format("%.4f", mLongitude));
+                        }
+                    });
+                }
+            }
+        };
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        if (sp.getBoolean("location", true)) {
+            (new Thread(r)).start();
         }
+
     }
 
     // Handle button submits by posting data to the OAB API
@@ -81,25 +109,19 @@ public class ButtonSubmitActivity extends Activity {
                 String description = ((EditText) findViewById(R.id.description)).getText().toString();
                 String usecase = ((EditText) findViewById(R.id.usecase)).getText().toString();
 
-                // Post our data using something like this when the API details are finalised
-                // TODO: Implement
-                /*
-                    Webb webb = Webb.create();
-                    JSONObject result = webb
-                            .post("http://oabutton.cottagelabs.com/api/blocked")
-                            .param("api_key", api_key) // We need to get this when the user signs up
-                            .param("url", url)
-                            .param("location", location) // Geocode this either here or in the API
-                            .param("doi", doi)
-                            .param("description", description) // Ignored by the API at the moment
-                            .param("usecase", usecase) // Ignored by the API at the moment
-                            .ensureSuccess()
-                            .asJsonObject()
-                            .getBody();
-                */
+                API.blockedRequest(new API.Callback() {
+                    @Override
+                    public void onComplete() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(context, getString(R.string.buttonSubmitted), Toast.LENGTH_LONG).show();
+                                finish();
+                            }
+                        });
+                    }
+                }, context, url, location, doi, description, usecase);
 
-                Toast.makeText(context, getString(R.string.buttonSubmitted), Toast.LENGTH_LONG).show();
-                finish();
             }
         });
     }
@@ -119,6 +141,9 @@ public class ButtonSubmitActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         }
         return super.onOptionsItemSelected(item);

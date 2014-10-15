@@ -11,6 +11,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.app.Fragment;
@@ -20,36 +21,26 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.ShareActionProvider;
 
-import com.google.gson.Gson;
-
 import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
-import org.openaccessbutton.openaccessbutton.blog.BlogDetailsFragment;
-import org.openaccessbutton.openaccessbutton.blog.BlogFragment;
-import org.openaccessbutton.openaccessbutton.blog.Post;
 import org.openaccessbutton.openaccessbutton.intro.SignupActivity;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 import org.openaccessbutton.openaccessbutton.push.Push;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
-import com.parse.Parse;
-import com.parse.ParseAnalytics;
-import com.parse.ParseInstallation;
-import com.parse.PushService;
 
 /**
  * Wrapper activity that provides navigation for the entire app, and loads the relevant fragment
  * based on that navigation.
  */
 public class MainActivity extends Activity implements OnFragmentNeededListener,
-        FragmentManager.OnBackStackChangedListener {
+        FragmentManager.OnBackStackChangedListener, OnShareIntentInterface {
     // Navigation drawer
     private String[] mNavigationTitles;
     private DrawerLayout mDrawerLayout;
@@ -62,6 +53,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
     private Fragment mFragment;
 
     private ShareActionProvider mShareActionProvider;
+    private Menu mMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,7 +169,6 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         }
         mFragment = mFragments[position];
 
-
         fragmentManager.beginTransaction().replace(R.id.content_frame, mFragment, "mFragment").commit();
         // Highlight the selected item, update the title, and close the drawer
         mDrawerList.setItemChecked(position, true);
@@ -225,6 +216,12 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             finish();
 
             return true;
+        // Otherwise if the settings button was pressed
+        } else if (item.getItemId() == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
+            return true;
         // Otherwise let Android handle the default behaviour
         } else {
             return super.onOptionsItemSelected(item);
@@ -235,6 +232,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        mMenu = menu;
 
         // Setup search
         /*
@@ -255,22 +253,53 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         */
 
         // Setup sharing
+        Intent standardShareIntent = new Intent();
+        standardShareIntent.setAction(Intent.ACTION_SEND);
+        standardShareIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.generic_share_message));
+        standardShareIntent.setType("text/plain");
+
         MenuItem shareItem = menu.findItem(R.id.action_share);
         mShareActionProvider = (ShareActionProvider) shareItem.getActionProvider();
         mShareActionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
-        mShareActionProvider.setShareIntent(createShareIntent());
+        mShareActionProvider.setShareIntent(standardShareIntent);
 
         return super.onCreateOptionsMenu(menu);
     }
 
-    protected Intent createShareIntent() {
-        // TODO This should vary based upon whereabouts we are on the app. See GH issue 13.
-        Intent shareIntent = new Intent();
-        shareIntent.setAction(Intent.ACTION_SEND);
-        shareIntent.putExtra(Intent.EXTRA_TEXT, "I love open access!");
-        shareIntent.setType("text/plain");
-        return shareIntent;
+    /*protected void updateShareIntent() {
+        if (mMenu != null) {
+            MenuItem shareItem = mMenu.findItem(R.id.action_share);
+            mShareActionProvider = (ShareActionProvider) shareItem.getActionProvider();
+            mShareActionProvider.setShareIntent(createShareIntent());
+        }
+    }*/
+
+    public void onShareIntentUpdated(Intent intent) {
+        if (mMenu != null) {
+            MenuItem shareItem = mMenu.findItem(R.id.action_share);
+            mShareActionProvider = (ShareActionProvider) shareItem.getActionProvider();
+            mShareActionProvider.setShareIntent(intent);
+        }
     }
+
+    /*protected Intent createShareIntent() {
+        return createShareIntent(mFragment);
+    }*/
+
+    /*protected Intent createShareIntent(Fragment fragment) {
+        Intent shareIntent;
+        if (mFragment instanceof OnShareButtonInterface) {
+            // Fragments might not be bound yet so
+            shareIntent = ((OnShareButtonInterface) fragment).onShareButtonPressed(getResources());
+        } else {
+            shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.generic_share_message));
+            shareIntent.setType("text/plain");
+        }
+
+        return shareIntent;
+    }*/
 
     public void onBackStackChanged() {
         setActionBarArrowDependingOnFragmentsBackStack();
@@ -315,6 +344,10 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         // If back handled return true, otherwise return false
         public boolean onBackButtonPressed();
     }
+
+    /*public interface OnShareButtonInterface {
+        public Intent onShareButtonPressed(Resources resources);
+    }*/
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

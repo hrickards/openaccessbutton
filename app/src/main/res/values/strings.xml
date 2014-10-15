@@ -58,7 +58,7 @@
     <string name="gotIt">Got it!</string>
     <string name="forgottenPassword">Forgot your password?</string>
     <string name="retypePassword">Retype password</string>
-    <string name="askQuestion">More questions? Touch here to ask one...</string>
+    <string name="askQuestion">Question not answered below? Ask one here.</string>
     <string name="askQuestionClosed">Touch to close the question form.</string>
     <string name="questionHint">Please, enter your question here.</string>
     <string name="passwordResetInstructions">No worries. Just enter your email address and we will send you a link to create a new one.</string>
@@ -112,6 +112,15 @@
     <string name="takeAction">Take Action</string>
     <string name="workTogether">If we all work together soon everyone will have access to research by default. </string>
     <string name="greatActions">If you want to help yourself, and others around the world we\’ll send you great actions and opportunities every now and then. </string>
-
-
+    <string name="blank_email">You must enter an email address!</string>
+    <string name="blank_password">You must enter a password!</string>
+    <string name="invalid_username_password">That username or password is invalid!</string>
+    <string name="browser_share_title">Here\'s some research I\'ve been looking at&#8230;</string>
+    <string name="map_share_text">Open Access Button Map</string>
+    <string name="blog_share_title">Open Access Button Blog</string>
+    <string name="generic_share_message">I love Open Access!</string>
+    <string name="feedback_uri">mailto:dev@openaccessbutton.org</string>
+    <string name="username_already_taken">Sorry that email address has already been registered</string>
+    <string name="noQuestionsTitle">No questions asked!</string>
+    <string name="noQuestionsDescription">Try submitting one now</string>
 </resources>

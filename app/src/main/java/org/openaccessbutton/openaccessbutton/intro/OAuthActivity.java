@@ -10,6 +10,8 @@ import android.view.MenuItem;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.api.API;
+import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
 import io.oauth.OAuth;
 import io.oauth.OAuthCallback;
@@ -36,12 +38,15 @@ public class OAuthActivity extends Activity {
             @Override
             public void onFinished(OAuthData oAuthData) {
                 if (oAuthData.status.equals("success")) {
-                    // TODO Store data in SharedPrefs
-
-                    // Go to IntroActivity
-                    Intent k = new Intent(context, IntroActivity.class);
-                    startActivity(k);
-                    finish();
+                    API.oauthSignupRequest(new API.OAuthSignupCallback() {
+                        @Override
+                        public void onComplete(String username, String apikey) {
+                            // Go to IntroActivity
+                            Intent k = new Intent(context, IntroActivity.class);
+                            startActivity(k);
+                            finish();
+                        }
+                    });
                 } else {
                     // Go back to activity that launched us
                     onBackPressed();
@@ -65,6 +70,9 @@ public class OAuthActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // Open up AppPreferencesActivity
+            Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
             return true;
         }
         return super.onOptionsItemSelected(item);

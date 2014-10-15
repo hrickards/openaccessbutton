@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:title="Notifications"
+        android:defaultValue="true"
+        android:summary="If selected, this option allows the app to receive push notifications containing vital open access updates, answers to questions, etc."
+        android:key="pushNotifications" />
+    <CheckBoxPreference android:title="Location"
+        android:defaultValue="true"
+        android:summary="If selected, this option allows the app to use a coarse version of your location to center the map and submit paywall blocks."
+        android:key="location" />
+    <Preference android:title="Account settings"
+        android:summary="Change user account settings, such as password and email address"
+        android:key="account">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="http://www.openaccessbutton.org/account"
+            />
+    </Preference>
+    <Preference
+        android:key="feedback"
+        android:title="Feedback"
+        android:summary="Give us feedback on how to improve the app!">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="@string/feedback_uri"/>
+    </Preference>
+</PreferenceScreen>
