@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -19,14 +20,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.KeyEvent;
+import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.DownloadListener;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -45,6 +49,9 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
     EditText mUrlBox;
     RelativeLayout mHeader;
     OnShareIntentInterface mCallback;
+    ProgressBar mProgress;
+    boolean loadingFinished = true;
+    boolean redirect = false;
 
     public BrowserFragment() {
         // Required empty public constructor
@@ -160,6 +167,42 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
                 LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mHeader.getLayoutParams();
                 params.height = newHeight;
                 mHeader.setLayoutParams(params);
+            }
+        });
+
+        // Show progress bar on loading
+        // Based on http://stackoverflow.com/questions/6199717
+        mProgress = (ProgressBar) view.findViewById(R.id.browser_progress_bar);
+        mWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String urlNewString) {
+                if (!loadingFinished) {
+                    redirect = true;
+                }
+
+                loadingFinished = false;
+                view.loadUrl(urlNewString);
+                return true;
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap facIcon) {
+                loadingFinished = false;
+                mProgress.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                if (!redirect) {
+                    loadingFinished = true;
+                }
+
+                if (loadingFinished && !redirect) {
+                    mProgress.setVisibility(View.INVISIBLE);
+                } else {
+                    redirect = false;
+                }
+
             }
         });
 
