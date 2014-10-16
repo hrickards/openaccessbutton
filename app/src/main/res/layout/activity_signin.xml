@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/backgroundColor"
     android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
@@ -13,7 +14,7 @@
             android:layout_marginLeft="20dp"
             android:layout_gravity="left"
             android:layout_height="wrap_content"
-            android:src="@drawable/openaccessbutton"/>
+            android:src="@drawable/logotext"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +24,7 @@
             android:layout_marginRight="30dp"
             android:background="@color/backgroundColor"
             android:layout_marginTop="30dp"
-            android:textColorHint="#ddd"
+            android:textColorHint="#888"
             android:textColor="#fff"
             android:textSize="20sp"
             android:hint="@string/email"
@@ -33,7 +34,7 @@
             android:layout_height="2dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:background="#fff"/>
+            android:background="@color/customNavy"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,12 +44,18 @@
             android:layout_marginRight="30dp"
             android:background="@color/backgroundColor"
             android:layout_marginTop="15dp"
-            android:textColorHint="#ddd"
-            android:textColor="#fff"
+            android:textColorHint="#888"
+            android:textColor="@color/fontColor"
             android:textSize="20sp"
             android:hint="@string/password"
             android:fontFamily="sans-serif"
             android:layout_marginBottom="15dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/customNavy"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -64,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:textColor="#ddd"
+            android:textColor="#888"
             android:textSize="16sp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="5dp"
@@ -80,6 +87,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/customNavy"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 style="@style/signUpButtons"
                 android:id="@+id/signupGoogleButton"
                 android:text="@string/signInGoogle"/>
@@ -87,12 +96,16 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/customNavy"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 style="@style/signUpButtons"
                 android:id="@+id/signupFacebookButton"
                 android:text="@string/signInFacebook"/>
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 style="@style/signUpButtons"
                 android:textColor="@color/customNavy"
                 android:id="@+id/signupTwitterButton"
@@ -105,7 +118,7 @@
             android:layout_marginRight="30dp"
             android:background="@color/backgroundColor"
             android:layout_marginTop="30dp"
-            android:textColor="#ddd"
+            android:textColor="#888"
             android:textSize="16sp"
             android:text="@string/forgottenPassword"
             android:id="@+id/forgotPasswordButton"/>

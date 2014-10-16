@@ -160,6 +160,7 @@ public class API {
                         .param("doi", doi)
                         .param("description", description) // Ignored by the API at the moment
                         .param("usecase", usecase) // Ignored by the API at the moment
+                        .param("android", true) // Indicate we're sending a request from a mobile device
                         .ensureSuccess()
                         .asJsonObject()
                         .getBody();

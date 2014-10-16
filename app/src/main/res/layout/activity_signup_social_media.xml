@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/openaccessbutton"/>
+            android:src="@drawable/logotext"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
