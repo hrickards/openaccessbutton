@@ -4,7 +4,8 @@
     android:id="@+id/footer_layout"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp" >
+    android:padding="10dp"
+    android:background="@color/backgroundColor">
 
     <ProgressBar
         android:id="@+id/progressBar1"
@@ -19,6 +20,7 @@
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/progressBar1"
         android:padding="5dp"
+        android:textColor="@color/fontColor"
         android:text="@string/loading_text" />
 
 </RelativeLayout>

@@ -113,7 +113,7 @@ public class XmlParser {
                 layout.addView(view);
             } else if (name.equals("html")) {
                 String html = "<html><head>"
-                        + "<style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #fff}"
+                        + "<style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #212F3F}"
                         + "</style></head>"
                         + "<body>"
                         + readHtml(parser, "html")

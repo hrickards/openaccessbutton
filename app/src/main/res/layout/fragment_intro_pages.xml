@@ -8,33 +8,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
         android:background="#fff">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/welcome"
             android:textColor="@color/customNavy"
             android:textSize="40sp"
+            android:gravity="center"
             android:textStyle="bold"
             android:layout_marginTop="20dp"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="20dp"
+           android:layout_marginRight="20dp"
+           android:layout_marginLeft="20dp"
+           android:gravity="left"
+           android:textColor="@color/customNavy"
+           android:textSize="16sp"
+           android:text="@string/getAccessToResearch"/>
         <ImageView
             android:id="@+id/infoPageTitle"
             android:layout_width="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_gravity="center"
             android:contentDescription="@string/app_name"
             android:layout_height="wrap_content"
             android:src="@drawable/newlogo"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:gravity="left"
-            android:textColor="@color/customNavy"
-            android:textSize="16sp"
-            android:text="@string/getAccessToResearch"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

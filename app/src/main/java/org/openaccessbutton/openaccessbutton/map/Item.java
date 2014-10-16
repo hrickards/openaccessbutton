@@ -32,21 +32,25 @@ public class Item implements ClusterItem {
 
         // Very pseudo random approach for choosing between the different possible icons,
         // but for our purposes it works well enough
-        switch (mStory.length() % 4) {
+        switch (mStory.length() % 5) {
             case 0:
-                mIcon = R.drawable.ic_launcher;
+                mIcon = R.drawable.mapblue;
                 break;
 
             case 1:
-                mIcon = R.drawable.ic_launcher_old;
+                mIcon = R.drawable.mapnavy;
                 break;
 
             case 2:
-                mIcon = R.drawable.ic_drawer;
+                mIcon = R.drawable.mapgray;
+                break;
+
+            case 3:
+                mIcon = R.drawable.maporange;
                 break;
 
             default:
-                mIcon = R.drawable.ic_drawer_dark;
+                mIcon = R.drawable.mapsky;
                 break;
         }
     }

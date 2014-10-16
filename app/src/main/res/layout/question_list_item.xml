@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="@color/backgroundColor">
 
     <TextView
         android:id="@+id/question_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/fontColor"
         android:layout_marginBottom="5dp"
         android:text="Question"
         android:layout_marginLeft="2dp"
@@ -23,6 +25,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/question_question"
         android:text="Answer"
+        android:textColor="@color/fontColor"
         tools:ignore="HardcodedText" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/customNavy"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/question_answer"/>
 
 </RelativeLayout>
