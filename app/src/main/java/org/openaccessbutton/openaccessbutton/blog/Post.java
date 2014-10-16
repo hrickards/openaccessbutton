@@ -47,7 +47,7 @@ public class Post {
     public String html() {
         // White font and with blog title as header
         return "<html><head>"
-                + "<style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #fff}"
+                + "<style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #212F3F}"
                 + "</style></head>"
                 + "<body>"
                 + "<h1>" + this.title + "</h1>"
