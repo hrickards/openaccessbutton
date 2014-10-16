@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- TODO: Namespace -->
 <page>
+<paragraph>What is Open Access?</paragraph>
+<faq>
+<question>What is Open Access? </question>
+        <answer>
+Open Access is the free, immediate online availability of research articles. Currently scholarly research articles are often only accessible through expensive journal subscriptions also called “paywalls.” Open Access aims to remove this access barrier and for knowledge to be freely accessed and shared by all.</answer>
+<details>Watch <a href='https://www.youtube.com/watch?v=L5rVH1KGBCY'>this Youtube video</a> by Nick Shockey, Jonathan Eisen and PhD Comics for more information about Open Access</faq>
+
+<faq><question>Why Open Access?</question>
+<answer>
+We engage and invest in research in order to accelerate the pace of scientific discovery, encourage innovation, enrich education, and stimulate the economy – to improve the public good.  Communication of the results of research is an essential component of the research process; research can only advance by sharing the results, and the value of an investment in research is only maximized through wide use of its results.
+Yet, too often, because of cost barriers or use restrictions, research results are not available to the full community of potential users.  The Internet gives us the opportunity to bring this crucial information to a worldwide audience at virtually no marginal cost, and allows us to use it in new, innovative ways. This has resulted in a call for new framework to allow research results to be more easily accessed and used— the call for Open Access.</answer>    
+<details> Benefits of Open Access for Researchers
+<ul> 
+<li>Increases your ability to find use relevant literature</li>
+<li>Increases the visibility, readership and impact of your work</li>
+<li>Creates new avenues for discovery in digital environment</li>
+<li>Enhances interdisciplinary research</li>
+<li>Accelerates the pace of research, discovery and innovation</li></ul></details>
+<details>Benefits of Open Access for Educational Institutions
+<ul>
+<li>Contributes to core mission of advancing knowledge</li>
+<li>Democratizes access across all institutions – regardless of size or budget</li>
+<li>Provides previously unattainable access to institutions that otherwise would not have been able to access</li>
+<li>Increases competitiveness of academic institutions</li></ul></details>
+<details>Benefits of Open Access for Students
+<ul>
+<li>Enriches the quality of their education</li>
+<li>Ensures access to all that students need to know, rather what they (or their school) can afford</li>
+<li>Contributes to a better-educated workforce</li></ul></details>
+<details>Benefits of Open Access for Businesses
+<ul>
+<li>Access to cutting-edge research encourages innovation</li>
+<li>Stimulates new ideas, new services, new products</li>
+<li>Creates new opportunities for job creation</li></ul><details>
+<details>Public
+<ul><li>Provides access to previously unavailable materials relating to health, energy, environment, and other areas of broad interest</li>
+<li>Creates better educated populace</li>
+<li>Encourages support of scientific enterprise and engagement in citizen science</li></ul></details>
+<details>Research Funders
+<ul>
+<li>Leverages return on research investment</li>
+<li>Creates tool to manage research portfolio</li>
+<li>Avoids funding duplicative research</li>
+<li>Creates transparency</li>
+<li>Encourages greater interaction with results of funded research</li></ul></details>
+<faq><question>How Does Open Access Work?</question>
+<answer>Open Access Button considers the terms outlined by the Creative Common's Attribution-Only license (CC-BY) to be the standard terms for Open Access.
+There are four primary mechanisms that can be used to enable Open Access:</answer> 
+<details><ul><li>Open Access Publishing:  Authors can choose to publish their research articles in a growing number of journals that meet the full definition of Open Access.  Articles are free to all interested readers, and the publishers place no financial or copyright barriers between the readers and the article.  Open Access publishing is the fastest rowing segment of the scholarly publishing market, and journal options are now available for nearly every area of research. A comprehensive list of Open Access journals is provided by the Directory of Open Access Journals (DOAJ).</li>
+<li>Digital Repositories:  Authors can choose to deposit their research articles in digital archives (often called Digital Repositories or Institutional Repositories) which conform to the standards of the Open Archives Initiative (OAI), and enable readers to freely access and fully reuse the article text.  This allows any author to make their work available under Open Access conditions regardless of the journal out the article is published in.  There are more than 2,000 open Digital Repositories available for authors to use around the world, and a comprehensive listing of is available through the Directory of Open Access Repositories (OpenDOAR).</li>
+<li>Effectively Managed Author Rights:  As the authors of a research paper, you have ability to ensure that your article can be accessed and used by the widest possible audience.  Tools such as Addenda to traditional Copyright Transfer Forms are readily available, proven resources that can help you understand open licenses, and to publish your articles under full Open Access conditions. Visit the SPARC Author Rights page to learn more. </li>
+<li>Local, National and International Open Access Policies:  Institutions that support research, from public and private research funders to higher education institutions, can implement effective policies that that support making Open Access to scholarly research articles the default mode for their researchers. Learn more about these policies on the SPARC Advocacy page.</li></details>
+
+<faq><question>Why Should You Care About Open Access?</question>
+<answer>Over the past decade, Open Access has become central to advancing the interests of researchers, scholars, students, businesses, and the public  - as well as librarians.  The digital environment poses new challenges and provides new opportunities in the sharing, review, and publication of research results. Ensuring broad, unfettered access to the knowledge contained in primary research articles and the rights to use these articles fully will play a key role in seeing that the scholarly communication system evolves in a way that supports the needs of scholars and the academic enterprise as a whole.
+Increasingly, institutions that support research – from public and private research funders to higher education institutions – are implementing policies that require researchers to make articles that report on research generated from their funding openly accessible to and fully useable by the public. 
+Learn more about these policies in the SPARC Advocacy section, which explores the motivations behind these policies, the basic components that emerging policies contain, as well as the basic components of current policies that effectively promote Open Access.</answer></faq>
+<faq><question>Where can I learn more about Open Access?</question>
+<answer>There are lots of great resources out there to learn more about Open Access. In the further reading section of the app, you can find a wealth of links to get you started</answer>
+
+<details>This was adapted from SPARC's <a href='http://sparc.arl.org/issues/open-access'>Open Access Guide</a>CC-BY 3.0</details></faq>
     <faq>
         <question>Does Open Access have reliable peer review?</question>
         <answer>Simple Answer: Yes. A strong community of experts exists in order to support Open Access publishing. They delegate their time to the cause and are just as reliable as the ones of paid journals.</answer>
