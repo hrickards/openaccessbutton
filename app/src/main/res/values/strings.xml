@@ -99,7 +99,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_questions">QuestionsActivity</string>
     <string name="answerPlaceholder">Unanswered</string>
-    <string name="action_questions">Questions</string>
+    <string name="action_questions">FAQ Answers</string>
     <string name="action_share">Share</string>
     <string name="blank_question_error">You can\'t submit a blank question!</string>
     <string name="getAccessToResearch">We can help you get access to research.</string>

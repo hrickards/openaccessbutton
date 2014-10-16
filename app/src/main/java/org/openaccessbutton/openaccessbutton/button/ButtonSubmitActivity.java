@@ -81,7 +81,8 @@ public class ButtonSubmitActivity extends Activity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            ((EditText) findViewById(R.id.location)).setText(String.format("%.4f", mLatitude) + ", " + String.format("%.4f", mLongitude));
+                            // Round to 1dp to signify approximately 11.1km accuracy
+                            ((EditText) findViewById(R.id.location)).setText(String.format("%.1f", mLatitude) + ", " + String.format("%.1f", mLongitude));
                         }
                     });
                 }
