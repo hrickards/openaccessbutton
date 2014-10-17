@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/askQuestion"
+            android:textColor="@color/fontColor"
             android:id="@+id/askQuestion"
             android:layout_marginLeft="9dp"/>
         <LinearLayout
@@ -28,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
                 android:layout_marginRight="9dp"
+                android:textColor="@color/fontColor"
                 android:hint="@string/questionHint"
                 android:inputType="textMultiLine"
                 android:id="@+id/newQuestion"
@@ -38,6 +40,7 @@
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="5dp"
                 style="@style/signUpButtons"
+                android:paddingRight="7dp"
                 android:id="@+id/newQuestionSubmit"
                 android:text="@string/submit"/>
         </LinearLayout>

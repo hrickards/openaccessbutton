@@ -37,7 +37,15 @@
     <string name="exampleLocation">e.g. London, United Kingdom</string>
     <string name="DOI">Digital Object Identifier (DOI)</string>
     <string name="formDescription">Description</string>
-    <string name="exampleFormDescription">Title, Authors, Journal</string>
+    <string name="exampleFormDescription">E.g. "understand my disease", "learn more about this aspect of culture".</string>
+    <string name="storyImportance">Your story is important to email the author and more. Click to read why</string>
+    <string name="needAccess">I need access! \nAdd to my wishlist</string>
+    <string name="findStories">Find Open Access Stories </string>
+    <string name="otherMaterials">Other materials</string>
+    <string name="supportDiego">Support Diego</string>
+    <string name="joinMailingList">Join the action mailing list </string>
+    <string name="becomeExpert">Become an expert</string>
+    <string name="interactiveFAQ">Interactive FAQ</string>
     <string name="whyAccess">Why do you need access?</string>
     <string name="exampleWhyAccess">e.g. I am trying to save lives, dammit!</string>
     <string name="submit">Submit</string>
@@ -69,6 +77,8 @@
     <string name="learn">Learn</string>
     <string name="research">Research</string>
     <string name="menu">Menu</string>
+    <string name="submitToButton">Submit to Open Access Button</string>
+    <string name="withResearchICould">With this research I could...</string>
 
     <string-array name="job">
         <item>Profession</item>

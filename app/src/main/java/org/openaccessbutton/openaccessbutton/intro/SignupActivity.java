@@ -58,9 +58,9 @@ public class SignupActivity extends Activity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 int textColor;
                 if (i == 0) {
-                    textColor = Color.parseColor("#DDDDDD");
+                    textColor = Color.parseColor("#888888");
                 } else {
-                    textColor = Color.WHITE;
+                    textColor = Color.parseColor("#212F3F");
                 }
                 ((TextView) adapterView.getChildAt(0)).setTextColor(textColor);
             }

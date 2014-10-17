@@ -9,12 +9,92 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-    <LinearLayout
+     <RelativeLayout
         android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+     <ImageView
+         android:layout_height="80dp"
+         android:maxHeight="80dp"
+         android:layout_marginTop="20dp"
+         android:layout_width="wrap_content"
+         android:id="@+id/submitLogo"
+         android:layout_alignParentLeft="true"
+         android:src="@drawable/newlogo"/>
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/submitToButton"
+         android:layout_marginLeft="0dp"
+         android:layout_marginRight="5dp"
+         android:layout_marginTop="25dp"
+         android:textColor="@color/fontColor"
+         android:layout_toRightOf="@id/submitLogo"
+         android:text="@string/submitToButton"
+         android:textSize="25sp"/>
+     <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
+        android:id="@+id/withResearchICould"
+        android:text="@string/withResearchICould"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/fontColor"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/submitLogo"/>
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="85"
+         android:layout_alignParentRight="true"
+         android:layout_marginTop="20dp"
+         android:layout_marginRight="30dp"
+         android:id="@+id/characterCounter"
+         android:layout_below="@id/submitLogo"/>
+     <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/characterCounter"
+         android:layout_marginLeft="8dp"
+         android:layout_marginRight="8dp"
+         android:hint="@string/exampleFormDescription"
+         android:inputType="textMultiLine"
+         android:textColor="@color/fontColor"
+         android:id="@+id/description"
+         android:lines="5"/>
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/storyImportance"
+         android:id="@+id/storyImportance"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="7dp"
+         android:layout_below="@+id/description"/>
+     <Button
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/storyImportance"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"
+         android:layout_marginTop="10dp"
+         style="@style/signUpButtons"
+         android:paddingLeft="100dp"
+         android:text="@string/needAccess"
+         android:id="@+id/buttonButton"/>
+     <View
+         android:layout_width="match_parent"
+         android:layout_marginRight="10dp"
+         android:layout_marginLeft="10dp"
+         android:layout_height="1dp"
+         android:layout_below="@id/buttonButton"
+         android:id="@+id/verticalLine"
+         style="@style/horizontalLine"/>
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="14dp"
+         android:layout_marginRight="10dp"
+         android:layout_below="@id/verticalLine"
+         android:text="@string/formInstructions"/>
+    <!--    <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/hitaPaywall"
@@ -114,7 +194,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginRight="35dp"
             android:text="@string/formInstructions"/>
-
-</LinearLayout>
+-->
+</RelativeLayout>
     </ScrollView>
     </FrameLayout>

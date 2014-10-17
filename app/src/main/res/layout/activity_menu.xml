@@ -15,14 +15,17 @@
             android:textColor="@color/fontColor"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>
-        <Button
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/signUpButtons"
+            android:layout_height="50dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+            android:textColor="@color/fontColor"
             android:layout_marginBottom="5dp"
-            android:drawableLeft="@drawable/button_menu"
+            android:drawableLeft="@drawable/ic_push"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:textSize="30sp"
             android:text="@string/doResearch"
             android:id="@+id/doResearchButton"/>
         <View
@@ -31,15 +34,17 @@
             android:background="@color/customNavy"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"/>
-        <Button
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/signUpButtons"
+            android:layout_height="50dp"
             android:layout_marginLeft="40dp"
+            android:textColor="@color/fontColor"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="7dp"
-            android:drawableLeft="@drawable/button_menu"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:textSize="30sp"
+            android:drawableLeft="@drawable/ic_research"
             android:text="@string/infoHub"
             android:id="@+id/infoHubButton"/>
         <View
@@ -48,16 +53,63 @@
             android:background="@color/customNavy"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"/>
-        <Button
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/signUpButtons"
+            style="@style/subCategory"
+            android:text="@string/interactiveFAQ"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/customNavy"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/subCategory"
+            android:text="@string/otherMaterials"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/customNavy"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/subCategory"
+            android:text="@string/findStories"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/customNavy"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/subCategory"
+            android:text="@string/blog"
+            android:id="@+id/moreOnAppButton"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/customNavy"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="7dp"
-            android:drawableLeft="@drawable/button_menu"
-            android:text="@string/openAccessMap"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:textColor="@color/fontColor"
+            android:textSize="30sp"
+            android:drawableLeft="@drawable/ic_action"
+            android:text="@string/takeAction"
             android:id="@+id/mapButton"/>
         <View
             android:layout_width="wrap_content"
@@ -65,22 +117,38 @@
             android:background="@color/customNavy"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"/>
-        <Button
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/signUpButtons"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="7dp"
-            android:drawableLeft="@drawable/button_menu"
-            android:text="@string/blog"
-            android:id="@+id/moreOnAppButton"/>
+            style="@style/subCategory"
+            android:text="@string/supportDiego"/>
         <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"
             android:background="@color/customNavy"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"/>
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/subCategory"
+            android:text="@string/joinMailingList"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/customNavy"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/subCategory"
+            android:text="@string/becomeExpert"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/customNavy"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="50dp"/>
     </LinearLayout>
 </ScrollView>
