@@ -50,7 +50,7 @@ public class API {
         callback.onComplete("", "");
     }
 
-    public static void signupRequest(final SignupCallback callback, final Context context, final String email, final String profession, final String name, final String password) {
+    public static void signupRequest(final SignupCallback callback, final Context context, final String email, final String profession, final String username, final String password) {
         final ProgressDialog dialog = createProgressDialog(context);
         Runnable r = new Runnable() {
             public void run() {
@@ -60,7 +60,7 @@ public class API {
                             .post(API_URL + "/register")
                             .param("email", email)
                             .param("profession", profession)
-                            .param("name", name)
+                            .param("username", username)
                             .param("password", password)
                             .asJsonObject()
                             .getBody();

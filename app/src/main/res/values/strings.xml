@@ -49,7 +49,7 @@
     <string name="password">Password</string>
     <string name="signIn">Sign In</string>
     <string name="register">Register</string>
-    <string name="nameRequired">Name (required)</string>
+    <string name="nameRequired">Username (required)</string>
     <string name="emailRequired">Email Address (required)</string>
     <string name="doResearch">Do research</string>
     <string name="infoHub">Open Access info hub</string>
@@ -73,7 +73,7 @@
     <string-array name="job">
         <item>Profession</item>
         <item>Student</item>
-        <item>Doctor</item>
+        <item>Health Professional</item>
         <item>Patient</item>
         <item>Advocate</item>
         <item>Academic</item>
@@ -119,9 +119,10 @@
     <string name="map_share_text">Open Access Button Map</string>
     <string name="blog_share_title">Open Access Button Blog</string>
     <string name="generic_share_message">I love Open Access!</string>
-    <string name="feedback_uri">mailto:dev@openaccessbutton.org</string>
+    <string name="feedback_uri">mailto:feedback@openaccessbutton.org</string>
     <string name="username_already_taken">Sorry that email address has already been registered</string>
     <string name="noQuestionsTitle">No questions asked!</string>
     <string name="map_error">Error loading map items</string>
     <string name="noQuestionsDescription">Try submitting one now</string>
+    <string name="signupHeaderText">We prefer you use your real name. If you\'d like to maintain privacy don\'t use your real name as your username as it will be publicly displayed.</string>
 </resources>

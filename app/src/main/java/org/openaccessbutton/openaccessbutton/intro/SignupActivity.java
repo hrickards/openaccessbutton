@@ -28,6 +28,8 @@ import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
 import org.openaccessbutton.openaccessbutton.api.API;
 import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
+import net.hockeyapp.android.CrashManager;
+import net.hockeyapp.android.UpdateManager;
 
 public class SignupActivity extends Activity {
     private static final String REGISTER_API_URL = "http://oabutton.cottagelabs.com/api/register";
@@ -147,6 +149,8 @@ public class SignupActivity extends Activity {
 
 
         });
+
+        checkForUpdates();
     }
 
 
@@ -170,5 +174,20 @@ public class SignupActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkForCrashes();
+    }
+
+    private void checkForCrashes() {
+        CrashManager.register(this, "5adca98a3d144ef911ae72f7cc87e793");
+    }
+
+    private void checkForUpdates() {
+        // Remove this for store builds!
+        UpdateManager.register(this, "5adca98a3d144ef911ae72f7cc87e793");
     }
 }

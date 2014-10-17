@@ -21,6 +21,14 @@
             android:layout_height="wrap_content"
             style="@style/header"
             android:text="@string/signUp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signupHeaderText"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/fontColor"
+            android:layout_marginBottom="10dp"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
