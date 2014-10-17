@@ -96,8 +96,8 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
         });
 
         // Share page to any generic application
-        ImageView shareButton = (ImageView) view.findViewById(R.id.shareButton);
-        shareButton.setOnClickListener(new View.OnClickListener() {
+        // ImageView shareButton = (ImageView) view.findViewById(R.id.shareButton);
+        /* shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Launches the chooser popup so the user can choose where to share the page
@@ -108,7 +108,7 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
             }
-        });
+        }); */
 
         // Submit page to OAB as a paywall
         ImageView oabButton = (ImageView) view.findViewById(R.id.oabButton);

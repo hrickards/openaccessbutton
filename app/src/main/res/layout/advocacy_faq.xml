@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:text="@string/faq1"
             android:id="@+id/faqQuestion1"
+            android:textColor="@color/fontColor"
             android:layout_marginBottom="5dp"
             android:textSize="25sp"
             android:layout_marginTop="5dp"
@@ -26,14 +27,14 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_more_white"
+            android:src="@drawable/ic_menu_more"
             android:id="@+id/expandAnswerButton"
             android:layout_marginRight="2dp"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#aaa"/>
+        android:background="#888"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -45,6 +46,7 @@
             android:text="@string/faq1"
             android:id="@+id/faqQuestion2"
             android:layout_marginTop="5dp"
+            android:textColor="@color/fontColor"
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginLeft="5dp"/>
@@ -53,6 +55,7 @@
             android:layout_height="wrap_content"
             android:text="@string/simpleAnswer1"
             android:id="@+id/faqAnswer"
+            android:textColor="#555"
             android:layout_marginTop="2dp"
             android:layout_marginLeft="9dp"
             android:layout_marginRight="7dp"/>
@@ -60,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="9dp"
-            android:textColor="#ccc"
+            android:textColor="#999"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="20dp"
             android:text="@string/clickForMoreInfo"
@@ -81,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:src="@drawable/ic_menu_less_white"
+            android:src="@drawable/ic_menu_less"
             android:layout_marginRight="7dp"
             android:id="@+id/contractAnswerButton"/>
             <View

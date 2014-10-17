@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:minHeight="50dp"
+        android:textColor="#aaa"
         android:textSize="20sp"
         android:inputType="textUri"
         android:imeOptions="actionGo"
@@ -30,27 +31,16 @@
          android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/oabButton"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:minHeight="50dp"
         android:layout_marginTop="2dp"
-        android:background="@color/customNavy"
+        android:background="@color/backgroundColor"
         android:scaleType="center"
-        android:src="@drawable/navbar_logo"
-        android:layout_toLeftOf="@+id/shareButton"
-        android:layout_alignParentBottom="true"/>
-    <ImageView
-        android:id="@+id/shareButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:minHeight="50dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="2dp"
-        android:background="@color/customNavy"
-        android:layout_marginRight="2dp"
-        android:src="@drawable/ic_sharing"
-        android:scaleType="center"
+        android:src="@drawable/ic_button"
+        android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"
+        android:layout_marginLeft="0dp"
         android:layout_alignParentBottom="true"/>
     </RelativeLayout>
     <org.openaccessbutton.openaccessbutton.browser.ScrollingWebView

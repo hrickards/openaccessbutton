@@ -23,17 +23,18 @@ public class MenuActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        // Bind our buttons to launch the relevant things when clicked
+        /*// Bind our buttons to launch the relevant things when clicked
         bindFragmentLaunchingButton(R.id.doResearchButton, 2, this);
         bindFragmentLaunchingButton(R.id.infoHubButton, 0, this);
         bindFragmentLaunchingButton(R.id.mapButton, 3, this);
-        bindFragmentLaunchingButton(R.id.moreOnAppButton, 1, this);
+        bindFragmentLaunchingButton(R.id.moreOnAppButton, 1, this);*/
     }
 
     /**
      * Adds a click listener to a button that launches MainActivity and opens a specific fragment
      * whenever the button is pressed
      */
+    /*
     protected void bindFragmentLaunchingButton(int buttonId, final int fragmentId, final Context context) {
         Button btn = (Button) findViewById(buttonId);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -78,5 +79,5 @@ public class MenuActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

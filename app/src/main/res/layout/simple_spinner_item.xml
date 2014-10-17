@@ -27,4 +27,4 @@
     android:paddingLeft="0dp"
     android:layout_height="wrap_content"
     android:ellipsize="marquee"
-    android:textColor="#ddd"/>
+    android:textColor="#888"/>

@@ -43,7 +43,7 @@ public class ButtonSubmitActivity extends Activity {
         // If we've been launched with the right intent, show the paywall form
         if (Intent.ACTION_SEND.equals(action) && type != null) {
             if ("text/plain".equals(type)) {
-                handleShare(intent);
+                // handleShare(intent);
             }
         } else {
             // Redirect back to MainActivity
@@ -51,10 +51,10 @@ public class ButtonSubmitActivity extends Activity {
             startActivity(i);
         }
 
-        setupButton();
+       // setupButton();
     }
 
-    void handleShare(Intent intent) {
+    /* void handleShare(Intent intent) {
         // Preset the URL in the form from the intent data
         String url = intent.getStringExtra(Intent.EXTRA_TEXT);
         EditText urlView = (EditText) findViewById(R.id.articleUrl);
@@ -93,10 +93,10 @@ public class ButtonSubmitActivity extends Activity {
             (new Thread(r)).start();
         }
 
-    }
+    } */
 
     // Handle button submits by posting data to the OAB API
-    protected void setupButton() {
+   /* protected void setupButton() {
         Button button = (Button) findViewById(R.id.buttonButton);
 
         final Context context = this;
@@ -126,7 +126,7 @@ public class ButtonSubmitActivity extends Activity {
             }
         });
     }
-
+*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
