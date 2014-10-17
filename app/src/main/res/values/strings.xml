@@ -49,7 +49,7 @@
     <string name="password">Password</string>
     <string name="signIn">Sign In</string>
     <string name="register">Register</string>
-    <string name="nameRequired">Name (required)</string>
+    <string name="nameRequired">Username (required)</string>
     <string name="emailRequired">Email Address (required)</string>
     <string name="doResearch">Do research</string>
     <string name="infoHub">Open Access info hub</string>
@@ -124,4 +124,5 @@
     <string name="noQuestionsTitle">No questions asked!</string>
     <string name="map_error">Error loading map items</string>
     <string name="noQuestionsDescription">Try submitting one now</string>
+    <string name="signupHeaderText">We prefer you use your real name. If you\'d like to maintain privacy don\'t use your real name as your username as it will be publicly displayed.</string>
 </resources>
