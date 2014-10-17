@@ -1,131 +1,512 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- TODO: Namespace -->
 <page>
-<paragraph>What is Open Access?</paragraph>
+<paragraph>
+What is Open Access?
+</paragraph>
 <faq>
-<question>What is Open Access? </question>
-        <answer>
-Open Access is the free, immediate online availability of research articles. Currently scholarly research articles are often only accessible through expensive journal subscriptions also called “paywalls.” Open Access aims to remove this access barrier and for knowledge to be freely accessed and shared by all.</answer>
-<details>Watch <a href='https://www.youtube.com/watch?v=L5rVH1KGBCY'>this Youtube video</a> by Nick Shockey, Jonathan Eisen and PhD Comics for more information about Open Access</faq>
-
-<faq><question>Why Open Access?</question>
+<question>
+What is Open Access? 
+</question>
+<answer>
+Open Access is the free, immediate online availability of research articles. Currently scholarly research articles are often only accessible through expensive journal subscriptions also called “paywalls.” Open Access aims to remove this access barrier and for knowledge to be freely accessed and shared by all.
+</answer>
+<details>
+Watch <a href='https://www.youtube.com/watch?v=L5rVH1KGBCY'>this Youtube video</a> by Nick Shockey, Jonathan Eisen and PhD Comics for more information about Open Access
+</details>        
+</faq>
+<faq>
+<question>
+Why Open Access?
+</question>
 <answer>
 We engage and invest in research in order to accelerate the pace of scientific discovery, encourage innovation, enrich education, and stimulate the economy – to improve the public good.  Communication of the results of research is an essential component of the research process; research can only advance by sharing the results, and the value of an investment in research is only maximized through wide use of its results.
-Yet, too often, because of cost barriers or use restrictions, research results are not available to the full community of potential users.  The Internet gives us the opportunity to bring this crucial information to a worldwide audience at virtually no marginal cost, and allows us to use it in new, innovative ways. This has resulted in a call for new framework to allow research results to be more easily accessed and used— the call for Open Access.</answer>    
-<details> Benefits of Open Access for Researchers
+Yet, too often, because of cost barriers or use restrictions, research results are not available to the full community of potential users.  The Internet gives us the opportunity to bring this crucial information to a worldwide audience at virtually no marginal cost, and allows us to use it in new, innovative ways. This has resulted in a call for new framework to allow research results to be more easily accessed and used— the call for Open Access.
+</answer>    
+<details> 
+Benefits of Open Access for Researchers
 <ul> 
-<li>Increases your ability to find use relevant literature</li>
-<li>Increases the visibility, readership and impact of your work</li>
-<li>Creates new avenues for discovery in digital environment</li>
-<li>Enhances interdisciplinary research</li>
-<li>Accelerates the pace of research, discovery and innovation</li></ul></details>
-<details>Benefits of Open Access for Educational Institutions
+<li>
+Increases your ability to find use relevant literature
+</li>
+<li>
+Increases the visibility, readership and impact of your work
+</li>
+<li>
+Creates new avenues for discovery in digital environment
+</li>
+<li>
+Enhances interdisciplinary research
+</li>
+<li>
+Accelerates the pace of research, discovery and innovation
+</li>
+</ul>
+</details>
+<details>
+Benefits of Open Access for Educational Institutions
 <ul>
-<li>Contributes to core mission of advancing knowledge</li>
-<li>Democratizes access across all institutions – regardless of size or budget</li>
-<li>Provides previously unattainable access to institutions that otherwise would not have been able to access</li>
-<li>Increases competitiveness of academic institutions</li></ul></details>
-<details>Benefits of Open Access for Students
+<li>
+Contributes to core mission of advancing knowledge
+</li>
+<li>
+Democratizes access across all institutions – regardless of size or budget
+</li>
+<li>
+Provides previously unattainable access to institutions that otherwise would not have been able to access
+</li>
+<li>
+Increases competitiveness of academic institutions
+</li>
+</ul>
+</details>
+<details>
+Benefits of Open Access for Students
 <ul>
-<li>Enriches the quality of their education</li>
-<li>Ensures access to all that students need to know, rather what they (or their school) can afford</li>
-<li>Contributes to a better-educated workforce</li></ul></details>
-<details>Benefits of Open Access for Businesses
+<li>
+Enriches the quality of their education
+</li>
+<li>
+Ensures access to all that students need to know, rather what they (or their school) can afford
+</li>
+<li>
+Contributes to a better-educated workforce
+</li>
+</ul>
+</details>
+<details>
+Benefits of Open Access for Businesses
 <ul>
-<li>Access to cutting-edge research encourages innovation</li>
-<li>Stimulates new ideas, new services, new products</li>
-<li>Creates new opportunities for job creation</li></ul><details>
-<details>Public
-<ul><li>Provides access to previously unavailable materials relating to health, energy, environment, and other areas of broad interest</li>
-<li>Creates better educated populace</li>
-<li>Encourages support of scientific enterprise and engagement in citizen science</li></ul></details>
-<details>Research Funders
+<li>
+Access to cutting-edge research encourages innovation
+</li>
+<li>
+Stimulates new ideas, new services, new products
+</li>
+<li>
+Creates new opportunities for job creation
+</li>
+</ul>
+</details>
+<details>
+Public
 <ul>
-<li>Leverages return on research investment</li>
-<li>Creates tool to manage research portfolio</li>
-<li>Avoids funding duplicative research</li>
-<li>Creates transparency</li>
-<li>Encourages greater interaction with results of funded research</li></ul></details>
-<faq><question>How Does Open Access Work?</question>
-<answer>Open Access Button considers the terms outlined by the Creative Common's Attribution-Only license (CC-BY) to be the standard terms for Open Access.
-There are four primary mechanisms that can be used to enable Open Access:</answer> 
-<details><ul><li>Open Access Publishing:  Authors can choose to publish their research articles in a growing number of journals that meet the full definition of Open Access.  Articles are free to all interested readers, and the publishers place no financial or copyright barriers between the readers and the article.  Open Access publishing is the fastest rowing segment of the scholarly publishing market, and journal options are now available for nearly every area of research. A comprehensive list of Open Access journals is provided by the Directory of Open Access Journals (DOAJ).</li>
-<li>Digital Repositories:  Authors can choose to deposit their research articles in digital archives (often called Digital Repositories or Institutional Repositories) which conform to the standards of the Open Archives Initiative (OAI), and enable readers to freely access and fully reuse the article text.  This allows any author to make their work available under Open Access conditions regardless of the journal out the article is published in.  There are more than 2,000 open Digital Repositories available for authors to use around the world, and a comprehensive listing of is available through the Directory of Open Access Repositories (OpenDOAR).</li>
-<li>Effectively Managed Author Rights:  As the authors of a research paper, you have ability to ensure that your article can be accessed and used by the widest possible audience.  Tools such as Addenda to traditional Copyright Transfer Forms are readily available, proven resources that can help you understand open licenses, and to publish your articles under full Open Access conditions. Visit the SPARC Author Rights page to learn more. </li>
-<li>Local, National and International Open Access Policies:  Institutions that support research, from public and private research funders to higher education institutions, can implement effective policies that that support making Open Access to scholarly research articles the default mode for their researchers. Learn more about these policies on the SPARC Advocacy page.</li></details>
-
-<faq><question>Why Should You Care About Open Access?</question>
-<answer>Over the past decade, Open Access has become central to advancing the interests of researchers, scholars, students, businesses, and the public  - as well as librarians.  The digital environment poses new challenges and provides new opportunities in the sharing, review, and publication of research results. Ensuring broad, unfettered access to the knowledge contained in primary research articles and the rights to use these articles fully will play a key role in seeing that the scholarly communication system evolves in a way that supports the needs of scholars and the academic enterprise as a whole.
+<li>
+Provides access to previously unavailable materials relating to health, energy, environment, and other areas of broad interest
+</li>
+<li>
+Creates better educated populace
+</li>
+<li>
+Encourages support of scientific enterprise and engagement in citizen science
+</li>
+</ul>
+</details>
+<details>
+Research Funders
+<ul>
+<li>
+Leverages return on research investment
+</li>
+<li>
+Creates tool to manage research portfolio
+</li>
+<li>
+Avoids funding duplicative research
+</li>
+<li>
+Creates transparency
+</li>
+<li>
+Encourages greater interaction with results of funded research
+</li>
+</ul>
+</details>
+<faq>
+<question>
+How Does Open Access Work?
+</question>
+<answer>
+Open Access Button considers the terms outlined by the Creative Common's Attribution-Only license (CC-BY) to be the standard terms for Open Access.
+There are four primary mechanisms that can be used to enable Open Access:
+</answer> 
+<details>
+<ul>
+<li>
+Open Access Publishing:  Authors can choose to publish their research articles in a growing number of journals that meet the full definition of Open Access.  Articles are free to all interested readers, and the publishers place no financial or copyright barriers between the readers and the article.  Open Access publishing is the fastest rowing segment of the scholarly publishing market, and journal options are now available for nearly every area of research. A comprehensive list of Open Access journals is provided by the Directory of Open Access Journals (DOAJ).
+</li>
+<li>
+Digital Repositories:  Authors can choose to deposit their research articles in digital archives (often called Digital Repositories or Institutional Repositories) which conform to the standards of the Open Archives Initiative (OAI), and enable readers to freely access and fully reuse the article text.  This allows any author to make their work available under Open Access conditions regardless of the journal out the article is published in.  There are more than 2,000 open Digital Repositories available for authors to use around the world, and a comprehensive listing of is available through the Directory of Open Access Repositories (OpenDOAR).
+</li>
+<li>
+Effectively Managed Author Rights:  As the authors of a research paper, you have ability to ensure that your article can be accessed and used by the widest possible audience.  Tools such as Addenda to traditional Copyright Transfer Forms are readily available, proven resources that can help you understand open licenses, and to publish your articles under full Open Access conditions. Visit the SPARC Author Rights page to learn more. 
+</li>
+<li>
+Local, National and International Open Access Policies:  Institutions that support research, from public and private research funders to higher education institutions, can implement effective policies that that support making Open Access to scholarly research articles the default mode for their researchers. Learn more about these policies on the SPARC Advocacy page.
+</li>
+</ul>
+</details>
+<faq>
+<question>
+Why Should You Care About Open Access?
+</question>
+<answer>
+Over the past decade, Open Access has become central to advancing the interests of researchers, scholars, students, businesses, and the public  - as well as librarians.  The digital environment poses new challenges and provides new opportunities in the sharing, review, and publication of research results. Ensuring broad, unfettered access to the knowledge contained in primary research articles and the rights to use these articles fully will play a key role in seeing that the scholarly communication system evolves in a way that supports the needs of scholars and the academic enterprise as a whole.
 Increasingly, institutions that support research – from public and private research funders to higher education institutions – are implementing policies that require researchers to make articles that report on research generated from their funding openly accessible to and fully useable by the public. 
-Learn more about these policies in the SPARC Advocacy section, which explores the motivations behind these policies, the basic components that emerging policies contain, as well as the basic components of current policies that effectively promote Open Access.</answer></faq>
-<faq><question>Where can I learn more about Open Access?</question>
-<answer>There are lots of great resources out there to learn more about Open Access. In the further reading section of the app, you can find a wealth of links to get you started</answer>
-
-<details>This was adapted from SPARC's <a href='http://sparc.arl.org/issues/open-access'>Open Access Guide</a>CC-BY 3.0</details></faq>
+Learn more about these policies in the SPARC Advocacy section, which explores the motivations behind these policies, the basic components that emerging policies contain, as well as the basic components of current policies that effectively promote Open Access.
+</answer>
+</faq>
+<faq>
+<question>
+Where can I learn more about Open Access?
+</question>
+<answer>
+There are lots of great resources out there to learn more about Open Access. In the further reading section of the app, you can find a wealth of links to get you started.
+</answer>
+<details>
+This was adapted from SPARC's <a href='http://sparc.arl.org/issues/open-access'>Open Access Guide</a>CC-BY 3.0
+</details>
+</faq>
 
 <paragraph>Open Access Misunderstandings</paragraph>
-<faq><question>“There is one definition of Open Access”</question>	
-<answer>Many people have many different definitions of "Open Access". At the Open Access Button we endorse the <a href='https://en.wikipedia.org/wiki/Budapest_Open_Access_Initiative'>Budapest Open Access Initiative definition</a>. So by "Open Access" to this literature, we mean its “free availability on the public internet, permitting any users to read, download, copy, distribute, print, search, or link to the full texts of these articles, crawl them for indexing, pass them as data to software, or use them for any other lawful purpose, without financial, legal, or technical barriers other than those inseparable from gaining access to the internet itself. The only constraint on reproduction and distribution, and the only role for copyright in this domain, should be to give authors control over the integrity of their work and the right to be properly acknowledged and cited”. </answer></faq>
-<faq><question>“All Open Access is Gold Open Access.”</question>
-<answer>As outlined by the Budapest Open Access Initiative, “Gold” Open Access is one of two strategies to achieve Open Access. Open Access delivered by journals is called "gold" Open Access and Open Access delivered by repositories is called "green" Open Access. Most  university or funding agencies has a policy requiring deposit in an Open Access repository rather than submission to Open Access journals.</answer></faq>
-
-<faq><question>“Open Access is not peer reviewed.”</question>
-<answer>No, the Open Access movement is focusing on open-access for peer-reviewed literature. The goal is to remove access barriers, not changing the quality of research.</answer>
-
-<details>A journal’s economic or access policy does not determine its peer review policy. Open Access journals can use the same peer review procedures, quality, processes and systems are the same as traditional journals. If traditional journals convert to Open Access, the quality of peer review doesn’t change. The key variables in journal quality are the quality of authors, the quality of editors, and the quality of referees, all of which are independent of the journal's price or medium.</details>
-
-<details>There are “predatory” publishers, do not publish with them. You can find advice on how to spot predatory publishers elsewhere in this app.</details>
-</faq>
-<faq><question>“Green Open Access is about bypassing peer review.”</question>
-
-<answer>Open Access repositories do not provide their own peer review, but they can and do host articles peer-reviewed elsewhere. Policies requiring green Open Access actively call for Open Access to peer-reviewed manuscripts.</answer>
-</faq>
-<faq><question>“Open Access journals are of low quality”</question>
-</answer>Thomson Scientific found that in every field of the sciences "there was at least one Open Access title that ranked at or near the top of its field" in citation impact. The number of high-quality Open Access journals has only grown since then. The quality of a scholarly journal whether Open Access or not Open Access, is a function of its authors, editors, and referees.</answer>
-</faq>
 <faq>
-<question>“Open Access journals are “free””</question>
-<answer>Open Access journals and articles are not “free” in the sense of “free lunch;” they do aim to be free, however, in the sense of “free speech.” Providing Open Access to research is not without cost, but research should be accessible to readers without barriers. Any costs involving editing, refereeing, producing, and distributing a journal can be managed in a any what does not involve the reader paying.</answer></faq>
-<faq>
-<question>“All Open Access journals charge publication fees”</question>
+<question>
+“There is one definition of Open Access”
+</question>	
 <answer>
-Charging Article processing charges (APCs) is the best known model for Open Access journals, but it is a commonly held misconception that gold open access always equals payment, at the time of writing 6,447 journals in the <a href='http://www.doaj.org'> Directory of Open Access Journals</a> did not charge for publishing in their journal. Of those that do there are a lot of journals that provide discounts to for article processing charges or no questions asked waivers. Please contact individual journals for more details about waivers and discounts.</answer></faq>
-<faq>
-<question>“Authors always pay article processing charges“</question>
-<answer>According to the <a href='http://arxiv.org/ftp/arxiv/papers/1101/1101.5260.pdf'>Study of Open Access Publishing (SOAP)</a>, when researchers publish in fee-based Open Access journals, the fees are paid by funders (59%) or by universities (24%). Only 12% of the time are they paid by authors out of pocket.</answer>
-<details>If scholars decide to make their work available by the self archiving route never pay a fee to do so.</details>
+Many people have many different definitions of "Open Access". At the Open Access Button we endorse the <a href='https://en.wikipedia.org/wiki/Budapest_Open_Access_Initiative'>Budapest Open Access Initiative definition</a>. So by "Open Access" to this literature, we mean its “free availability on the public internet, permitting any users to read, download, copy, distribute, print, search, or link to the full texts of these articles, crawl them for indexing, pass them as data to software, or use them for any other lawful purpose, without financial, legal, or technical barriers other than those inseparable from gaining access to the internet itself. The only constraint on reproduction and distribution, and the only role for copyright in this domain, should be to give authors control over the integrity of their work and the right to be properly acknowledged and cited”. 
+</answer>
 </faq>
 <faq>
-<question>“Publication fees at Open Access journals are just subscriptions in disguise.”</question>
-<answer>This misunderstanding ignores the fact that publication fees at fee-based Open Access journals pay for the free, immediate online availability with full re-use rights, which is the whole point.  Subscriptions don't buy that. Article Processing Charges in those journals that charge them buy access for everyone with an internet connection, including those who aren't paying fees, while subscriptions pay only for private use and consumption.</answer></faq>
-<faq><question>"Open Access publishing deprives authors of royalties.”</question>
-<answer>Journals don't pay authors for their work and generally don't pay editors and referees who facilitate peer review either. In addition to this, money charged for subscriptions does not go back to fund academic work.</answer></faq>
-<faq><question>“Self-archiving takes too much time.”</question>
-<answer>Researchers in Southampton have shown that self-archiving takes about <a href='http://eprints.soton.ac.uk/263098/'>10 minutes per paper</a>. For scholars who publish a paper a month, and who have an average amount of help from co-authors, librarians, students, or assistants, self-archiving takes less than 40 minutes per year.</answer></faq>
-<faq><question>“Open Access helps readers but not authors.”</question>
-<answer>Open Access publishing helps authors by increasing their ability to find and use relevant literature, by increasing the visibility, readership and impact of their work, creating new avenues for discovery in digital environment, enhancing interdisciplinary research and accelerating the pace of research, discovery and innovation.</answer></faq>
-<faq><question>“Open Access Journals have lower impact factors.”</question>
-<answer>There are high impact factor open access journals in a wide range of disciplines. You can review the Directory of Open Access Journals. However, Impact Factor is regarded by some as a flawed metric for assessing impact, read Stephen Curry’s <a href='http://occamstypewriter.org/scurry/2012/08/13/sick-of-impact-factors/'>“Sick of Impact Factors”</a> for a critical analysis.</answer>
+<question>
+“All Open Access is Gold Open Access.”
+</question>
+<answer>
+As outlined by the Budapest Open Access Initiative, “Gold” Open Access is one of two strategies to achieve Open Access. Open Access delivered by journals is called "gold" Open Access and Open Access delivered by repositories is called "green" Open Access. Most  university or funding agencies has a policy requiring deposit in an Open Access repository rather than submission to Open Access journals.
+</answer>
 </faq>
-<faq><question>“Open Access is about providing access to lay readers.”</question>
-<answer>This is not true, in addition to lay citizens who do not have access, educators who would like to incorporate the latest scientific discoveries into their curricula do not have access, scientists and humanities researchers at institutions who cannot afford journal subscriptions do not have access. Erin McKiernan has written openly about her struggles to get access to the literature she needs to do her research.
+<faq>
+<question>
+“Open Access is not peer reviewed.”
+</question>
+<answer>
+No, the Open Access movement is focusing on open-access for peer-reviewed literature. The goal is to remove access barriers, not changing the quality of research.
+</answer>
+<details>
+A journal’s economic or access policy does not determine its peer review policy. Open Access journals can use the same peer review procedures, quality, processes and systems are the same as traditional journals. If traditional journals convert to Open Access, the quality of peer review doesn’t change. The key variables in journal quality are the quality of authors, the quality of editors, and the quality of referees, all of which are independent of the journal's price or medium.
+</details>
+<details>
+There are “predatory” publishers, do not publish with them. You can find advice on how to spot predatory publishers elsewhere in this app.
+</details>
+</faq>
+<faq>
+<question>
+“Green Open Access is about bypassing peer review.”
+</question>
+<answer>
+Open Access repositories do not provide their own peer review, but they can and do host articles peer-reviewed elsewhere. Policies requiring green Open Access actively call for Open Access to peer-reviewed manuscripts.
+</answer>
+</faq>
+<faq>
+<question>
+“Open Access journals are of low quality”
+</question>
+</answer>
+Thomson Scientific found that in every field of the sciences "there was at least one Open Access title that ranked at or near the top of its field" in citation impact. The number of high-quality Open Access journals has only grown since then. The quality of a scholarly journal whether Open Access or not Open Access, is a function of its authors, editors, and referees.
+</answer>
+</faq>
+<faq>
+<question>
+“Open Access journals are “free””
+</question>
+<answer>
+Open Access journals and articles are not “free” in the sense of “free lunch;” they do aim to be free, however, in the sense of “free speech.” Providing Open Access to research is not without cost, but research should be accessible to readers without barriers. Any costs involving editing, refereeing, producing, and distributing a journal can be managed in a any what does not involve the reader paying.
+</answer>
+</faq>
+<faq>
+<question>
+“All Open Access journals charge publication fees”
+</question>
+<answer>
+Charging Article processing charges (APCs) is the best known model for Open Access journals, but it is a commonly held misconception that gold open access always equals payment, at the time of writing 6,447 journals in the <a href='http://www.doaj.org'> Directory of Open Access Journals</a> did not charge for publishing in their journal. Of those that do there are a lot of journals that provide discounts to for article processing charges or no questions asked waivers. Please contact individual journals for more details about waivers and discounts.
+</answer>
+</faq>
+<faq>
+<question>“Authors always pay article processing charges“
+</question>
+<answer>
+According to the <a href='http://arxiv.org/ftp/arxiv/papers/1101/1101.5260.pdf'>Study of Open Access Publishing (SOAP)</a>, when researchers publish in fee-based Open Access journals, the fees are paid by funders (59%) or by universities (24%). Only 12% of the time are they paid by authors out of pocket.
+</answer>
+<details>
+If scholars decide to make their work available by the self archiving route never pay a fee to do so.
+</details>
+</faq>
+<faq>
+<question>
+“Publication fees at Open Access journals are just subscriptions in disguise.”
+</question>
+<answer>
+This misunderstanding ignores the fact that publication fees at fee-based Open Access journals pay for the free, immediate online availability with full re-use rights, which is the whole point.  Subscriptions don't buy that. Article Processing Charges in those journals that charge them buy access for everyone with an internet connection, including those who aren't paying fees, while subscriptions pay only for private use and consumption.
+</answer>
+</faq>
+<faq>
+<question>
+"Open Access publishing deprives authors of royalties.”
+</question>
+<answer>
+Journals don't pay authors for their work and generally don't pay editors and referees who facilitate peer review either. In addition to this, money charged for subscriptions does not go back to fund academic work.
+</answer>
+</faq>
+<faq>
+<question>
+“Self-archiving takes too much time.”
+</question>
+<answer>
+Researchers in Southampton have shown that self-archiving takes about <a href='http://eprints.soton.ac.uk/263098/'>10 minutes per paper</a>. For scholars who publish a paper a month, and who have an average amount of help from co-authors, librarians, students, or assistants, self-archiving takes less than 40 minutes per year.
+</answer>
+</faq>
+<faq>
+<question>“Open Access helps readers but not authors.”
+</question>
+<answer>
+Open Access publishing helps authors by increasing their ability to find and use relevant literature, by increasing the visibility, readership and impact of their work, creating new avenues for discovery in digital environment, enhancing interdisciplinary research and accelerating the pace of research, discovery and innovation.
+</answer>
+</faq>
+<faq>
+<question>
+“Open Access Journals have lower impact factors.”
+</question>
+<answer>
+There are high impact factor open access journals in a wide range of disciplines. You can review the Directory of Open Access Journals. However, Impact Factor is regarded by some as a flawed metric for assessing impact, read Stephen Curry’s <a href='http://occamstypewriter.org/scurry/2012/08/13/sick-of-impact-factors/'>“Sick of Impact Factors”</a> for a critical analysis.
+</answer>
+</faq>
+<faq>
+<question>
+“Open Access is about providing access to lay readers.”
+</question>
+<answer>
+This is not true, in addition to lay citizens who do not have access, educators who would like to incorporate the latest scientific discoveries into their curricula do not have access, scientists and humanities researchers at institutions who cannot afford journal subscriptions do not have access. Erin McKiernan has <a href='https://emckiernan.wordpress.com/2013/11/18/not-all-scientists-have-access/'>written openly</a> about her struggles to get access to the literature she needs to do her research.
+Since the launch of the Open Access Button Beta, we have collected more than 9,000 instances of people being denied access to research. This is only a small sample of the true value but within this 9,000 there are stories of scholars all over the world denied access to research.
+</answer>
+</faq>
+<faq>
+<question>
+“Open Access is more expensive than subscription (because subscription journals are free)”
+</question> 
+<answer>
+Whichever way you estimate average price charged per article in the subscription system you end up with figures way higher than average APCs for born digital pure Open Access publishers.
+</answer>
+<details>
+While transitional costs for a move to journal-mediated Open Access funded (largely) through APCs are likely to be higher it is also the case that this will liberate subscription costs more rapidly. While we can generate wider access with relatively little transitional costs through repository-mediated Open Access this won’t help to bring down subscriptions costs. Even if it was more expensive, providing Open Access to academic work would still be the right thing to do. But in fact it is cheaper, more efficient, and creates new opportunities along the chain of the research process.
+</details>
+</faq>
+<faq>
+<question>
+“Open Access prohibits commercial uses”
+</question>
+<answer>
+Open Access work published under the terms of the Creative Commons Attribution licence (CC-BY) allow for commercial uses, other Creative Commons licences such as Attribution-NonCommercial CC BY-NC, Attribution-NonCommercial-ShareAlike CC BY-NC-SA and Attribution-NonCommercial-NoDerivs CC BY-NC-ND only allow for non-commerical uses of work. You can learn more about the licences <a href='https://creativecommons.org/licenses/'>here</a>
+</answer>
+</faq>
+<faq>
+<question>
+“Why Open Access, since the articles are already available in all academic libraries?”</question> 
+<answer>
+All articles are not available in academic libraries. With ever increasing costs of academic research journal subscriptions, libraries are not longer able to afford a subscription to all journals. Harvard, the richest university library in the world, announced in 2008 that they could <a href='http://www.theguardian.com/science/2012/apr/24/harvard-university-journal-publishers-prices'>no longer afford to subscribe to all journals</a>. The situation regarding academic libraries is only for those privileged enough to be part of a rich institution like a library. For many, there is no option of a well funded university library to subscribe to lots of journals. So far we have seen people from all backgrounds from all areas of the globe denied access to research.
+</answer>
+</faq>
+<faq>
+<question>
+“Open Access equals no copyright”
+</question>
+<answer>
+Choosing to publish through an open access channel does not mean the article is not copyrighted. The same options exist when publishing through an open access channel as when an article is published through a traditional publishing: the author may in some cases be able to retain copyright, or may be required to grant the journal publisher copyright. But in either case, the article is still copyrighted, either by the author or the publisher. There is no direct and clean relationship between open access journals and copyright policy. Many, but not all, open access journals have liberal policies that allow authors to retain copyright. Most traditional subscription-based journals have standard copyright transfer agreements that require authors to turn over copyright upon publication, but some such publishers will agree to negotiate this requirement, or have a standard agreement that is more liberal. As an author and copyright holder, if you wish to clearly instruct readers about what you authorize them to do with your content, you can attach a <a href='https://creativecommons.org/licenses/'>Creative Commons license</a>.
+</answer>
+</faq>
 
-Since the launch of the Open Access Button Beta, we have collected more than 9,000 instances of people being denied access to research. This is only a small sample of the true value but within this 9,000 there are stories of scholars all over the world denied access to research.</answer>
+<paragraph>Open Access Frequently Asked Questions</paragraph>
+<faq>
+<question>
+What does the term Open Access mean?
+</question>
+<answer>
+Simple Answer: Open Access is the free immediate online availability to peer reviewed academic research with full re-use rights.
+</answer>
+<details>
+Longer Answer:  By "open access" to this literature, we mean its free availability on the public internet, permitting any users to read, download, copy, distribute, print, search, or link to the full texts of these articles, crawl them for indexing, pass them as data to software, or use them for any other lawful purpose, without financial, legal, or technical barriers other than those inseparable from gaining access to the internet itself. The only constraint on reproduction and distribution, and the only role for copyright in this domain, should be to give authors control over the integrity of their work and the right to be properly acknowledged and cited.
+</details>
 </faq>
-<faq><question>“Open Access is more expensive than subscription (because subscription journals are free)”</question> 
-<answer>Whichever way you estimate average price charged per article in the subscription system you end up with figures way higher than average APCs for born digital pure Open Access publishers.</answer>
+<faq>
+<question>
+Why do researchers support open access?
+</question>
+<answer>
+Many support Open Access to research because they believe the results of tax-payer funded research should be shared; since citizens have paid for this research, they should be able to access it at no additional charge. Many others also support Open Access to academic research because knowledge itself, or information, is a public good.
+</answer>
+</faq>
+<faq>
+<question>
+How do we achieve open access to scholarly literature?
+</question>
+<answer>
+To achieve open access to scholarly literature, there are two complementary strategies. Green Open Access and Gold Open Access. Open Access delivered by journals is called "gold" Open Access and Open Access delivered by repositories is called "green" Open Access.
+</answer>
+</faq>
+<faq>
+<question>
+How can I make my work more openly available?
+</question>
+<answer>
+Check out our ‘How to Open Yourself’ guide on how to make your work openly available.
+</answer>
+</faq>
+<faq>
+<question>
+What are the benefits of publishing Open Access?
+</question> 
+<answer>
+It increases the visibility, readership and impact of your work, for a further list of benefits check out the "What is Open Access" section of the app.
+</answer>
+</faq>
+<faq>
+<question>
+Does Open Access have reliable peer review?
+</question>
+<answer>
+Simple Answer: Yes.
+</answer>
+<details>
+Longer Answer:Completely. We seek open access for peer-reviewed literature. The only exception is for preprints, which are put online prior to peer review but which are intended for peer-reviewed journals at a later stage in their evolution. Peer review is medium-independent, as necessary for online journals as for print journals, and no more difficult. 
+</details>
+</faq>
+<faq>
+<question>
+Is Open Access low quality?
+</question>
+<answer>
+Simple answer: No.
+</answer>
+<details>
+Longer answer: Thomson Scientific found that in every field of the sciences "there was at least one Open Access title that ranked at or near the top of its field" in citation impact. The number of high-quality Open Access journals has only grown since then. The quality of a scholarly journal whether Open Access or not Open Access, is a function of its authors, editors, and referees.
+</details>
+</faq>
+<faq>
+<question>
+The manuscript has been submitted to a subscription-only paywalled journal. Help!
+</question>
+<answer>
+Don’t panic. You still have options left to make a version of the work publicly accessible. find out more in our “How to Open Yourself" guide.
+</answer>
+</faq>
+<faq>
+<question>
+Is the only way to provide open access to peer-reviewed journal articles is to publish in open access journals?
+</question>
+<answer>
+No, green open access is considered another strategy to provide open access to peer reviewed journal articles.
+</answer>
+</faq>
+<faq>
+<question>
+What is an APC?
+</question>
+<answer>
+An APC is an article processing charge.
+</answer>
+<details>
+Long Answer: this is a charge is a fee which is sometimes charged to publish an article in an academic journal. This fee is usually paid by an author's institution or research funder rather than by the author themselves. As you will read later, the majority of Open Access journals do not charge article processing charges.
+<details>
+</faq>
+<faq>
+<question>
+Do all or most open access journals charge publication fees?
+</question>
+<answer>
+Simple answer: No,  over 6000 open access journals in the Directory of Open Access Journals do not charge publishing fees.
+</answer>
+<details>
+Longer answer: Charging Article processing charges (APCs) is the best known model for Open Access journals, but it is a commonly held misconception that gold open access always equals payment, at the time of writing 6,447 journals in the Directory of Open Access Journals did not charge for publishing in their journal. Of those that do there are a lot of journals that provide discounts to for article processing charges or no questions asked waivers. Please contact individual journals for more details about waivers and discounts.
+</details>
+</faq>
+<faq>
+<question>
+I want to publish a paper in an Open Access Journal, where can I find the relevant journal?
+</question>
+<answer>
+In the <a href='http://www.doaj.org'>Directory of Open Access Journals</a>, you can search or browse by journal title or by subject open access journals to find where to publish your research as open access. You can search and browse all the journals, or only the journals that don’t charge publication fees.
+</answer>
+</faq>
+<faq>
+<question>
+Do I as a researcher have to pay the article processing charge?
+</question> 
+<answer> 
+Short answer: It’s unlikely.
+</answer>
+<details>
+Longer answer: According to the comprehensive <a href='http://arxiv.org/ftp/arxiv/papers/1101/1101.5260.pdf'>Study of Open Access Publishing (SOAP)</a>, when researchers publish in fee-based open access journals, the fees are paid by funders (59%) or by universities (24%). Only 12% of the time are they paid by authors out of pocket. This is a good reason to stop using the term "author fees" for publication fees, or the term "author pays" for the fee-based business model. Scholars who make their work green open access rather than gold never pay a fee to do so. Even when they choose the gold route, over 6000 of the peer-reviewed open access journals in the Directory of Open Access Journals do not charge authors to publish Open Access.
+</details>
+</faq>
+<faq>
+<question>
+What can I do to promote Open Access?
+</question>
+<answer>
+Check out our Advocacy guide in this app.
+</answer>
+</faq>
+<faq>
+<question>
+Does Publishing in a conventional journal closes the door on making the same work Open Access?
+</questions>
+<answer>
+Simple answer: No, depending on individual journal policies you can self-archive your research. Check Sherpa ROMEO for some details. 
+</answer>
+<details>
+Longer answer: Most conventional publishers give standing permission for author-initiated green open access. Many of the others will give permission on request. For authors unsure of a publisher's position, check out the Sherpa RoMEO database of publisher policies, read the publishing contract, or ask an editor. It's always worth asking, if only to register demand and show rising expectations. Because this permission comes from publishers themselves, it makes green open access lawful even when authors have transferred all relevant rights to publishers. However, the permission needn't come from publishers. Authors may retain relevant rights, on their own, through author addenda, or through open access policies at their funding agency or employer.
+</details> 
+</faq>
+<faq>
+<question>
+How do I find out which version of my paper can be used in a institutional repository?
+</question>
+<answer>
+You can use <a href='http://www.sherpa.ac.uk/romeo/'>Sherpa-Romeo</a> to find a summary of permissions that are normally given as part of each publisher's copyright transfer agreement. 
+</answer>   
+</faq>
+<faq>
+<question>                                                  
+If my institution doesn’t have an institutional repository, where can I deposit my research papers?</question>
+<answer>
+You can deposit your research papers in the open access subject (disciplinary) repositories. Browse the list of open access disciplinary repositories in the Open Access Directory (OAD).  Unless otherwise noted, they accept relevant deposits regardless of the author's institutional affiliation. Or search and browse the Directory of Open Access Repositories to find the disciplinary repositories (in the Any Repository Type box choose Disciplinary).
+</answer>
+</faq>
+<faq>
+<question>
+Where can I find out if the journal I want to publish provides gold Open Access?
+</question>
+<answer>
+You can visit the online tool <a href='http://www.sherpa.ac.uk/fact/'>SHERPA/FACT</a> and search by the funding body and the journal title you are interested in. Alternatively contact a friendly librarian!
+</answer>                
+</answer>
+</faq>
+<faq>
+<question>
+What are Creative Commons Licences?
+</question>
+<answer>
+<img src=”http://www.dontwasteyourtime.co.uk/wp-content/uploads/2013/01/creative-commons2.png” />
+</answer>
+</faq>
+<faq>
+<question>
+Are there other FAQs about Open Access?
+</question> 
+<answer>
+Yes, <a href='http://oad.simmons.edu/oadwiki/FAQs_about_OA'>here</a>
+</answer>
 
-<details>While transitional costs for a move to journal-mediated Open Access funded (largely) through APCs are likely to be higher it is also the case that this will liberate subscription costs more rapidly. While we can generate wider access with relatively little transitional costs through repository-mediated Open Access this won’t help to bring down subscriptions costs. Even if it was more expensive, providing Open Access to academic work would still be the right thing to do. But in fact it is cheaper, more efficient, and creates new opportunities along the chain of the research process.</details>
-</faq>
-<faq><question>“Open Access prohibits commercial uses”</question>
-<answer>Open Access work published under the terms of the Creative Commons Attribution licence (CC-BY) allow for commercial uses, other Creative Commons licences such as Attribution-NonCommercial CC BY-NC, Attribution-NonCommercial-ShareAlike CC BY-NC-SA and Attribution-NonCommercial-NoDerivs CC BY-NC-ND only allow for non-commerical uses of work. You can learn more about the licences <a href='https://creativecommons.org/licenses/'>here</a></answer>
-</faq>
-<faq><question>“Why Open Access, since the articles are already available in all academic libraries?”</question> 
-<answer>All articles are not available in academic libraries. With ever increasing costs of academic research journal subscriptions, libraries are not longer able to afford a subscription to all journals. Harvard, the richest university library in the world, announced in 2008 that they could <a href='http://www.theguardian.com/science/2012/apr/24/harvard-university-journal-publishers-prices'>no longer afford to subscribe to all journals</a>. The situation regarding academic libraries is only for those privileged enough to be part of a rich institution like a library. For many, there is no option of a well funded university library to subscribe to lots of journals. So far we have seen people from all backgrounds from all areas of the globe denied access to research.
-</answer></faq>
-<faq><question>“Open Access equals no copyright”</question>
-<answer>Choosing to publish through an open access channel does not mean the article is not copyrighted. The same options exist when publishing through an open access channel as when an article is published through a traditional publishing: the author may in some cases be able to retain copyright, or may be required to grant the journal publisher copyright. But in either case, the article is still copyrighted, either by the author or the publisher. There is no direct and clean relationship between open access journals and copyright policy. Many, but not all, open access journals have liberal policies that allow authors to retain copyright. Most traditional subscription-based journals have standard copyright transfer agreements that require authors to turn over copyright upon publication, but some such publishers will agree to negotiate this requirement, or have a standard agreement that is more liberal. As an author and copyright holder, if you wish to clearly instruct readers about what you authorize them to do with your content, you can attach a <a href='https://creativecommons.org/licenses/'>Creative Commons license</a>.
-</answer></faq>
+
 
 
 
