@@ -73,7 +73,7 @@
     <string-array name="job">
         <item>Profession</item>
         <item>Student</item>
-        <item>Doctor</item>
+        <item>Health Professional</item>
         <item>Patient</item>
         <item>Advocate</item>
         <item>Academic</item>
