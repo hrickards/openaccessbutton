@@ -20,6 +20,7 @@
         android:singleLine="true"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/oabButton"
+        android:selectAllOnFocus="true"
         android:text=""/>
      <ProgressBar
          style="?android:attr/progressBarStyleSmall"

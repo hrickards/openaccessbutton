@@ -131,9 +131,15 @@ public class BrowserFragment extends Fragment implements MainActivity.OnBackButt
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
                 if (actionId == EditorInfo.IME_ACTION_GO) {
                     // Enter button pressed
-                    mWebView.loadUrl(mUrlBox.getText().toString());
+                    String url = mUrlBox.getText().toString();
+                    // Ensure URL contains schema
+                    if (!url.contains("://")) {
+                        url = "http://" + url;
+                    }
+                    mWebView.loadUrl(url);
                     // Close keyboard
                     InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(mUrlBox.getWindowToken(), 0);
                     // Take focus away from URL box
                     mUrlBox.clearFocus();
 

@@ -14,7 +14,7 @@
         android:key="account">
         <intent
             android:action="android.intent.action.VIEW"
-            android:data="http://www.openaccessbutton.org/account"
+            android:data="http://www.openaccessbutton.org/user"
             />
     </Preference>
     <Preference

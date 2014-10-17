@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.goebl.david.Webb;
 import com.goebl.david.WebbException;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.openaccessbutton.openaccessbutton.R;
@@ -37,6 +38,7 @@ public class API {
 
     public interface StoryListCallback {
         void onComplete(Item[] stories);
+        void onError(String message);
     }
 
     public interface Callback {
@@ -48,7 +50,7 @@ public class API {
         callback.onComplete("", "");
     }
 
-    public static void signupRequest(final SignupCallback callback, final Context context, final String email, final String profession, final String name, final String password) {
+    public static void signupRequest(final SignupCallback callback, final Context context, final String email, final String profession, final String username, final String password) {
         final ProgressDialog dialog = createProgressDialog(context);
         Runnable r = new Runnable() {
             public void run() {
@@ -58,7 +60,7 @@ public class API {
                             .post(API_URL + "/register")
                             .param("email", email)
                             .param("profession", profession)
-                            .param("name", name)
+                            .param("username", username)
                             .param("password", password)
                             .asJsonObject()
                             .getBody();
@@ -173,10 +175,58 @@ public class API {
 
     }
 
-    public static void storyListRequest(StoryListCallback callback) {
-        // TODO Call the API
-        Log.w("oab", "storylist not implemented");
-        callback.onComplete(new Item[] {});
+    public static void storyListRequest(final StoryListCallback callback, final Context context) {
+        final ProgressDialog dialog = createProgressDialog(context);
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    // TODO are we getting all of them?
+                    String query = "{\"size\":1000,\"query\":{\"match_all\":{}},\"fields\":[\"coords.lat\",\"coords.lng\",\"story\",\"doi\",\"user_profession\",\"url\",\"accessed\",\"user_name\",\"description\"]}";
+
+                    Webb webb = Webb.create();
+                    JSONObject results = webb
+                        .get("http://oabutton.cottagelabs.com/query")
+                        .param("source", query)
+                        .ensureSuccess()
+                        .asJsonObject()
+                        .getBody();
+                    closeProgressDialog(dialog, context);
+
+                    JSONArray hits = results.getJSONObject("hits").getJSONArray("hits");
+                    Item[] items = new Item[hits.length()];
+                    for (int i=0; i<hits.length(); i++) {
+                        JSONObject fields = hits.getJSONObject(i).getJSONObject("fields");
+                        // These are to 1dp however we want to spread them out
+                        // TODO Use some super-ultra-fast-but-still-provably-random-library rather than doing this
+                        double lat = fields.getDouble("coords.lat") + 0.0005*(((i*i)%200)-100);
+                        double lng = fields.getDouble("coords.lng") + 0.0005*(((i*i*i)%200)-100);
+                        String story = fields.getString("story");
+                        String doi = fields.getString("doi");
+                        String userProfession = fields.getString("user_profession");
+                        String url = fields.getString("url");
+                        String accessed = fields.getString("accessed");
+                        String userName = fields.getString("user_name");
+                        String description = fields.getString("description");
+                        items[i] = new Item(lat, lng, story, doi, userProfession, url, accessed, userName, description);
+                    }
+
+                    callback.onComplete(items);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    closeProgressDialog(dialog, context);
+                    callback.onError(context.getResources().getString(R.string.map_error));
+                } catch (Error e) {
+                    e.printStackTrace();
+                    closeProgressDialog(dialog, context);
+                    callback.onError(context.getResources().getString(R.string.map_error));
+                } catch (WebbException e) {
+                    e.printStackTrace();
+                    closeProgressDialog(dialog, context);
+                    callback.onError(context.getResources().getString(R.string.map_error));}
+            }
+        };
+        (new Thread(r)).start();
     }
 
     protected static ProgressDialog createProgressDialog(Context context) {
