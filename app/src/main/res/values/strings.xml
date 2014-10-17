@@ -122,5 +122,6 @@
     <string name="feedback_uri">mailto:dev@openaccessbutton.org</string>
     <string name="username_already_taken">Sorry that email address has already been registered</string>
     <string name="noQuestionsTitle">No questions asked!</string>
+    <string name="map_error">Error loading map items</string>
     <string name="noQuestionsDescription">Try submitting one now</string>
 </resources>
