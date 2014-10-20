@@ -5,12 +5,17 @@
         android:showAsAction="ifRoom"
         android:title="@string/action_share"
         android:actionProviderClass="android.widget.ShareActionProvider" />
+
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never" />
     <item android:id="@+id/action_questions"
         android:title="@string/action_questions"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_about"
+        android:title="@string/action_about"
         android:orderInCategory="100"
         android:showAsAction="never" />
     <item android:id="@+id/action_logout"

@@ -26,7 +26,7 @@
             android:textStyle="bold"
             android:paddingTop="10dp"
             android:textSize="30sp"
-            android:text="@string/doResearch"
+            android:text="@string/menu_do_research"
             android:id="@+id/doResearchButton"/>
         <View
             android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
             android:paddingTop="10dp"
             android:textSize="30sp"
             android:drawableLeft="@drawable/ic_research"
-            android:text="@string/infoHub"
+            android:text="@string/menu_get_informed"
             android:id="@+id/infoHubButton"/>
         <View
             android:layout_width="wrap_content"
@@ -57,7 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/subCategory"
-            android:text="@string/interactiveFAQ"/>
+            android:id="@+id/interactiveFaqButton"
+            android:text="@string/menu_faq"/>
         <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"
@@ -68,7 +69,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/subCategory"
-            android:text="@string/otherMaterials"/>
+            android:id="@+id/otherMaterialsButton"
+            android:text="@string/menu_other_info"/>
         <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"
@@ -79,7 +81,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/subCategory"
-            android:text="@string/findStories"/>
+            android:text="@string/menu_find_stories"
+            android:id="@+id/mapButton"/>
         <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"
@@ -90,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/subCategory"
-            android:text="@string/blog"
+            android:text="@string/menu_blog"
             android:id="@+id/moreOnAppButton"/>
         <View
             android:layout_width="wrap_content"
@@ -107,10 +110,10 @@
             android:textStyle="bold"
             android:paddingTop="10dp"
             android:textColor="@color/fontColor"
+            android:id="@+id/takeActionButton"
             android:textSize="30sp"
             android:drawableLeft="@drawable/ic_action"
-            android:text="@string/takeAction"
-            android:id="@+id/mapButton"/>
+            android:text="@string/menu_take_action"/>
         <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"
@@ -121,7 +124,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/subCategory"
-            android:text="@string/supportDiego"/>
+            android:id="@+id/supportDiegoButton"
+            android:text="@string/menu_support_diego"/>
         <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"
@@ -132,18 +136,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/subCategory"
-            android:text="@string/joinMailingList"/>
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:background="@color/customNavy"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="50dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/subCategory"
-            android:text="@string/becomeExpert"/>
+            android:id="@+id/becomeExpertButton"
+            android:text="@string/menu_become_an_expert"/>
         <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"

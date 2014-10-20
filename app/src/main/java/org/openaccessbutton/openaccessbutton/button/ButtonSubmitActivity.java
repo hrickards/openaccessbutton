@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.about.AboutActivity;
 import org.openaccessbutton.openaccessbutton.api.API;
 import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
@@ -27,8 +28,8 @@ import java.util.List;
  * Submit paywalled articles to the OAB
  */
 public class ButtonSubmitActivity extends Activity {
-    private double mLatitude;
-    private double mLongitude;
+    private String mLocation;
+    private String mUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class ButtonSubmitActivity extends Activity {
         // If we've been launched with the right intent, show the paywall form
         if (Intent.ACTION_SEND.equals(action) && type != null) {
             if ("text/plain".equals(type)) {
-                // handleShare(intent);
+                handleShare(intent);
             }
         } else {
             // Redirect back to MainActivity
@@ -51,14 +52,12 @@ public class ButtonSubmitActivity extends Activity {
             startActivity(i);
         }
 
-       // setupButton();
+       setupButton();
     }
 
-    /* void handleShare(Intent intent) {
+    void handleShare(Intent intent) {
         // Preset the URL in the form from the intent data
-        String url = intent.getStringExtra(Intent.EXTRA_TEXT);
-        EditText urlView = (EditText) findViewById(R.id.articleUrl);
-        urlView.setText(url);
+        mUrl = intent.getStringExtra(Intent.EXTRA_TEXT);
 
         Runnable r = new Runnable() {
             @Override
@@ -82,7 +81,7 @@ public class ButtonSubmitActivity extends Activity {
                         @Override
                         public void run() {
                             // Round to 1dp to signify approximately 11.1km accuracy
-                            ((EditText) findViewById(R.id.location)).setText(String.format("%.1f", mLatitude) + ", " + String.format("%.1f", mLongitude));
+                            mLocation = String.format("%.1f", mLatitude) + ", " + String.format("%.1f", mLongitude);
                         }
                     });
                 }
@@ -93,22 +92,18 @@ public class ButtonSubmitActivity extends Activity {
             (new Thread(r)).start();
         }
 
-    } */
+    }
 
     // Handle button submits by posting data to the OAB API
-   /* protected void setupButton() {
-        Button button = (Button) findViewById(R.id.buttonButton);
+    protected void setupButton() {
+        Button needAccess = (Button) findViewById(R.id.needAccessButton);
 
         final Context context = this;
 
-        button.setOnClickListener(new View.OnClickListener() {
+        needAccess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = ((EditText) findViewById(R.id.articleUrl)).getText().toString();
-                String location = ((EditText) findViewById(R.id.location)).getText().toString();
-                String doi = ((EditText) findViewById(R.id.doi)).getText().toString();
-                String description = ((EditText) findViewById(R.id.description)).getText().toString();
-                String usecase = ((EditText) findViewById(R.id.usecase)).getText().toString();
+                String story = ((EditText) findViewById(R.id.description)).getText().toString();
 
                 API.blockedRequest(new API.Callback() {
                     @Override
@@ -116,17 +111,15 @@ public class ButtonSubmitActivity extends Activity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(context, getString(R.string.buttonSubmitted), Toast.LENGTH_LONG).show();
+                                Toast.makeText(context, getString(R.string.needAccessSent), Toast.LENGTH_LONG).show();
                                 finish();
                             }
                         });
                     }
-                }, context, url, location, doi, description, usecase);
-
+                }, context, mUrl, mLocation, story, true);
             }
         });
     }
-*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -144,6 +137,11 @@ public class ButtonSubmitActivity extends Activity {
         if (id == R.id.action_settings) {
             // Open up AppPreferencesActivity
             Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
+            return true;
+        } else if (item.getItemId() == R.id.action_about) {
+            // Open up AboutActivity
+            Intent k = new Intent(this, AboutActivity.class);
             startActivity(k);
             return true;
         }

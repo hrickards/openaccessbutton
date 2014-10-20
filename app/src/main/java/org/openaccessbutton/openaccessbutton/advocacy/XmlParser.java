@@ -11,6 +11,7 @@ package org.openaccessbutton.openaccessbutton.advocacy;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.Layout;
+import android.util.Log;
 import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +46,7 @@ public class XmlParser {
     public void parseToView(InputStream in, LinearLayout layout, Context context) throws
             XmlPullParserException, IOException {
         try {
+            Log.w("oab", "startParse");
             XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             parser.setInput(in, null);
@@ -152,10 +154,7 @@ public class XmlParser {
      * Extract text from a <answer> tag
      */
     private String readFaqAnswer(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, "answer");
-        String answer = readText(parser);
-        parser.require(XmlPullParser.END_TAG, ns, "answer");
-        return answer;
+        return readHtml(parser, "answer");
     }
 
     /**
@@ -175,7 +174,12 @@ public class XmlParser {
         while (true) {
             int eventType = parser.next();
             if (eventType == XmlPullParser.START_TAG) {
-                html = html + "<" + parser.getName() + ">";
+                html = html + "<" + parser.getName();
+                for (int i=0; i<parser.getAttributeCount(); i++) {
+                    // TODO Very hackish
+                    html = html + " " + parser.getAttributeName(i) + "='" + parser.getAttributeValue(i) +"'";
+                }
+                html = html + ">";
             } else if (eventType == XmlPullParser.END_TAG) {
                 if (parser.getName().equals(tag)) {
                     break;

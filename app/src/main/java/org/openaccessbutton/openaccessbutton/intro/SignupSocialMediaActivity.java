@@ -24,27 +24,4 @@ public class SignupSocialMediaActivity extends Activity {
         TextView twitterButton = (TextView) findViewById(R.id.signupTwitterButton);
         twitterButton.setOnClickListener(new SignUpSocialMediaClickListener(this, "twitter"));
     }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.signup_social_media, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            // Open up AppPreferencesActivity
-            Intent k = new Intent(this, AppPreferencesActivity.class);
-            startActivity(k);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -9,6 +9,7 @@ package org.openaccessbutton.openaccessbutton;
 
 
 import android.content.Context;
+import android.util.Log;
 import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +25,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
@@ -92,6 +95,8 @@ public class NavigationXmlParser {
         // Item properties
         String title = null;
         String className = null;
+        String menu = null;
+        String filename = null;
 
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -103,11 +108,15 @@ public class NavigationXmlParser {
                 title = readTitle(parser);
             } else if (name.equals("class")) {
                 className = readClassName(parser);
+            } else if (name.equals("menu")) {
+                menu = readMenu(parser);
+            } else if (name.equals("filename")) {
+                filename = readFilename(parser);
             } else {
                 skip(parser);
             }
         }
-        return new NavigationItem(title, className);
+        return new NavigationItem(title, className, menu, filename);
     }
 
     private void skip(XmlPullParser parser) throws XmlPullParserException, IOException {
@@ -138,6 +147,16 @@ public class NavigationXmlParser {
     }
 
     /**
+     * Extract text from a <menu> tag
+     */
+    private String readMenu(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, "menu");
+        String menu = readText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, "menu");
+        return menu;
+    }
+
+    /**
      * Extract text from a <class> tag
      */
     private String readClassName(XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -145,6 +164,16 @@ public class NavigationXmlParser {
         String className = readText(parser);
         parser.require(XmlPullParser.END_TAG, ns, "class");
         return className;
+    }
+
+    /**
+     * Extract text from a <filename> tag
+     */
+    private String readFilename(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, "filename");
+        String filename = readText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, "filename");
+        return filename;
     }
 
     private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -167,6 +196,35 @@ public class NavigationXmlParser {
             titles[i] = mItems.get(i).title;
         }
         return titles;
+    }
+
+    /**
+     * Obtain an array of the unique NavigationItem menu titles
+     */
+    public String[] getMenuTitles() {
+        String[] titles = new String[mItems.size()];
+        for (int i=0; i<mItems.size(); i++) {
+            titles[i] = mItems.get(i).menu;
+        }
+        // Unique
+        return new HashSet<String>(Arrays.asList(titles)).toArray(new String[titles.length]);
+    }
+
+    /**
+     * Given the position of an item in the XML, return the position of it's menu item
+     */
+    public int getMenuPositionFromPosition(int position) {
+        String menuTitle = mItems.get(position).menu;
+
+        if (menuTitle.equals("Get Informed")) {
+            return 1;
+        } else if (menuTitle.equals("Do Research")) {
+            return 2;
+        } else if (menuTitle.equals("Take Action")) {
+            return 3;
+        } else {
+            return 1;
+        }
     }
 
     /**

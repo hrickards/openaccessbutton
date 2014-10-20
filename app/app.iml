@@ -85,8 +85,8 @@
     <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" name="OAuth" level="project" />
     <orderEntry type="library" exported="" name="Parse-1.6.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-5.2.08" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-20.0.0" level="project" />
-    <orderEntry type="library" exported="" name="play-services-5.0.89" level="project" />
     <orderEntry type="library" exported="" name="support-v4-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="commons-lang3-3.3.2" level="project" />
     <orderEntry type="library" exported="" name="android-maps-utils-0.3.1" level="project" />

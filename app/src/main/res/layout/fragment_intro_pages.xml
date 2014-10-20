@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome"
+            android:text="@string/intro_welcome"
             android:textColor="@color/customNavy"
             android:textSize="40sp"
             android:gravity="center"
@@ -27,7 +27,7 @@
            android:gravity="left"
            android:textColor="@color/customNavy"
            android:textSize="16sp"
-           android:text="@string/getAccessToResearch"/>
+           android:text="@string/intro_welcome_top"/>
         <ImageView
             android:id="@+id/infoPageTitle"
             android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
             android:gravity="left"
             android:textStyle="bold"
             android:textColor="@color/customNavy"
-            android:text="@string/pushButton"/>
+            android:text="@string/intro_welcome_centre"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/customNavy"
-            android:text="@string/oab_intro_2"/>
+            android:text="@string/intro_welcome_bottom"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -85,7 +85,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
-            android:text="@string/doResearch"
+            android:text="@string/intro_do_research"
             android:textSize="40sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/fontColor"
-            android:text="@string/meetPage2Body"/>
+            android:text="@string/intro_do_research_top"/>
         <ImageView
             android:layout_marginBottom="20dp"
             android:contentDescription="@string/learn"
@@ -112,7 +112,7 @@
             style="@style/meetPageList"
             android:textSize="16sp"
             android:textColor="@color/fontColor"
-            android:text="@string/nextTime"/>
+            android:text="@string/intro_do_research_bottom"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -129,7 +129,7 @@
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/getInformed"
+            android:text="@string/intro_get_informed"
             android:gravity="center"
             />
         <TextView
@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/fontColor"
             android:layout_marginTop="16dp"
-            android:text="@string/packedWithInfo"
+            android:text="@string/intro_get_informed_top"
             android:textSize="16sp"
             />
         <ImageView
@@ -151,7 +151,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/fontColor"
             android:layout_marginTop="16dp"
-            android:text="@string/keepAppBySide"
+            android:text="@string/intro_get_informed_bottom"
             android:textSize="16sp"
             />
     </LinearLayout>
@@ -170,14 +170,14 @@
             android:textColor="@color/fontColor"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="@string/takeAction"/>
+            android:text="@string/intro_take_action"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:textColor="@color/customNavy"
             android:textSize="16sp"
-            android:text="@string/workTogether"/>
+            android:text="@string/intro_take_action_top"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -190,79 +190,6 @@
             android:layout_marginTop="15dp"
             android:textColor="@color/fontColor"
             android:textSize="16sp"
-            android:text="@string/greatActions"/>
+            android:text="@string/intro_take_action_bottom"/>
     </LinearLayout>
-    <!-- <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:background="@color/backgroundColor">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_marginTop="40dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/openaccessbutton"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            style="@style/smallText"
-            android:text="@string/signUpSocialMedia"/>
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            style="@style/signUpButtons"
-            android:id="@+id/signupGoogleButton"
-            android:text="@string/signUpGoogle"/>
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            style="@style/signUpButtons"
-            android:id="@+id/signupFacebookButton"
-            android:text="@string/signUpFacebook"/>
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            style="@style/signUpButtons"
-            android:id="@+id/signupTwitterButton"
-            android:text="@string/signUpTwitter"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/smallText"
-            android:text="@string/signUp"/>
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            style="@style/signUpButtons"
-            android:id="@+id/signupEmailButton"
-            android:text="@string/signUpEmail"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/smallText"
-            android:id="@+id/signinButton"
-            android:text="@string/registeredSignIn"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/smallText"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_gravity="bottom"
-            android:text="@string/signUpAgreements"/>
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@color/backgroundColor">
-    <Button
-        android:id="@+id/goto_menu_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Finish" />
-    </RelativeLayout> -->
 </LinearLayout>

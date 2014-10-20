@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- Application themes -->
     <style name="AppTheme" parent="android:Theme.Holo">
         <item name="android:activatedBackgroundIndicator">@drawable/activated_background_holo_dark</item>
@@ -8,7 +10,13 @@
         <item name="android:windowBackground">@color/backgroundColor</item>
         <item name="android:colorBackground">@color/customNavy</item>
         <item name="android:panelBackground">@color/customNavy</item>
+        <item name="android:editTextStyle">@style/MyEditText</item>
     </style>
+
+    <style name="MyEditText" parent="@android:style/Widget.Holo.EditText">
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
     <style name="NoActionBar" parent="AppTheme">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
@@ -30,13 +38,18 @@
         <item name="android:layout_marginTop">25dp</item>
         <item name="android:textSize">20sp</item>
     </style>
+
     <style name="signUpButtonsDark" parent="@style/signUpButtons">
         <item name="android:background">@drawable/button_bg_dark</item>
         <item name="android:textColor">#fff</item>
     </style>
+
     <style name="menuButtons">
-        <!--<item name="android:background">@drawable/button_bg_navy</item>
-        <item name="android:textColor">#fff</item>-->
+
+        <!--
+        <item name="android:background">@drawable/button_bg_navy</item>
+        <item name="android:textColor">#fff</item>
+        -->
         <item name="android:background">#fff</item>
         <item name="android:textColor">@color/fontColor</item>
         <item name="android:paddingBottom">10dp</item>
@@ -66,6 +79,7 @@
     <style name="GrayedOutText" parent="@android:style/TextAppearance">
         <item name="android:textColor">#888</item>
     </style>
+
     <style name="subCategory">
         <item name="android:textColor">@color/fontColor</item>
         <item name="android:layout_marginTop">5dp</item>
@@ -73,12 +87,14 @@
         <item name="android:layout_marginRight">60dp</item>
         <item name="android:textSize">20dp</item>
     </style>
+
     <style name="smallText">
         <item name="android:textSize">12sp</item>
         <item name="android:layout_marginTop">15dp</item>
         <item name="android:textColor">@color/fontColor</item>
         <item name="android:layout_marginLeft">40dp</item>
     </style>
+
     <style name="header">
         <item name="android:textSize">25sp</item>
         <item name="android:paddingTop">15dp</item>
@@ -89,10 +105,10 @@
     </style>
 
     <!-- ActionBar styles -->
-    <style name="MyActionBar"
-        parent="@android:style/Widget.Holo.ActionBar">
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">@color/customNavy</item>
     </style>
+
     <style name="MyPopupMenu" parent="@android:style/Widget.Holo.ListPopupWindow">
         <item name="android:popupBackground">@drawable/menu_dropdown_panel</item>
     </style>
@@ -100,16 +116,19 @@
     <style name="TextAppearance">
         <item name="android:textColor">@color/backgroundColor</item>
     </style>
+
     <style name="meetPageList">
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:layout_marginLeft">5dp</item>
         <item name="android:textColor">@color/fontColor</item>
         <item name="android:textSize">16sp</item>
     </style>
+
     <style name="formMargins">
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">7dp</item>
     </style>
+
     <style name="horizontalLine">
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>
@@ -117,4 +136,22 @@
         <item name="android:layout_marginLeft">25dp</item>
         <item name="android:layout_marginRight">25dp</item>
     </style>
+
+    <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">@style/ButtonBar</item>
+        <item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>
+    </style>
+
+    <style name="ButtonBar">
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:background">@android:drawable/bottom_bar</item>
+    </style>
+
+    <style name="ButtonBarButton" />
+
 </resources>

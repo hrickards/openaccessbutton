@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/header"
-            android:text="@string/signUpWithSocialMedia"/>
+            android:text="@string/sign_up_with_social_media"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:id="@+id/signupGoogleButton"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:text="@string/signUpGoogle"/>
+            android:text="@string/sign_up_google"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:id="@+id/signupFacebookButton"
-            android:text="@string/signUpFacebook"/>
+            android:text="@string/sign_up_facebook"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -47,6 +47,6 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:id="@+id/signupTwitterButton"
-            android:text="@string/signUpTwitter"/>
+            android:text="@string/sign_up_twitter"/>
     </LinearLayout>
 </ScrollView>

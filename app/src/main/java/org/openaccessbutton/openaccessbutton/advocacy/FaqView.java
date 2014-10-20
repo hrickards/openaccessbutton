@@ -1,12 +1,20 @@
 package org.openaccessbutton.openaccessbutton.advocacy;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.AttributeSet;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,8 +27,9 @@ import org.openaccessbutton.openaccessbutton.R;
  */
 public class FaqView extends LinearLayout {
     // Animation speed
-    public final static double ANIMATION_DP_MS = 2;
+    public final static double ANIMATION_DP_MS = 0.2;
     protected Context mContext;
+    protected String mDetails;
     
     public FaqView(Context context) {
         super(context);
@@ -43,11 +52,18 @@ public class FaqView extends LinearLayout {
     }
 
     public void setAnswer(String answer) {
-        ((TextView) findViewById(R.id.faqAnswer)).setText(answer);
+        ((WebView) findViewById(R.id.faqAnswer)).loadData(answer, "text/html", "utf-8");
     }
 
     public void setDetails(String html) {
+        mDetails = html;
         ((WebView) findViewById(R.id.detailsContent)).loadData(html, "text/html", "utf-8");
+
+        if (mDetails != null && mDetails.length() > 0) {
+            findViewById(R.id.moreInfo).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.moreInfo).setVisibility(View.GONE);
+        }
     }
 
     public void setImage(String imageName) {
@@ -61,6 +77,25 @@ public class FaqView extends LinearLayout {
         // Initialise the details WebView with blank data
         WebView details = (WebView) findViewById(R.id.detailsContent);
         details.loadData("<html><head><style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #212F3F}</head><body></body></html>", "text/html", "utf-8");
+        details.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                Intent k = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                k.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                ((Activity) mContext).startActivity(k);
+                return true;
+            }
+        });
+        WebView answer = (WebView) findViewById(R.id.faqAnswer);
+        details.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                Intent k = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                ((Activity) mContext).startActivity(k);
+                return true;
+            }
+        });
+        answer.loadData("<html><head><style type=\"text/css\">body,a,a:hover,a:active,a:visited{color: #212F3F}</head><body></body></html>", "text/html", "utf-8");
 
         // Start off with the answer and details hidden
         switchToQuestionView();
@@ -75,6 +110,13 @@ public class FaqView extends LinearLayout {
         });
         ImageView contractAnswerButton = (ImageView) findViewById(R.id.contractAnswerButton);
         contractAnswerButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchToQuestionView();
+            }
+        });
+        ImageView contractAnswerButton2 = (ImageView) findViewById(R.id.closeButton2);
+        contractAnswerButton2.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 switchToQuestionView();
@@ -98,29 +140,20 @@ public class FaqView extends LinearLayout {
         // Animate hiding the answer and details by reducing the height to 0
         // Copied from Tom Esterez @ http://stackoverflow.com/questions/4946295
         final int initialHeight = v.getMeasuredHeight();
-        Animation a = new Animation()
-        {
-            @Override
-            protected void applyTransformation(float interpolatedTime, Transformation t) {
-                if(interpolatedTime == 1){
-                    v.setVisibility(View.GONE);
-                    findViewById(R.id.expandAnswerButton).setVisibility(View.VISIBLE);
-                    findViewById(R.id.detailsContent).setVisibility(View.GONE);
-                    findViewById(R.id.imageContent).setVisibility(View.GONE);
-                    findViewById(R.id.moreInfo).setVisibility(View.VISIBLE);
-                }else{
-                    v.getLayoutParams().height = initialHeight - (int)(initialHeight * interpolatedTime);
-                    v.requestLayout();
-                }
-            }
+        //WindowManager wm = (WindowManager) v.getContext().getSystemService(Context.WINDOW_SERVICE);
+        //Display display = wm.getDefaultDisplay();
 
-            @Override
-            public boolean willChangeBounds() {
-                return true;
-            }
-        };
-        a.setDuration((int) (ANIMATION_DP_MS*initialHeight / v.getContext().getResources().getDisplayMetrics().density));
-        v.startAnimation(a);
+        v.setVisibility(View.GONE);
+        findViewById(R.id.expandAnswerButton).setVisibility(View.VISIBLE);
+        findViewById(R.id.closeButton2).setVisibility(View.GONE);
+        findViewById(R.id.detailsContent).setVisibility(View.GONE);
+        findViewById(R.id.imageContent).setVisibility(View.GONE);
+
+        if (mDetails != null && mDetails.length() > 0) {
+            findViewById(R.id.moreInfo).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.moreInfo).setVisibility(View.GONE);
+        }
     }
 
     /**
@@ -151,11 +184,15 @@ public class FaqView extends LinearLayout {
             }
         };
         a.setDuration((int)(ANIMATION_DP_MS*targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
-        findViewById(R.id.expandAnswerButton).setVisibility(View.INVISIBLE);
+        findViewById(R.id.expandAnswerButton).setVisibility(View.GONE);
+        findViewById(R.id.closeButton2).setVisibility(View.VISIBLE);
         findViewById(R.id.detailsContent).setVisibility(View.GONE);
         findViewById(R.id.imageContent).setVisibility(View.GONE);
-        findViewById(R.id.moreInfo).setVisibility(View.VISIBLE);
-        v.startAnimation(a);
+        if (mDetails != null && mDetails.length() > 0) {
+            findViewById(R.id.moreInfo).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.moreInfo).setVisibility(View.GONE);
+        }        v.startAnimation(a);
     }
 
     /**

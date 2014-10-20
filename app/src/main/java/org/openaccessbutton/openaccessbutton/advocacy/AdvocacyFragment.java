@@ -41,9 +41,10 @@ import java.io.InputStream;
  */
 public class AdvocacyFragment extends Fragment {
     protected OnShareIntentInterface mCallback;
+    protected String mResourceName;
 
-    public AdvocacyFragment() {
-        // Required empty public constructor
+    public AdvocacyFragment(String resourceName) {
+        mResourceName = resourceName;
     }
 
     public void onAttach(Activity activity) {
@@ -95,14 +96,23 @@ public class AdvocacyFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_advocacy, container, false);
 
+        InputStream object;
         // XML file containing content
-        InputStream object = this.getResources().openRawResource(R.raw.advocacy);
+        if (mResourceName.equals("diego.xml")) {
+            object = this.getResources().openRawResource(R.raw.diego);
+        } else if (mResourceName.equals("other_content.xml")) {
+            object = this.getResources().openRawResource(R.raw.other_content);
+        } else if (mResourceName.equals("take_action.xml")) {
+            object = this.getResources().openRawResource(R.raw.take_action);
+        } else {
+            object = this.getResources().openRawResource(R.raw.advocacy);
+        }
         // LinearLayout to append content to
         LinearLayout layout = (LinearLayout) view.findViewById(R.id.advocacy_content);
 
         try {
             XmlParser xmlParser = new XmlParser();
-            xmlParser.parseToView(object, layout, getActivity().getApplicationContext());
+            xmlParser.parseToView(object, layout, getActivity());
         } catch (IOException e) {
             // TODO: Do something
             Log.e("openaccess", "exception", e);

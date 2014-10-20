@@ -39,18 +39,8 @@ public class SignupActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        // Check if the user's already signed in
-        SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
-        String apiKey = prefs.getString("api_key", "");
-        if (apiKey.length() > 0) {
-            // Go to MenuActivity
-            Intent k = new Intent(this, MenuActivity.class);
-            startActivity(k);
-            finish();
-        }
-
         Spinner spinner = (Spinner) findViewById(R.id.signupProfession);
-        final ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.job, R.layout.simple_spinner_item);
+        final ArrayAdapter <CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.job_titles, R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -73,10 +63,10 @@ public class SignupActivity extends Activity {
         // Bind signin button
         TextView signinButton = (TextView) findViewById(R.id.globalSigninButton);
         signinButton.setOnClickListener(new SigninButtonClickListener(this));
+        final Context context = this;
 
         // Bind signupSocialMedia button
-        TextView signupSocialMediaButton = (TextView) findViewById(R.id.globalSignUpSocialMedia);
-        final Context context = this;
+        /* TextView signupSocialMediaButton = (TextView) findViewById(R.id.globalSignUpSocialMedia);
         signupSocialMediaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,7 +74,7 @@ public class SignupActivity extends Activity {
                 Intent k = new Intent(context, SignupSocialMediaActivity.class);
                 context.startActivity(k);
             }
-        });
+        });*/
 
         // Bind listener to signup button
         final Button submitButton = (Button) findViewById(R.id.signupButton);
@@ -93,7 +83,7 @@ public class SignupActivity extends Activity {
             public void onClick(View view) {
                 final String email = ((EditText) findViewById(R.id.signUpEmail)).getText().toString();
                 String professionT = ((Spinner) findViewById(R.id.signupProfession)).getSelectedItem().toString();
-                if (professionT.equals(getResources().getStringArray(R.array.job)[0])) {
+                if (professionT.equals(getResources().getStringArray(R.array.job_titles)[0])) {
                     professionT = "";
                 }
                 final String profession = professionT;
@@ -151,29 +141,6 @@ public class SignupActivity extends Activity {
         });
 
         checkForUpdates();
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.signup, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            // Open up AppPreferencesActivity
-            Intent k = new Intent(this, AppPreferencesActivity.class);
-            startActivity(k);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

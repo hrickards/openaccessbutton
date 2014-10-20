@@ -8,7 +8,7 @@
     android:layout_marginBottom="10dp">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:gravity="center">
@@ -30,6 +30,12 @@
             android:src="@drawable/ic_menu_more"
             android:id="@+id/expandAnswerButton"
             android:layout_marginRight="2dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu_less"
+            android:id="@+id/closeButton2"
+            android:layout_marginRight="2dp"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -50,12 +56,10 @@
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginLeft="5dp"/>
-        <TextView
-            android:layout_width="wrap_content"
+        <WebView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/simpleAnswer1"
             android:id="@+id/faqAnswer"
-            android:textColor="#555"
             android:layout_marginTop="2dp"
             android:layout_marginLeft="9dp"
             android:layout_marginRight="7dp"/>
@@ -63,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="9dp"
-            android:textColor="#999"
+            android:textColor="#000"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="20dp"
             android:text="@string/clickForMoreInfo"
