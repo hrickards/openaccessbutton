@@ -20,7 +20,7 @@ import org.openaccessbutton.openaccessbutton.map.Item;
  * Created by rickards on 10/14/14.
  */
 public class API {
-    public final static String API_URL = "http://oabutton.cottagelabs.com/api";
+    public final static String API_URL = "https://openaccessbutton.org/api";
 
     public interface SignupCallback {
         void onComplete(String username, String apikey);
@@ -156,7 +156,7 @@ public class API {
             public void run() {
                 Webb webb = Webb.create();
                 JSONObject result = webb
-                        .post("http://oabutton.cottagelabs.com/api/blocked")
+                        .post(API_URL + "/blocked")
                         .param("api_key", apiKey) // We need to get this when the user signs up
                         .param("url", url)
                         .param("location", location) // Geocode this either here or in the API
@@ -186,7 +186,7 @@ public class API {
 
                     Webb webb = Webb.create();
                     JSONObject results = webb
-                        .get("http://oabutton.cottagelabs.com/query")
+                        .get("https://openaccessbutton.org/query")
                         .param("source", query)
                         .ensureSuccess()
                         .asJsonObject()

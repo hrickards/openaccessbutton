@@ -43,8 +43,7 @@ public class AdvocacyFragment extends Fragment {
     protected OnShareIntentInterface mCallback;
     protected String mResourceName;
 
-    public AdvocacyFragment(String resourceName) {
-        mResourceName = resourceName;
+    public AdvocacyFragment() {
     }
 
     public void onAttach(Activity activity) {
@@ -95,6 +94,8 @@ public class AdvocacyFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_advocacy, container, false);
+
+        mResourceName = getArguments().getString("filename");
 
         InputStream object;
         // XML file containing content

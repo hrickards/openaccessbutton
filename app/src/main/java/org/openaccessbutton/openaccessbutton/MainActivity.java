@@ -183,7 +183,10 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             try {
                 Class<?> fragmentClass = Class.forName(item.className);
                 if (item.className.equals("org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment")) {
-                    mFragments[position] = new AdvocacyFragment(item.filename);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("filename", item.filename);
+                    mFragments[position] = new AdvocacyFragment();
+                    mFragments[position].setArguments(bundle);
                 } else {
                     mFragments[position] = (Fragment) fragmentClass.newInstance();
                 }
