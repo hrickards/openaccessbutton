@@ -51,13 +51,6 @@ public class LaunchActivity extends Activity {
                 startActivity(k);
             }
         });
-        /*findViewById(R.id.signupWithSocialMediaButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent k = new Intent(context, SignupSocialMediaActivity.class);
-                startActivity(k);
-            }
-        });*/
     }
 
 

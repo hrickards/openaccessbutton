@@ -53,59 +53,6 @@ public class ScreenSlidePageFragment extends Fragment {
             rootView.removeView(childView);
         }
 
-        // Logic we need to run on a per-view basis
-        /** switch (mPageNumber) {
-             case 4:
-                Button signupButton = (Button) childView.findViewById(R.id.signupEmailButton);
-                signupButton.setOnClickListener(new SignupEmailButtonClickListener(getActivity()));
-                TextView signinButton = (TextView) childView.findViewById(R.id.signinButton);
-                signinButton.setOnClickListener(new SigninButtonClickListener(getActivity()));
-
-                // Social sign in buttons
-                TextView signupGoogleButton = (Button) childView.findViewById(R.id.signupGoogleButton);
-                TextView signupTwitterButton = (Button) childView.findViewById(R.id.signupTwitterButton);
-                TextView signupFacebookButton = (Button) childView.findViewById(R.id.signupFacebookButton);
-                signupGoogleButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent k = new Intent(getActivity(), OAuthActivity.class);
-                        k.putExtra("provider", "google");
-                        startActivity(k);
-                        getActivity().finish();
-                    }
-                });
-                signupTwitterButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent k = new Intent(getActivity(), OAuthActivity.class);
-                        k.putExtra("provider", "twitter");
-                        startActivity(k);
-                        getActivity().finish();
-                    }
-                });
-                signupFacebookButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent k = new Intent(getActivity(), OAuthActivity.class);
-                        k.putExtra("provider", "facebook");
-                        startActivity(k);
-                        getActivity().finish();
-                    }
-                });
-            break;
-
-            case 4:
-                Button gotoMenuButton = (Button) childView.findViewById(R.id.goto_menu_button);
-                gotoMenuButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent k = new Intent(getActivity(), MenuActivity.class);
-                        startActivity(k);
-                        getActivity().finish();
-                    }
-                });
-            break;
-        } **/
         return childView;
     }
 }

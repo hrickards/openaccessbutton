@@ -75,48 +75,5 @@ public class SigninActivity extends Activity {
                 finish();
             }
         });
-
-        // Show the social login buttons
-        /*TextView socialButtonShow = (TextView) findViewById(R.id.socialSignInButton);
-        socialButtonShow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final View v = findViewById(R.id.socialSignInButtons);
-
-                // Animate showing the social sign in buttons
-                // Copied from Tom Esterez @ http://stackoverflow.com/questions/4946295
-                v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                final int targtetHeight = v.getMeasuredHeight();
-                v.getLayoutParams().height = 0;
-                v.setVisibility(View.VISIBLE);
-                Animation a = new Animation()
-                {
-                    @Override
-                    protected void applyTransformation(float interpolatedTime, Transformation t) {
-                        v.getLayoutParams().height = interpolatedTime == 1
-                                ? LinearLayout.LayoutParams.WRAP_CONTENT
-                                : (int)(targtetHeight * interpolatedTime);
-                        v.requestLayout();
-                    }
-
-                    @Override
-                    public boolean willChangeBounds() {
-                        return true;
-                    }
-                };
-                a.setDuration((int)(ANIMATION_DP_MS*targtetHeight / v.getContext().getResources().getDisplayMetrics().density));
-                findViewById(R.id.socialSignInButton).setVisibility(View.GONE);
-                v.startAnimation(a);
-            }
-        });*/
-
-
-        // Social signin buttons
-        TextView googleButton = (TextView) findViewById(R.id.signupGoogleButton);
-        googleButton.setOnClickListener(new SignUpSocialMediaClickListener(this, "google"));
-        TextView facebookButton = (TextView) findViewById(R.id.signupFacebookButton);
-        facebookButton.setOnClickListener(new SignUpSocialMediaClickListener(this, "facebook"));
-        TextView twitterButton = (TextView) findViewById(R.id.signupTwitterButton);
-        twitterButton.setOnClickListener(new SignUpSocialMediaClickListener(this, "twitter"));
     }
 }
