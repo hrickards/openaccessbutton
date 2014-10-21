@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
@@ -53,6 +54,16 @@ public class ButtonSubmitActivity extends Activity {
         }
 
        setupButton();
+
+        // Open info page
+        findViewById(R.id.storyImportance).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(Intent.ACTION_VIEW, Uri.parse("http://openaccessbutton.org/why"));
+                k.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(k);
+            }
+        });
     }
 
     void handleShare(Intent intent) {
