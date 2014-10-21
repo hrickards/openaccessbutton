@@ -106,7 +106,7 @@ public class API {
                     Webb webb = Webb.create();
                     JSONObject result = webb
                             .post(API_URL + "/retrieve")
-                            .param("email", username)
+                            .param("username", username)
                             .param("password", password)
                             .ensureSuccess()
                             .asJsonObject()

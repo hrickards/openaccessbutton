@@ -100,7 +100,7 @@
     <string name="sign_up_with_social_media">Register with Social Media</string>
 
     <!-- Sign in page -->
-    <string name="email_title">Email Address</string>
+    <string name="username_title">Username</string>
     <string name="sign_in_social_media_description">Alternatively, touch here to Sign In with Social Media</string>
     <string name="sign_in_google">Sign in with Google+</string>
     <string name="sign_in_facebook">Sign in with Facebook</string>
@@ -135,9 +135,9 @@
 
     <!-- Forgotten password page -->
     <string name="forgotten_password_header">Forgotten your Password?</string>
-    <string name="forgotten_password_description">No worries. Just enter your email address and we will send you a link to create a new one.</string>
-    <string name="registered_email_header">Registered email</string>
-    <string name="registered_email_example">someone@somewhere.com</string>
+    <string name="forgotten_password_description">No worries. Just enter your username and we will send you a link to create a new password.</string>
+    <string name="registered_username_header">Registered username</string>
+    <string name="registered_username_example">joebloggs</string>
 
     <!-- Intro pages global -->
     <string name="intro_finished_button">Got it!</string>

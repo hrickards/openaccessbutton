@@ -35,7 +35,7 @@ public class SigninActivity extends Activity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String username = ((EditText) findViewById(R.id.signInEmail)).getText().toString();
+                final String username = ((EditText) findViewById(R.id.signInUsername)).getText().toString();
                 final String password = ((EditText) findViewById(R.id.signInPassword)).getText().toString();
                 API.signinRequest(new API.SigninCallback() {
                     @Override

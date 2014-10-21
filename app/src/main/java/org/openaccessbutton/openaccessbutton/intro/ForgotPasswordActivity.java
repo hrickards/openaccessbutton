@@ -38,8 +38,8 @@ public class ForgotPasswordActivity extends Activity {
             public void onClick(View view) {
                 try {
                     // Open forgot password form in browser
-                    String email = ((EditText) findViewById(R.id.forgotPasswordEmail)).getText().toString();
-                    String url = "http://www.openaccessbutton.org/forgot_password?email=" + URLEncoder.encode(email, "UTF-8");
+                    String username = ((EditText) findViewById(R.id.forgotPasswordUsername)).getText().toString();
+                    String url = "http://www.openaccessbutton.org/forgot_password?username=" + URLEncoder.encode(username, "UTF-8");
 
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse(url));
