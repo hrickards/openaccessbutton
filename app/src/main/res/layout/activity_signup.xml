@@ -20,11 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/header"
-            android:text="@string/signUp"/>
+            android:text="@string/sign_up"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/signupHeaderText"
+            android:text="@string/choosing_username_paragraph"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:textColor="@color/fontColor"
@@ -40,7 +40,7 @@
             android:textColor="@color/fontColor"
             android:textColorHint="#888"
             android:textSize="20sp"
-            android:hint="@string/nameRequired"
+            android:hint="@string/name_required_title"
             android:layout_marginBottom="15dp"/>
         <View
             android:layout_width="match_parent"
@@ -60,7 +60,7 @@
             android:textColor="@color/fontColor"
             android:textSize="20sp"
             android:textColorHint="#888"
-            android:hint="@string/emailRequired"
+            android:hint="@string/email_required_title"
             android:layout_marginBottom="15dp"/>
         <View
             android:layout_width="match_parent"
@@ -76,7 +76,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/btn_dropdown"
-            android:entries="@array/job"
+            android:entries="@array/job_titles"
             android:id="@+id/signupProfession"/>
         <View
             android:layout_width="match_parent"
@@ -96,7 +96,7 @@
             android:textColorHint="#888"
             android:textSize="20sp"
             android:textColor="@color/fontColor"
-            android:hint="@string/password"
+            android:hint="@string/password_title"
             android:fontFamily="sans-serif"
             android:layout_marginBottom="15dp"/>
         <View
@@ -117,14 +117,14 @@
             android:textColorHint="#888"
             android:textSize="20sp"
             android:textColor="@color/fontColor"
-            android:hint="@string/retypePassword"
+            android:hint="@string/retype_password_title"
             android:fontFamily="sans-serif"
             android:layout_marginBottom="15dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:textColor="#888"
             android:layout_height="wrap_content"
-            android:text="@string/registeredSignIn"
+            android:text="@string/already_registered_lead"
             android:id="@+id/globalSigninButton" />
         <Button
             android:layout_width="fill_parent"
@@ -135,17 +135,19 @@
             android:textColor="@color/customNavy"
             android:layout_marginTop="15dp"
             android:padding="10dp"
-            android:text="@string/register"
+            android:text="@string/sign_up"
             android:gravity="center"
             android:layout_marginBottom="15dp"
             android:id="@+id/signupButton"/>
+        <!--
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="12dp"
             android:textColor="#888"
-            android:text="@string/signUpSocialMedia"
+            android:text="@string/signup_social_media_lead"
             android:id="@+id/globalSignUpSocialMedia"/>
+            -->
     </LinearLayout>
 </ScrollView>

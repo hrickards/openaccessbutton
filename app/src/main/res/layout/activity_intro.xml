@@ -50,7 +50,7 @@
         android:gravity="center"
         android:layout_marginTop="5dp"
         android:id="@+id/globalSignupEmailButton"
-        android:text="@string/gotIt" />
+        android:text="@string/intro_finished_button" />
 
     <TextView
         android:layout_width="match_parent"
@@ -59,5 +59,5 @@
         android:layout_marginBottom="5dp"
         android:layout_marginRight="50dp"
         android:textColor="@color/customNavy"
-        android:text="@string/takeToApp" />
+        android:text="@string/intro_finished_description" />
 </LinearLayout>

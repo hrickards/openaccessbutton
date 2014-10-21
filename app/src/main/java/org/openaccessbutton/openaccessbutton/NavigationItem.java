@@ -6,9 +6,13 @@ package org.openaccessbutton.openaccessbutton;
 public class NavigationItem {
     public final String title;
     public final String className;
+    public final String menu;
+    public final String filename;
 
-    public NavigationItem(String title, String className) {
+    public NavigationItem(String title, String className, String menu, String filename) {
         this.title = title;
         this.className = className;
+        this.menu = menu;
+        this.filename = filename;
     }
 }

@@ -38,8 +38,8 @@ public class ForgotPasswordActivity extends Activity {
             public void onClick(View view) {
                 try {
                     // Open forgot password form in browser
-                    String email = ((EditText) findViewById(R.id.forgotPasswordEmail)).getText().toString();
-                    String url = "http://www.openaccessbutton.org/forgot_password?email=" + URLEncoder.encode(email, "UTF-8");
+                    String username = ((EditText) findViewById(R.id.forgotPasswordUsername)).getText().toString();
+                    String url = "http://www.openaccessbutton.org/forgot_password?username=" + URLEncoder.encode(username, "UTF-8");
 
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse(url));
@@ -49,28 +49,5 @@ public class ForgotPasswordActivity extends Activity {
                 }
             }
         });
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.forgot_password, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            // Open up AppPreferencesActivity
-            Intent k = new Intent(this, AppPreferencesActivity.class);
-            startActivity(k);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

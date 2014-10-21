@@ -1,0 +1,216 @@
+<page>
+<paragraph>
+    How to Open yourself.
+</paragraph>
+<html>
+There are a number of strategies to reach Open Access to research. Open Access delivered by journals is called "gold" Open Access and Open Access delivered by repositories is called "green" Open Access. There is a myth that all Open Access is gold , even for peer-reviewed articles but that is not true. Today most Open Access in medicine and biomedicine is gold, but in every other field it's mostly green. In university and funding agency mandated Open Access, nearly every Open Access policy is a green policy, requiring deposit in an Open Access repository rather than submission to Open Access journals. This guide provides some recommendations for those of you that publish research and who want to publish open access.
+</html>
+<faq>
+<question>
+    Publish in an Open Access Journal
+</question>
+<answer>
+    If you want to publish your work in an Open Access journal, it can be difficult deciding which one and there are a lot of variables that may impact your decision. Things you can do to help are:
+
+    <ul>
+        <li>
+            Talking to Open Access advocates in your subject area.
+        </li>
+        <li>
+            Browsing through the <a href='http://www.doaj.org'>Directory of Open Access Journals</a>.
+        </li>
+        <li>
+            Do you read it yourself?
+        </li>
+    </ul>
+
+    The <a href='http://www.doaj.org'>Directory of Open Access Journals</a>(DOAJ) is the foremost listing of all Open Access journals out there. At the time of writing, it includes over 10,000 Open Access journals from all fields of publishing. If you regard open access as defined by the Budapest Open Access Initiative, then there are 2159 journals that publish research under a CC-BY licence, the licence most inkeeping with the Budapest definition. It is a commonly held misconception that gold open access always equals payment, at the time of writing 6,447 journals did not charge for publishing in their journal. Of those that do there are a lot of journals that provide discounts to for article processing charges or no questions asked waivers. Please contact individual journals for more details about waivers and discounts.
+</answer>
+<details>
+    Journals that support themselves financially by charging APC's to support the costs associated with publication are aware that some researchers do not have a means by which to pay. Therefore they have established systems and eligibility criteria for those researchers in need, to apply for fee waivers.
+
+    Fees can either be waived in their entirety, or a partial discount off the standard APC may be offered, depending on your eligibility criteria. If you can't find their waiver/discount policy email the journal/publisher to ask about it.
+
+    Example fee waiver policies include (a non-exhaustive list):
+    <ul>
+        <li>
+            PLOS's publication fee assistance
+        </li>
+        <li>
+            BioMed Central's open access waiver fund
+        </li>
+        <li>
+            Hindawi's waiver policy
+        </li>
+        <li>
+            Pensoft's discounts and waivers
+        </li>
+        <li>
+            Copernicus Publications financial support
+        </li>
+        <li>
+            F1000Research's discounts and waivers
+        </li>
+        <li>
+            PeerJ's fee waiver policy for undergraduates &amp; researchers in low-income economies
+        </li>
+    </ul>
+</details>
+</faq>
+<faq>
+<question>
+    Predatory Open Access Journals
+</question>
+<answer>
+    You may have heard about predatory Open Access publishers and it's true, they do exist, but there are a number of things you can do to prevent publishing your work in a predatory journal.
+    To help identify predatory journals, they typically:
+</answer>
+<details>
+    <ul>
+        <li>
+            Accept articles quickly with little or no peer review or quality control
+        </li>
+        <li>
+            Notify academics of article fees only after papers are accepted
+        </li>
+        <li>
+            Aggressively campaign for academics to submit articles or serve on editorial boards (all those spam emails you get).
+        </li>
+        <li>
+            List academics as members of editorial boards without their permission, and not allowing academics to resign from editorial boards.
+        </li>
+        <li>
+            Appoint fake academics to editorial boards.
+        </li>
+        <li>
+            Mimick the name or web site style of more established journals.
+        </li>
+        Provide misleading claims about the publishing operation, such as a false location.
+        <li>
+            Improperly use ISSNs.
+        </li>
+    </ul>
+</details>
+<answer>
+    To protect yourself against predatory publishers you can:
+</answer>
+<details>
+    <ul>
+        <li>
+            Ask your librarian for advice
+        </li>
+        <li>
+            Talk to Open Access Advocates and colleagues (however some people just dislike Open Access regardless of journal quality).
+        </li>
+        <li>
+            Read a selection of articles that have previously been published there. Are they of good quality?
+        </li>
+        <li>
+            Have a look at who's on the editorial board of the journal (Do you know who any of the editors are? Is their research relevant to your broad subject area?)
+        </li>
+        <li>
+            Check the journal has an ISSN and that the ISSN is validated.
+        </li>
+        <li>
+            Is the publisher a member of <a href='http://oaspa.org/'>OASPA</a>? Yes = good sign. No = tread carefully, if it's a small society-run journal of good quality then it doesn't matter too much that it's not an OASPA member.
+        </li>
+        <li>
+            Ask yourself, do you read it?
+        </li>
+    </ul>
+    Running basic checks like this before you think of submitting your work to a journal can really help. The final point about reading the journal is important,  a particular journal to publish in may be ok but if researhcers in your area don't read this journal or hasn't heard of this journal you probably shouldn't submit your work there unless you're sure you want to support the journal with your work.
+</details>
+</faq>
+<faq>
+<question>
+    Publishing in an open access journal has many advantages but another strategy that must be considered is self-archiving in an Open Access repository.
+</question>
+<answer>
+    If the journal allows it, you may be able to upload a pre-print (a draft of a scientific paper that has not yet been published in a peer-reviewed scientific journal) of your paper before submitting it to a journal.
+
+    Suggested preprint servers include:
+</answer>
+<details>
+    <ul>
+        <li>
+            <a href='http://arxiv.org/'>Arxiv</a>(for Mathematics, Physics, Astronomy, Computer Science, Quantitative Biology, Statistics, and Quantitative Finance)
+        </li>
+        <li>
+            <a href='http://biorxiv.org/'>Biorxiv</a> (for Biological &amp; Biomedical Sciences)
+        </li>
+        <li>
+            <a href='https://peerj.com/preprints/'>PeerJ</a> (for Biological &amp; Biomedical Sciences)
+        </li>
+        <li>
+            <a href='https://zenodo.org/'>Zenodo</a> (for Science)
+        </li>
+        <li>
+            <a href='http://www.ssrn.com/'>SSRN</a> (for Social Sciences)
+        </li>
+        <li>
+            <a href='http://cogprints.org/'>Cogprints</a> (for Cognitive Sciences)
+        </li>
+        <li>
+            <a href='http://www.econstor.eu/'>Econstor</a> (for Economics)
+        </li>
+        <li>
+            Your institutional repository (if you have one).
+        </li>
+    </ul>
+</details>
+</faq>
+<html>
+In addition to this, Most conventional publishers give permission for authors to self archive their work (green open access). Some publishers will also give permission on request. If you publish in a non open access journal, a really useful resource is the Sherpa RoMEO database of publisher policies. You can also read the publishing contract, or ask an editor. It's always worth asking, if only to show the demand for open access and show rising expectations from authors of publishers.
+</html>
+<html>
+If you are wanting to self archive your work, the <a href='http://roar.eprints.org/'>Registry of Open Access Repositories (ROAR)</a> lists more than 3,700 repositories, both subject-based open access repositories and institutional open access repositories.
+</html>
+<faq>
+<question>
+    General advice
+</question>
+<answer>
+    <ul>
+        <li>
+            Librarians are awesome. Talk to them! They are a fountain of wisdom and may have funds to support APC-driven open access publishing.
+        </li>
+        <li>
+            Some Open Access journals will reduce the article processing charges to society members, emailing to ask can save a lot in article processing charges.
+        </li>
+        <li>
+            If you can put Open Access publication funding in your grant proposals - research funders recognise that publishing costs money - many are willing to fund this.If your grant does not allow it, reach out to your program manager and ask whether they plan to alter the policy.
+        </li>
+        <li>
+            Many traditional journals will ask you to give them your copyright of your work (this isn't actually necessary for them to publish it, but many still insist), with a Copyright Transfer Agreement. Consider using the  SPARC Author Addendum to take back your rights. (N.B This may not always work).
+        </li>
+        <li>
+            Avoid needlessly expensive APC-charging journal option, many of the legacy journal publishers offer expensive ‘hybrid' Open Access publication options in their traditional journals. Check the price of these options with your research librarian before you choose these options. Some can charge $3000 - $5000USD!
+        </li>
+    </ul>
+</answer>
+</faq>
+<faq>
+<question>
+    What if you've already submitted/previously submitted to a subscription journal?
+</question>
+<answer>
+    If the journal allows it, you may be able to upload a pre-print (a draft of a scientific paper that has not yet been published in a peer-reviewed scientific journal) of your paper before submitting it to a journal.
+    Suggested preprint servers can be found above.
+</answer>
+<details> SPARC Author Addendum
+    <ul>
+        <li>
+            Complete the addendum from the <a href='http://www.sparc.arl.org/resources/authors/addendum'>SPARC website</a>.
+        </li>
+        <li>
+            Note in a cover letter to your publisher that you have included an addendum to their standard agreement.
+        </li>
+        <li>
+            Wait for confirmation from publisher that they have accepted the addendum terms &amp; conditions.
+        </li>
+    </ul>
+    This route is far from guaranteed to be successful. In some cases publishers will outright reject any attempt to modify their standard agreement terms and conditions. So be prepared to play ‘hardball' and withdraw your publication if they don't agree to the addendum. Even if they do eventually agree to the addendum, the whole process can inadvertently slow-up the publication process and these delays may frustrate your co-authors.
+</details>
+</faq>
+
+    </page>

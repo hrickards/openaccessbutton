@@ -26,8 +26,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ShareActionProvider;
 
+import org.openaccessbutton.openaccessbutton.about.AboutActivity;
+import org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment;
 import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
+import org.openaccessbutton.openaccessbutton.intro.LaunchActivity;
 import org.openaccessbutton.openaccessbutton.intro.SignupActivity;
+import org.openaccessbutton.openaccessbutton.menu.MenuActivity;
 import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 import org.openaccessbutton.openaccessbutton.push.Push;
 import org.xmlpull.v1.XmlPullParserException;
@@ -43,6 +47,7 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         FragmentManager.OnBackStackChangedListener, OnShareIntentInterface {
     // Navigation drawer
     private String[] mNavigationTitles;
+    private String[] mNavigationMenuTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -105,8 +110,9 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
 
         // Obtain an array of the navigation titles
         mNavigationTitles = mNavigationParser.getTitles();
+        mNavigationMenuTitles = mNavigationParser.getMenuTitles();
         mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item,
-                mNavigationTitles));
+                new String[] {"Home", "Get Informed", "Do Research", "Take Action"}));
 
         // Initialise mFragments to the right length
         mFragments = new Fragment[mNavigationParser.size()];
@@ -135,7 +141,28 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView parent, View view, int position, long id) {
-            switchToFragment(position);
+            int fragmentPosition = 0;
+            switch (position) {
+                case 0:
+                    Intent k = new Intent(getApplicationContext(), MenuActivity.class);
+                    startActivity(k);
+                    overridePendingTransition(0, 0);
+                    return;
+
+                case 1:
+                    fragmentPosition = 1;
+                    break;
+
+                case 2:
+                    fragmentPosition = 3;
+                    break;
+
+                case 3:
+                    fragmentPosition = 5;
+                    break;
+            }
+
+            switchToFragment(fragmentPosition);
         }
     }
 
@@ -155,7 +182,14 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             // - All our fragment constructors need no arguments
             try {
                 Class<?> fragmentClass = Class.forName(item.className);
-                mFragments[position] = (Fragment) fragmentClass.newInstance();
+                if (item.className.equals("org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment")) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("filename", item.filename);
+                    mFragments[position] = new AdvocacyFragment();
+                    mFragments[position].setArguments(bundle);
+                } else {
+                    mFragments[position] = (Fragment) fragmentClass.newInstance();
+                }
             } catch (ClassNotFoundException e) {
                 mFragments[position] = null;
                 Log.e("openaccess", "exception", e);
@@ -169,9 +203,11 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         }
         mFragment = mFragments[position];
 
+        int menuPosition = mNavigationParser.getMenuPositionFromPosition(position);
+
         fragmentManager.beginTransaction().replace(R.id.content_frame, mFragment, "mFragment").commit();
         // Highlight the selected item, update the title, and close the drawer
-        mDrawerList.setItemChecked(position, true);
+        mDrawerList.setItemChecked(menuPosition, true);
         setTitle(mNavigationTitles[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
     }
@@ -210,8 +246,8 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
             prefs.edit().remove("api_key").apply();
 
-            // Go back to SignupActivity
-            Intent k = new Intent(this, SignupActivity.class);
+            // Go back to LaunchActivity
+            Intent k = new Intent(this, LaunchActivity.class);
             startActivity(k);
             finish();
 
@@ -220,6 +256,12 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         } else if (item.getItemId() == R.id.action_settings) {
             // Open up AppPreferencesActivity
             Intent k = new Intent(this, AppPreferencesActivity.class);
+            startActivity(k);
+            return true;
+            // Otherwise if the about button was pressed
+        } else if (item.getItemId() == R.id.action_about) {
+            // Open up AboutActivity
+            Intent k = new Intent(this, AboutActivity.class);
             startActivity(k);
             return true;
         // Otherwise let Android handle the default behaviour
@@ -233,24 +275,6 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         mMenu = menu;
-
-        // Setup search
-        /*
-        mSearchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
-        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                // TODO Do: something with this:
-                Log.w("oab", "Search: " + s);
-                return false;
-            }
-        });
-        */
 
         // Setup sharing
         Intent standardShareIntent = new Intent();
@@ -266,14 +290,6 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         return super.onCreateOptionsMenu(menu);
     }
 
-    /*protected void updateShareIntent() {
-        if (mMenu != null) {
-            MenuItem shareItem = mMenu.findItem(R.id.action_share);
-            mShareActionProvider = (ShareActionProvider) shareItem.getActionProvider();
-            mShareActionProvider.setShareIntent(createShareIntent());
-        }
-    }*/
-
     public void onShareIntentUpdated(Intent intent) {
         if (mMenu != null) {
             MenuItem shareItem = mMenu.findItem(R.id.action_share);
@@ -281,25 +297,6 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             mShareActionProvider.setShareIntent(intent);
         }
     }
-
-    /*protected Intent createShareIntent() {
-        return createShareIntent(mFragment);
-    }*/
-
-    /*protected Intent createShareIntent(Fragment fragment) {
-        Intent shareIntent;
-        if (mFragment instanceof OnShareButtonInterface) {
-            // Fragments might not be bound yet so
-            shareIntent = ((OnShareButtonInterface) fragment).onShareButtonPressed(getResources());
-        } else {
-            shareIntent = new Intent();
-            shareIntent.setAction(Intent.ACTION_SEND);
-            shareIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.generic_share_message));
-            shareIntent.setType("text/plain");
-        }
-
-        return shareIntent;
-    }*/
 
     public void onBackStackChanged() {
         setActionBarArrowDependingOnFragmentsBackStack();

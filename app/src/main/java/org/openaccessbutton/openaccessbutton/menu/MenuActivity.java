@@ -9,10 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import org.openaccessbutton.openaccessbutton.MainActivity;
 import org.openaccessbutton.openaccessbutton.R;
+import org.openaccessbutton.openaccessbutton.about.AboutActivity;
 import org.openaccessbutton.openaccessbutton.advocacy.QuestionsActivity;
+import org.openaccessbutton.openaccessbutton.intro.LaunchActivity;
 import org.openaccessbutton.openaccessbutton.intro.SignupActivity;
 import org.openaccessbutton.openaccessbutton.preferences.AppPreferencesActivity;
 
@@ -23,30 +26,100 @@ public class MenuActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        /*// Bind our buttons to launch the relevant things when clicked
-        bindFragmentLaunchingButton(R.id.doResearchButton, 2, this);
-        bindFragmentLaunchingButton(R.id.infoHubButton, 0, this);
-        bindFragmentLaunchingButton(R.id.mapButton, 3, this);
-        bindFragmentLaunchingButton(R.id.moreOnAppButton, 1, this);*/
-    }
+        final Context context = this;
 
-    /**
-     * Adds a click listener to a button that launches MainActivity and opens a specific fragment
-     * whenever the button is pressed
-     */
-    /*
-    protected void bindFragmentLaunchingButton(int buttonId, final int fragmentId, final Context context) {
-        Button btn = (Button) findViewById(buttonId);
-        btn.setOnClickListener(new View.OnClickListener() {
+        // 0 -- Information
+        // 1 -- FAQ
+        // 2 - Blog
+        // 3 - Browser
+        // 4 - Map
+        // 5 - Take Action
+        // 6 - Support Diego
+
+        // Do research
+        findViewById(R.id.doResearchButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent k = new Intent(context, MainActivity.class);
-                k.putExtra("fragmentNo", fragmentId);
+                k.putExtra("fragmentNo", 3);
+                startActivity(k);
+            }
+        });
+
+        // Information
+        findViewById(R.id.infoHubButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(context, MainActivity.class);
+                k.putExtra("fragmentNo", 0);
+                startActivity(k);
+            }
+        });
+        findViewById(R.id.otherMaterialsButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(context, MainActivity.class);
+                k.putExtra("fragmentNo", 0);
+                startActivity(k);
+            }
+        });
+
+        // FAQ
+        findViewById(R.id.interactiveFaqButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(context, MainActivity.class);
+                k.putExtra("fragmentNo", 1);
+                startActivity(k);
+            }
+        });
+
+        // Map
+        findViewById(R.id.mapButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(context, MainActivity.class);
+                k.putExtra("fragmentNo", 4);
+                startActivity(k);
+            }
+        });
+
+        // Blog
+        findViewById(R.id.moreOnAppButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(context, MainActivity.class);
+                k.putExtra("fragmentNo", 2);
+                startActivity(k);
+            }
+        });
+
+        // Take action
+        findViewById(R.id.takeActionButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(context, MainActivity.class);
+                k.putExtra("fragmentNo", 5);
+                startActivity(k);
+            }
+        });
+        findViewById(R.id.supportDiegoButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(context, MainActivity.class);
+                k.putExtra("fragmentNo", 6);
+                startActivity(k);
+            }
+        });
+        findViewById(R.id.becomeExpertButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(context, MainActivity.class);
+                k.putExtra("fragmentNo", 5);
                 startActivity(k);
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,13 +144,18 @@ public class MenuActivity extends Activity {
             SharedPreferences prefs = getSharedPreferences("org.openaccessbutton.openaccessbutton", 0);
             prefs.edit().remove("api_key").apply();
 
-            // Go back to SignupActivity
-            Intent k = new Intent(this, SignupActivity.class);
+            // Go back to LaunchActivity
+            Intent k = new Intent(this, LaunchActivity.class);
             startActivity(k);
             finish();
 
             return true;
+        } else if (item.getItemId() == R.id.action_about) {
+            // Open up AboutActivity
+            Intent k = new Intent(this, AboutActivity.class);
+            startActivity(k);
+            return true;
         }
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 }

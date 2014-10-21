@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Open Access Button</string>
     <string name="action_settings">Settings</string>
     <string name="drawer_open">Open the Navigation Drawer</string>
     <string name="drawer_close">Close the Navigation Drawer</string>
@@ -9,7 +7,6 @@
     <string name="loading_text">Loading…</string>
     <string name="button_submit_intent_title">Submit to Open Access Button</string>
     <string name="knowledge">Knowledge</string>
-    <string name="meetPage2Body">This app is built to help you access the research you need. You can use our features both inside and outside the app. When you can\’t afford a paper bit the button inside the app, or share the page you\'re on to the app from outside the app. </string>
     <string name="meetPage2List">•List of popular myths and counter arguments</string>
     <string name="meetPage2Reasons">•Reasons for publishing your research open online</string>
     <string name="meetPage2Importance">•The importance of open knowledge today</string>
@@ -19,16 +16,8 @@
     <string name="interactiveMap">Interactive Map</string>
     <string name="paywallsHit">8888 Paywalls Hit</string>
     <string name="researchFeatures">Our interactive map displays people being denied access to research they both needed to pay for and their stories.</string>
-    <string name="signUpSocialMedia">Alternatively, touch here to Sign Up with Social Media</string>
-    <string name="signInSocialMedia">Alternatively, touch here to Sign In with Social Media</string>
-    <string name="signUpGoogle">Sign Up with Google+</string>
-    <string name="signUpFacebook">Sign Up with Facebook</string>
-    <string name="signUpTwitter">Sign Up with Twitter</string>
-    <string name="signInGoogle">Sign in with Google+</string>
-    <string name="signInFacebook">Sign in with Facebook</string>
-    <string name="signInTwitter">Sign in with Twitter</string>
+
     <string name="orSignUpEmail">Or Sign Up using Email</string>
-    <string name="registeredSignIn">Already registered? Then touch here to Sign In.</string>
     <string name="hitaPaywall">You have hit a paywall?!</string>
     <string name="thatSucks">That sucks.</string>
     <string name="tellUsWhy">Tell us why and we will put you on the map.</string>
@@ -39,39 +28,22 @@
     <string name="formDescription">Description</string>
     <string name="exampleFormDescription">E.g. "understand my disease", "learn more about this aspect of culture".</string>
     <string name="storyImportance">Your story is important to email the author and more. Click to read why</string>
-    <string name="needAccess">I need access! \nAdd to my wishlist</string>
-    <string name="findStories">Find Open Access Stories </string>
-    <string name="otherMaterials">Other materials</string>
-    <string name="supportDiego">Support Diego</string>
-    <string name="joinMailingList">Join the action mailing list </string>
-    <string name="becomeExpert">Become an expert</string>
+    <string name="needAccess">I need access!\nAdd to my wishlist</string>
+    <string name="addWishlist">Add to my wishlist</string>
     <string name="interactiveFAQ">Interactive FAQ</string>
     <string name="whyAccess">Why do you need access?</string>
     <string name="exampleWhyAccess">e.g. I am trying to save lives, dammit!</string>
-    <string name="submit">Submit</string>
     <string name="formInstructions">For instructions, more info and your contribution head to www.openaccessbutton.org</string>
     <string name="faq1">Does Open Access have reliable peer review?</string>
     <string name="simpleAnswer1">Simple Answer: Yes. A strong community of experts exists in order to support Open Access publishing. They delegate their time to the cause and are just as reliable as the ones of paid journals.</string>
     <string name="clickForMoreInfo">Touch for more information on the topic.</string>
     <string name="email">Email Address</string>
-    <string name="password">Password</string>
-    <string name="signIn">Sign In</string>
     <string name="register">Register</string>
-    <string name="nameRequired">Username (required)</string>
-    <string name="emailRequired">Email Address (required)</string>
-    <string name="doResearch">Do research</string>
     <string name="infoHub">Open Access info hub</string>
     <string name="openAccessMap">Open Access Button map</string>
-    <string name="takeToApp">Touch on the button above to be taken straight into the app.</string>
-    <string name="gotIt">Got it!</string>
-    <string name="forgottenPassword">Forgot your password?</string>
-    <string name="retypePassword">Retype password</string>
     <string name="askQuestion">Question not answered below? Ask one here.</string>
     <string name="askQuestionClosed">Touch to close the question form.</string>
     <string name="questionHint">Please, enter your question here.</string>
-    <string name="passwordResetInstructions">No worries. Just enter your email address and we will send you a link to create a new one.</string>
-    <string name="registeredEmail">Registered email</string>
-    <string name="exampleEmail">someone@somewhere.com</string>
     <string name="passwordResetEmailed">We have now emailed you instructions on resetting your password. Please check your email address for further instructions.</string>
     <string name="questionSubmitted">Your question is now submitted. You will receive an answer via your email within a few days. Thank you for your patience</string>
     <string name="learn">Learn</string>
@@ -80,7 +52,65 @@
     <string name="submitToButton">Submit to Open Access Button</string>
     <string name="withResearchICould">With this research I could...</string>
 
-    <string-array name="job">
+
+    <string name="buttonSubmitted">Paywall recorded! Thank you!</string>
+    <string name="title_activity_oauth">OAuthActivity</string>
+    <string name="oauth_authenticating">Authenticating…</string>
+    <string name="passwords_not_matching">Error: the two passwords don\'t match</string>
+    <string name="action_logout">Logout</string>
+    <string name="oab_intro_1">Welcome to our app. We are a small company that aims to provide tools and research for Open Access research advocates. Our aim is that one day all research is openly available for the public and not stuck behind a paywall.</string>
+    <string name="menu_more_on_app">More on App?</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_questions">QuestionsActivity</string>
+    <string name="answerPlaceholder">Unanswered</string>
+    <string name="action_questions">FAQ Answers</string>
+    <string name="action_share">Share</string>
+    <string name="blank_question_error">You can\'t submit a blank question!</string>
+    <string name="blank_email">You must enter an email address!</string>
+    <string name="blank_password">You must enter a password!</string>
+    <string name="invalid_username_password">That username or password is invalid!</string>
+    <string name="browser_share_title">Here\'s some research I\'ve been looking at…</string>
+    <string name="map_share_text">Open Access Button Map</string>
+    <string name="blog_share_title">Open Access Button Blog</string>
+    <string name="generic_share_message">I love Open Access!</string>
+    <string name="feedback_uri">mailto:feedback@openaccessbutton.org</string>
+    <string name="username_already_taken">Sorry that email address has already been registered</string>
+    <string name="noQuestionsTitle">No questions asked!</string>
+    <string name="map_error">Error loading map items</string>
+    <string name="noQuestionsDescription">Try submitting one now</string>
+    <string name="addedToWishlist">Successfully submitted to wishlist</string>
+    <string name="needAccessSent">Request for access submitted</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="about_content">The Open Access Button was founded and run by volunteer students and young researchers around the world tired of not being able to get the research they need. Together they work to build apps, tell stories and support campaigns which will help make this problem a thing of the past.\nYou can find the code for the app <a href="https://github.com/oabutton/androidmobileapp">here</a> under an MIT licence. You can even help build the next version!</string>
+    <string name="jisc_content">This app was created with the support of JISC</string>
+    <string name="action_about">About</string>
+    <string name="title_activity_launch">LaunchActivity</string>
+
+    <!-- General -->
+    <string name="app_name">Open Access Button</string>
+    <string name="submit">Submit</string>
+
+    <!-- Landing page -->
+    <string name="landing_text">Thanks for downloading the Open Access Button Mobile App! To get you setup, we first need to know who you are.</string>
+    <string name="privacy_text">By signing in or registering you agree to our <a href="https://www.openaccessbutton.org/privacy">privacy policy</a> and <a href="https://www.openaccessbutton.org/terms">Terms of Service</a></string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Register</string>
+    <string name="sign_up_with_social_media">Register with Social Media</string>
+
+    <!-- Sign in page -->
+    <string name="username_title">Username</string>
+    <string name="sign_in_social_media_description">Alternatively, touch here to Sign In with Social Media</string>
+    <string name="sign_in_google">Sign in with Google+</string>
+    <string name="sign_in_facebook">Sign in with Facebook</string>
+    <string name="sign_in_twitter">Sign in with Twitter</string>
+    <string name="forgotten_password_link">Forgot your password?</string>
+
+    <!-- Sign up page -->
+    <string name="choosing_username_paragraph">We prefer you use your real name. If you\'d like to maintain privacy don\'t use your real name as your username as it will be publicly displayed.</string>
+    <string name="name_required_title">Username (required)</string>
+    <string name="email_required_title">Email Address (required)</string>
+    <string-array name="job_titles">
         <item>Profession</item>
         <item>Student</item>
         <item>Health Professional</item>
@@ -92,47 +122,58 @@
         <item>Other</item>
         <item>Prefer not to say</item>
     </string-array>
+    <string name="password_title">Password</string>
+    <string name="retype_password_title">Retype password</string>
+    <string name="already_registered_lead">Already registered? Then touch here to Sign In.</string>
+    <string name="signup_social_media_lead">Alternatively, touch here to Sign Up with Social Media</string>
 
-    <string name="blog">Open Access Button blog</string>
-    <string name="buttonSubmitted">Paywall recorded! Thank you!</string>
-    <string name="title_activity_oauth">OAuthActivity</string>
-    <string name="oauth_authenticating">Authenticating…</string>
-    <string name="passwords_not_matching">Error: the two passwords don\'t match</string>
-    <string name="action_logout">Logout</string>
+    <!-- Sign up with social media page -->
+    <string name="sign_up_google">Sign Up with Google+</string>
+    <string name="sign_up_facebook">Sign Up with Facebook</string>
+    <string name="sign_up_twitter">Sign Up with Twitter</string>
+
+    <!-- Forgotten password page -->
+    <string name="forgotten_password_header">Forgotten your Password?</string>
+    <string name="forgotten_password_description">No worries. Just enter your username and we will send you a link to create a new password.</string>
+    <string name="registered_username_header">Registered username</string>
+    <string name="registered_username_example">joebloggs</string>
+
+    <!-- Intro pages global -->
+    <string name="intro_finished_button">Got it!</string>
+    <string name="intro_finished_description">Touch on the button above to be taken straight into the app.</string>
     <string name="swipe_right">Swipe right for more…</string>
-    <string name="oab_intro_1">Welcome to our app. We are a small company that aims to provide tools and research for Open Access research advocates. Our aim is that one day all research is openly available for the public and not stuck behind a paywall.</string>
-    <string name="oab_intro_2">Thanks for downloading the Open Access Button. Swipe right to find out how to use the app. </string>
-    <string name="menu_more_on_app">More on App?</string>
-    <string name="signUp">Sign Up</string>
-    <string name="signUpWithSocialMedia">Sign Up with Social Media</string>
-    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_questions">QuestionsActivity</string>
-    <string name="answerPlaceholder">Unanswered</string>
-    <string name="action_questions">FAQ Answers</string>
-    <string name="action_share">Share</string>
-    <string name="blank_question_error">You can\'t submit a blank question!</string>
-    <string name="getAccessToResearch">We can help you get access to research.</string>
-    <string name="pushButton">Push Button. Get Research. Make Progress.</string>
-    <string name="welcome">Welcome</string>
-    <string name="nextTime">Next time your by your computer login to your account and see if we\’ve found you access. </string>
-    <string name="getInformed">Get Informed</string>
-    <string name="packedWithInfo">Inside we\’ve packed a huge amount of information about Open Access. Use our FAQ and guides to answer your questions, and if you have more leftover submit them to us!</string>
-    <string name="keepAppBySide">Why not keep this app by your side next time you discussing Open Access with your friends and professors?</string>
-    <string name="takeAction">Take Action</string>
-    <string name="workTogether">If we all work together soon everyone will have access to research by default. </string>
-    <string name="greatActions">If you want to help yourself, and others around the world we\’ll send you great actions and opportunities every now and then. </string>
-    <string name="blank_email">You must enter an email address!</string>
-    <string name="blank_password">You must enter a password!</string>
-    <string name="invalid_username_password">That username or password is invalid!</string>
-    <string name="browser_share_title">Here\'s some research I\'ve been looking at&#8230;</string>
-    <string name="map_share_text">Open Access Button Map</string>
-    <string name="blog_share_title">Open Access Button Blog</string>
-    <string name="generic_share_message">I love Open Access!</string>
-    <string name="feedback_uri">mailto:feedback@openaccessbutton.org</string>
-    <string name="username_already_taken">Sorry that email address has already been registered</string>
-    <string name="noQuestionsTitle">No questions asked!</string>
-    <string name="map_error">Error loading map items</string>
-    <string name="noQuestionsDescription">Try submitting one now</string>
-    <string name="signupHeaderText">We prefer you use your real name. If you\'d like to maintain privacy don\'t use your real name as your username as it will be publicly displayed.</string>
+
+    <!-- Welcome intro page -->
+    <string name="intro_welcome">Welcome</string>
+    <string name="intro_welcome_top">We can help you get access to research.</string>
+    <string name="intro_welcome_centre">Push Button. Get Research. Make Progress.</string>
+    <string name="intro_welcome_bottom">Thanks for downloading the Open Access Button. Swipe right to find out how to use the app. </string>
+
+    <!-- Do research intro page -->
+    <string name="intro_do_research">Do research</string>
+    <string name="intro_do_research_top">This app is built to help you access the research you need. You can use our features both inside and outside the app. When you can\’t afford a paper bit the button inside the app, or share the page you\'re on to the app from outside the app. </string>
+    <string name="intro_do_research_bottom">Next time your\'e by your computer login to your account and see if we\’ve found you access. </string>
+
+    <!-- Get informed intro page -->
+    <string name="intro_get_informed">Get Informed</string>
+    <string name="intro_get_informed_top">Inside we\'ve packed a huge amount of information about Open Access. Use our FAQ and guides to answer your questions, and if you have more leftover submit them to us!</string>
+    <string name="intro_get_informed_bottom">Why not keep this app by your side next time you discussing Open Access with your friends and professors?</string>
+
+    <!-- Take action intro page -->
+    <string name="intro_take_action">Take Action</string>
+    <string name="intro_take_action_top">If we all work together soon everyone will have access to research by default. </string>
+    <string name="intro_take_action_bottom">If you want to help yourself, and others around the world we\’ll send you great actions and opportunities every now and then. </string>
+
+    <!-- Menu page -->
+    <string name="menu_do_research">Do Research</string>
+    <string name="menu_get_informed">Get Informed</string>
+    <string name="menu_faq">Interactive FAQ</string>
+    <string name="menu_other_info">Other materials</string>
+    <string name="menu_find_stories">Find Open Access Stories </string>
+    <string name="menu_blog">Open Access Button blog</string>
+    <string name="menu_take_action">Take Action</string>
+    <string name="menu_support_diego">Support Diego</string>
+    <string name="menu_mailing_list">Join the action mailing list </string>
+    <string name="menu_become_an_expert">Become an expert</string>
+
 </resources>

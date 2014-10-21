@@ -20,7 +20,7 @@ import org.openaccessbutton.openaccessbutton.map.Item;
  * Created by rickards on 10/14/14.
  */
 public class API {
-    public final static String API_URL = "http://openaccessbutton.org/api";
+    public final static String API_URL = "https://openaccessbutton.org/api";
 
     public interface SignupCallback {
         void onComplete(String username, String apikey);
@@ -106,13 +106,14 @@ public class API {
                     Webb webb = Webb.create();
                     JSONObject result = webb
                             .post(API_URL + "/retrieve")
-                            .param("email", username)
+                            .param("username", username)
                             .param("password", password)
                             .ensureSuccess()
                             .asJsonObject()
                             .getBody();
                     String apiKey = result.getString("api_key");
                     if ((apiKey == null) || (apiKey.equals(""))) {
+                        Log.w("result", result.toString());
                         throw new Error("Invalid username or password");
                     }
 
@@ -145,7 +146,7 @@ public class API {
 
     }
 
-    public static void blockedRequest(final Callback callback, final Context context, final String url, final String location, final String doi, final String description, final String usecase) {
+    public static void blockedRequest(final Callback callback, final Context context, final String url, final String location, final String story, final boolean wishlist) {
         SharedPreferences prefs = context.getSharedPreferences("org.openaccessbutton.openaccessbutton", Context.MODE_PRIVATE);
         final String apiKey = prefs.getString("api_key", "");
 
@@ -155,13 +156,12 @@ public class API {
             public void run() {
                 Webb webb = Webb.create();
                 JSONObject result = webb
-                        .post("http://oabutton.cottagelabs.com/api/blocked")
+                        .post(API_URL + "/blocked")
                         .param("api_key", apiKey) // We need to get this when the user signs up
                         .param("url", url)
                         .param("location", location) // Geocode this either here or in the API
-                        .param("doi", doi)
-                        .param("description", description) // Ignored by the API at the moment
-                        .param("usecase", usecase) // Ignored by the API at the moment
+                        .param("story", story)
+                        .param("wishlist", wishlist)
                         .param("android", true) // Indicate we're sending a request from a mobile device
                         .ensureSuccess()
                         .asJsonObject()
@@ -186,7 +186,7 @@ public class API {
 
                     Webb webb = Webb.create();
                     JSONObject results = webb
-                        .get("http://oabutton.cottagelabs.com/query")
+                        .get("https://openaccessbutton.org/query")
                         .param("source", query)
                         .ensureSuccess()
                         .asJsonObject()

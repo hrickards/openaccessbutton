@@ -15,19 +15,23 @@
             android:layout_gravity="left"
             android:layout_height="wrap_content"
             android:src="@drawable/logotext"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/header"
+            android:text="@string/sign_in"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/signInEmail"
+            android:id="@+id/signInUsername"
             android:inputType="textEmailAddress"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:background="@color/backgroundColor"
-            android:layout_marginTop="30dp"
             android:textColorHint="#888"
             android:textColor="@color/fontColor"
             android:textSize="20sp"
-            android:hint="@string/email"
+            android:hint="@string/username_title"
             android:layout_marginBottom="15dp"/>
         <View
             android:layout_width="match_parent"
@@ -47,7 +51,7 @@
             android:textColorHint="#888"
             android:textColor="@color/fontColor"
             android:textSize="20sp"
-            android:hint="@string/password"
+            android:hint="@string/password_title"
             android:fontFamily="sans-serif"
             android:layout_marginBottom="15dp"/>
         <View
@@ -66,7 +70,8 @@
             android:padding="10dp"
             android:gravity="center"
             android:id="@+id/signinButton"
-            android:text="@string/signIn"/>
+            android:text="@string/sign_in"/>
+        <!--
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,8 +80,9 @@
             android:textSize="16sp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="5dp"
-            android:text="@string/signInSocialMedia"
+            android:text="@string/sign_in_social_media_description"
             android:id="@+id/socialSignInButton"/>
+            -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,7 +97,7 @@
                 android:layout_marginLeft="30dp"
                 style="@style/signUpButtons"
                 android:id="@+id/signupGoogleButton"
-                android:text="@string/signInGoogle"/>
+                android:text="@string/sign_in_google"/>
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -100,7 +106,7 @@
                 android:layout_marginLeft="30dp"
                 style="@style/signUpButtons"
                 android:id="@+id/signupFacebookButton"
-                android:text="@string/signInFacebook"/>
+                android:text="@string/sign_in_facebook"/>
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -109,7 +115,7 @@
                 style="@style/signUpButtons"
                 android:textColor="@color/customNavy"
                 android:id="@+id/signupTwitterButton"
-                android:text="@string/signInTwitter"/>
+                android:text="@string/sign_in_twitter"/>
         </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
@@ -118,9 +124,8 @@
             android:layout_marginRight="30dp"
             android:background="@color/backgroundColor"
             android:layout_marginTop="30dp"
-            android:textColor="#888"
             android:textSize="16sp"
-            android:text="@string/forgottenPassword"
+            android:text="@string/forgotten_password_link"
             android:id="@+id/forgotPasswordButton"/>
     </LinearLayout>
 </ScrollView>

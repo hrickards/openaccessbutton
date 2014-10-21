@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation>
     <item>
-        <title>Advocacy</title>
+        <title>Information</title>
         <class>org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment</class>
+        <filename>other_content.xml</filename>
+        <menu>Get Informed</menu>
     </item>
     <item>
-        <title>Blog</title>
+        <title>FAQ</title>
+        <class>org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment</class>
+        <filename>advocacy.xml</filename>
+        <menu>Get Informed</menu>
+    </item>
+    <item>
+        <title>Get Informed</title>
         <class>org.openaccessbutton.openaccessbutton.blog.BlogFragment</class>
+        <menu>Get Informed</menu>
     </item>
     <item>
-        <title>Browser</title>
+        <title>Do Research</title>
         <class>org.openaccessbutton.openaccessbutton.browser.BrowserFragment</class>
+        <menu>Do Research</menu>
     </item>
     <item>
         <title>Map</title>
         <class>org.openaccessbutton.openaccessbutton.map.MapFragment</class>
+        <menu>Get Informed</menu>
+    </item>
+    <item>
+        <title>Take Action</title>
+        <class>org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment</class>
+        <filename>take_action.xml</filename>
+        <menu>Take Action</menu>
+    </item>
+    <item>
+        <title>Support Diego</title>
+        <class>org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment</class>
+        <filename>diego.xml</filename>
+        <menu>Take Action</menu>
     </item>
 </navigation>

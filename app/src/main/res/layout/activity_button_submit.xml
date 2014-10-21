@@ -69,22 +69,22 @@
          android:layout_marginRight="7dp"
          android:layout_below="@+id/description"/>
      <Button
-         android:layout_width="fill_parent"
-         android:layout_height="wrap_content"
-         android:layout_below="@id/storyImportance"
-         android:layout_marginLeft="10dp"
-         android:layout_marginRight="10dp"
-         android:layout_marginTop="10dp"
-         style="@style/signUpButtons"
-         android:paddingLeft="100dp"
-         android:text="@string/needAccess"
-         android:id="@+id/buttonButton"/>
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/storyImportance"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginTop="10dp"
+             style="@style/signUpButtons"
+             android:gravity="center"
+             android:text="@string/needAccess"
+             android:id="@+id/needAccessButton"/>
      <View
          android:layout_width="match_parent"
          android:layout_marginRight="10dp"
          android:layout_marginLeft="10dp"
          android:layout_height="1dp"
-         android:layout_below="@id/buttonButton"
+         android:layout_below="@id/needAccessButton"
          android:id="@+id/verticalLine"
          style="@style/horizontalLine"/>
      <TextView
