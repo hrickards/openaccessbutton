@@ -5,17 +5,18 @@
  */
 
 package org.openaccessbutton.openaccessbutton;
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.ShareActionProvider;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -24,7 +25,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.ShareActionProvider;
 
 import org.openaccessbutton.openaccessbutton.about.AboutActivity;
 import org.openaccessbutton.openaccessbutton.advocacy.AdvocacyFragment;
@@ -43,7 +43,7 @@ import java.io.InputStream;
  * Wrapper activity that provides navigation for the entire app, and loads the relevant fragment
  * based on that navigation.
  */
-public class MainActivity extends Activity implements OnFragmentNeededListener,
+public class MainActivity extends ActionBarActivity implements OnFragmentNeededListener,
         FragmentManager.OnBackStackChangedListener, OnShareIntentInterface {
     // Navigation drawer
     private String[] mNavigationTitles;
@@ -59,9 +59,11 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
 
     private ShareActionProvider mShareActionProvider;
     private Menu mMenu;
+    private String DEFAULT_SHARE_HISTORY_FILE_NAME = "share_history.xml";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialiseNavigation();
@@ -130,8 +132,8 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
         getFragmentManager().addOnBackStackChangedListener(this);
     }
 
@@ -283,8 +285,11 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
         standardShareIntent.setType("text/plain");
 
         MenuItem shareItem = menu.findItem(R.id.action_share);
-        mShareActionProvider = (ShareActionProvider) shareItem.getActionProvider();
-        mShareActionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
+        mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
+        if (mShareActionProvider == null) {
+            mShareActionProvider = new ShareActionProvider(this);
+        }
+        mShareActionProvider.setShareHistoryFileName(DEFAULT_SHARE_HISTORY_FILE_NAME);
         mShareActionProvider.setShareIntent(standardShareIntent);
 
         return super.onCreateOptionsMenu(menu);
@@ -293,7 +298,10 @@ public class MainActivity extends Activity implements OnFragmentNeededListener,
     public void onShareIntentUpdated(Intent intent) {
         if (mMenu != null) {
             MenuItem shareItem = mMenu.findItem(R.id.action_share);
-            mShareActionProvider = (ShareActionProvider) shareItem.getActionProvider();
+            mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
+            if (mShareActionProvider == null) {
+                mShareActionProvider = new ShareActionProvider(this);
+            }
             mShareActionProvider.setShareIntent(intent);
         }
     }
