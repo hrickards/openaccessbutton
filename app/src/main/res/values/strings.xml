@@ -93,7 +93,7 @@
 
     <!-- Landing page -->
     <string name="landing_text">Thanks for downloading the Open Access Button Mobile App! To get you setup, we first need to know who you are.</string>
-    <string name="privacy_text">By signing in or registering you agree to our <a href="https://www.openaccessbutton.org/privacy">privacy policy</a> and <a href="https://www.openaccessbutton.org/terms">Terms of Service</a></string>
+    <string name="privacy_text">By signing in or registering you agree to our <a href="https://www.openaccessbutton.org/privacy">Privacy Policy</a> and <a href="https://www.openaccessbutton.org/terms">Terms of Service</a></string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Register</string>
     <string name="sign_up_with_social_media">Register with Social Media</string>
