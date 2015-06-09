@@ -146,7 +146,7 @@ public class API {
 
     }
 
-    public static void blockedRequest(final Callback callback, final Context context, final String url, final String location, final String story, final boolean wishlist) {
+    public static void blockedRequest(final Callback callback, final Context context, final String url, final Double mLatitude, final Double mLongitude, final String story, final boolean wishlist) {
         SharedPreferences prefs = context.getSharedPreferences("org.openaccessbutton.openaccessbutton", Context.MODE_PRIVATE);
         final String apiKey = prefs.getString("api_key", "");
 
@@ -154,15 +154,32 @@ public class API {
         Runnable r = new Runnable() {
             @Override
             public void run() {
+                JSONObject data = new JSONObject();
+                // on errors, we just post off whatever data we could dump into JSON for now
+                try {
+                    data.put("url", url);
+                } catch (JSONException e) { e.printStackTrace(); }
+                try {
+                    data.put("story", story);
+                } catch (JSONException e) { e.printStackTrace(); }
+                try {
+                    data.put("wishlist", wishlist);
+                } catch (JSONException e) { e.printStackTrace(); }
+                try {
+                    if (mLatitude != null && mLongitude != null) {
+                        JSONObject geo = new JSONObject();
+                        // lat and lng should be strings for the API
+                        geo.put("lat", mLatitude.toString());
+                        geo.put("lon", mLongitude.toString());
+                        data.put("location", geo);
+                    }
+                } catch (JSONException e) { e.printStackTrace(); }
+
                 Webb webb = Webb.create();
                 JSONObject result = webb
                         .post(API_URL + "/blocked")
                         .param("api_key", apiKey) // We need to get this when the user signs up
-                        .param("url", url)
-                        .param("location", location) // Geocode this either here or in the API
-                        .param("story", story)
-                        .param("wishlist", wishlist)
-                        .param("android", true) // Indicate we're sending a request from a mobile device
+                        .body(data)
                         .ensureSuccess()
                         .asJsonObject()
                         .getBody();

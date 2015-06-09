@@ -30,6 +30,7 @@ import java.util.List;
  */
 public class ButtonSubmitActivity extends Activity {
     private String mLocation;
+    private double mLatitude, mLongitude;
     private String mUrl;
 
     @Override
@@ -85,8 +86,8 @@ public class ButtonSubmitActivity extends Activity {
                 }
 
                 if (location != null) {
-                    final double mLatitude = location.getLatitude();
-                    final double mLongitude = location.getLongitude();
+                    mLatitude = location.getLatitude();
+                    mLongitude = location.getLongitude();
 
                     runOnUiThread(new Runnable() {
                         @Override
@@ -127,7 +128,7 @@ public class ButtonSubmitActivity extends Activity {
                             }
                         });
                     }
-                }, context, mUrl, mLocation, story, true);
+                }, context, mUrl, mLatitude, mLongitude, story, true);
             }
         });
     }
